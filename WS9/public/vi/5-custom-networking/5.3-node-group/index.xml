@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Provision a new Node Group on KUBERNETES ON AWS WORKSHOP</title>
+    <link>/vi/5-custom-networking/5.3-node-group/</link>
+    <description>Recent content in Provision a new Node Group on KUBERNETES ON AWS WORKSHOP</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language>
+    <atom:link href="/vi/5-custom-networking/5.3-node-group/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

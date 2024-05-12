@@ -1,0 +1,309 @@
+[
+{
+	"uri": "/vi/6-amazon-guardduty-for-eks/6.1-enable-guardduty-protection-on-eks/",
+	"title": "Enable GuardDuty Protection on EKS",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/5-secrets-management/5.1-exploring-secrets/",
+	"title": "Exploring Secrets",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Giới thiệu Kubernetes là một nền tảng nguồn mở, khả chuyển, có thể mở rộng để quản lý các ứng dụng được đóng gói và các service, giúp thuận lợi trong việc cấu hình và tự động hoá việc triển khai ứng dụng. Kubernetes là một hệ sinh thái lớn và phát triển nhanh chóng. Các dịch vụ, sự hỗ trợ và công cụ có sẵn rộng rãi.\nTên gọi Kubernetes có nguồn gốc từ tiếng Hy Lạp, có ý nghĩa là người lái tàu hoặc hoa tiêu. Google mở mã nguồn Kubernetes từ năm 2014. Kubernetes xây dựng dựa trên một thập kỷ rưỡi kinh nghiệm mà Google có được với việc vận hành một khối lượng lớn workload trong thực tế, kết hợp với các ý tưởng và thực tiễn tốt nhất từ cộng đồng.\nQuay ngược thời gian Chúng ta hãy xem tại sao Kubernetes rất hữu ích bằng cách quay ngược thời gian.\nThời đại triển khai theo cách truyền thống: Ban đầu, các ứng dụng được chạy trên các máy chủ vật lý. Không có cách nào để xác định ranh giới tài nguyên cho các ứng dụng trong máy chủ vật lý và điều này gây ra sự cố phân bổ tài nguyên. Ví dụ, nếu nhiều ứng dụng cùng chạy trên một máy chủ vật lý, có thể có những trường hợp một ứng dụng sẽ chiếm phần lớn tài nguyên hơn và kết quả là các ứng dụng khác sẽ hoạt động kém đi. Một giải pháp cho điều này sẽ là chạy từng ứng dụng trên một máy chủ vật lý khác nhau. Nhưng giải pháp này không tối ưu vì tài nguyên không được sử dụng đúng mức và rất tốn kém cho các tổ chức để có thể duy trì nhiều máy chủ vật lý như vậy.\nThời đại triển khai ảo hóa: Như một giải pháp, ảo hóa đã được giới thiệu. Nó cho phép bạn chạy nhiều Máy ảo (VM) trên CPU của một máy chủ vật lý. Ảo hóa cho phép các ứng dụng được cô lập giữa các VM và cung cấp mức độ bảo mật vì thông tin của một ứng dụng không thể được truy cập tự do bởi một ứng dụng khác.\nẢo hóa cho phép sử dụng tốt hơn các tài nguyên trong một máy chủ vật lý và cho phép khả năng mở rộng tốt hơn vì một ứng dụng có thể được thêm hoặc cập nhật dễ dàng, giảm chi phí phần cứng và hơn thế nữa. Với ảo hóa, bạn có thể có một tập hợp các tài nguyên vật lý dưới dạng một cụm các máy ảo sẵn dùng.\nMỗi VM là một máy tính chạy tất cả các thành phần, bao gồm cả hệ điều hành riêng của nó, bên trên phần cứng được ảo hóa.\nThời đại triển khai Container: Các container tương tự như VM, nhưng chúng có tính cô lập để chia sẻ Hệ điều hành (HĐH) giữa các ứng dụng. Do đó, container được coi là nhẹ (lightweight). Tương tự như VM, một container có hệ thống tệp (filesystem), CPU, bộ nhớ, process space, v.v. Khi chúng được tách rời khỏi cơ sở hạ tầng bên dưới, chúng có thể khả chuyển (portable) trên cloud hoặc các bản phân phối Hệ điều hành.\nCác container đã trở nên phổ biến vì chúng có thêm nhiều lợi ích, chẳng hạn như:\nTạo mới và triển khai ứng dụng Agile: gia tăng tính dễ dàng và hiệu quả của việc tạo các container image so với việc sử dụng VM image. Phát triển, tích hợp và triển khai liên tục: cung cấp khả năng build và triển khai container image thường xuyên và đáng tin cậy với việc rollbacks dễ dàng, nhanh chóng. Phân biệt giữa Dev và Ops: tạo các images của các application container tại thời điểm build/release thay vì thời gian triển khai, do đó phân tách các ứng dụng khỏi hạ tầng. Khả năng quan sát không chỉ hiển thị thông tin và các metric ở mức Hệ điều hành, mà còn cả application health và các tín hiệu khác. Tính nhất quán về môi trường trong suốt quá trình phát triển, testing và trong production: Chạy tương tự trên laptop như trên cloud. Tính khả chuyển trên cloud và các bản phân phối HĐH: Chạy trên Ubuntu, RHEL, CoreOS, on-premises, Google Kubernetes Engine và bất kì nơi nào khác. Quản lý tập trung ứng dụng: Tăng mức độ trừu tượng từ việc chạy một Hệ điều hành trên phần cứng ảo hóa sang chạy một ứng dụng trên một HĐH bằng logical resources. Các micro-services phân tán, elastic: ứng dụng được phân tách thành các phần nhỏ hơn, độc lập và thể được triển khai và quản lý một cách linh hoạt - chứ không phải một app nguyên khối (monolithic). Cô lập các tài nguyên: dự đoán hiệu năng ứng dụng Sử dụng tài nguyên: hiệu quả Tại sao bạn cần Kubernetes và nó có thể làm những gì? Các container là một cách tốt để đóng gói và chạy các ứng dụng của bạn. Trong môi trường production, bạn cần quản lý các container chạy các ứng dụng và đảm bảo rằng không có khoảng thời gian downtime. Ví dụ, nếu một container bị tắt đi, một container khác cần phải khởi động lên. Điều này sẽ dễ dàng hơn nếu được xử lý bởi một hệ thống.\nĐó là cách Kubernetes đến với chúng ta. Kubernetes cung cấp cho bạn một framework để chạy các hệ phân tán một cách mạnh mẽ. Nó đảm nhiệm việc nhân rộng và chuyển đổi dự phòng cho ứng dụng của bạn, cung cấp các mẫu deployment và hơn thế nữa. Ví dụ, Kubernetes có thể dễ dàng quản lý một triển khai canary cho hệ thống của bạn.\nKubernetes cung cấp cho bạn:\nService discovery và cân bằng tải\nKubernetes có thể expose một container sử dụng DNS hoặc địa chỉ IP của riêng nó. Nếu lượng traffic truy cập đến một container cao, Kubernetes có thể cân bằng tải và phân phối lưu lượng mạng (network traffic) để việc triển khai được ổn định. Điều phối bộ nhớ\nKubernetes cho phép bạn tự động mount một hệ thống lưu trữ mà bạn chọn, như local storages, public cloud providers, v.v. Tự động rollouts và rollbacks\nBạn có thể mô tả trạng thái mong muốn cho các container được triển khai dùng Kubernetes và nó có thể thay đổi trạng thái thực tế sang trạng thái mong muốn với tần suất được kiểm soát. Ví dụ, bạn có thể tự động hoá Kubernetes để tạo mới các container cho việc triển khai của bạn, xoá các container hiện có và áp dụng tất cả các resource của chúng vào container mới. Đóng gói tự động\nBạn cung cấp cho Kubernetes một cluster gồm các node mà nó có thể sử dụng để chạy các tác vụ được đóng gói (containerized task). Bạn cho Kubernetes biết mỗi container cần bao nhiêu CPU và bộ nhớ (RAM). Kubernetes có thể điều phối các container đến các node để tận dụng tốt nhất các resource của bạn. Tự phục hồi\nKubernetes khởi động lại các containers bị lỗi, thay thế các container, xoá các container không phản hồi lại cấu hình health check do người dùng xác định và không cho các client biết đến chúng cho đến khi chúng sẵn sàng hoạt động. Quản lý cấu hình và bảo mật\nKubernetes cho phép bạn lưu trữ và quản lý các thông tin nhạy cảm như: password, OAuth token và SSH key. Bạn có thể triển khai và cập nhật lại secret và cấu hình ứng dụng mà không cần build lại các container image và không để lộ secret trong cấu hình stack của bạn. Kubernetes không phải là gì? Kubernetes không phải là một hệ thống PaaS (Nền tảng như một Dịch vụ) truyền thống, toàn diện. Do Kubernetes hoạt động ở tầng container chứ không phải ở tầng phần cứng, nó cung cấp một số tính năng thường áp dụng chung cho các dịch vụ PaaS, như triển khai, nhân rộng, cân bằng tải, ghi nhật ký và giám sát. Tuy nhiên, Kubernetes không phải là cấu trúc nguyên khối và các giải pháp mặc định này là tùy chọn và có thể cắm được (pluggable).\nKubernetes:\nKhông giới hạn các loại ứng dụng được hỗ trợ. Kubernetes nhằm mục đích hỗ trợ một khối lượng công việc cực kỳ đa dạng, bao gồm cả stateless, stateful và xử lý dữ liệu. Nếu một ứng dụng có thể chạy trong một container, nó sẽ chạy rất tốt trên Kubernetes. Không triển khai mã nguồn và không build ứng dụng của bạn. Quy trình CI/CD được xác định bởi tổ chức cũng như các yêu cầu kỹ thuật. Không cung cấp các service ở mức ứng dụng, như middleware (ví dụ, các message buses), các framework xử lý dữ liệu (ví dụ, Spark), cơ sở dữ liệu (ví dụ, MySQL), bộ nhớ cache, cũng như hệ thống lưu trữ của cluster (ví dụ, Ceph). Các thành phần như vậy có thể chạy trên Kubernetes và/hoặc có thể được truy cập bởi các ứng dụng chạy trên Kubernetes thông qua các cơ chế di động, chẳng hạn như Open Service Broker. Không bắt buộc các giải pháp ghi lại nhật ký (logging), giám sát (monitoring) hoặc cảnh báo (alerting). Nó cung cấp một số sự tích hợp như proof-of-concept, và cơ chế để thu thập và xuất các số liệu. Không cung cấp, không bắt buộc một cấu hình ngôn ngữ/hệ thống (ví dụ: Jsonnet). Nó cung cấp một API khai báo có thể được targeted bởi các hình thức khai báo tùy ý. Không cung cấp cũng như áp dụng bất kỳ cấu hình toàn diện, bảo trì, quản lý hoặc hệ thống tự phục hồi. Ngoài ra, Kubernetes không phải là một hệ thống điều phối đơn thuần. Trong thực tế, nó loại bỏ sự cần thiết của việc điều phối. Định nghĩa kỹ thuật của điều phối là việc thực thi một quy trình công việc được xác định: đầu tiên làm việc A, sau đó là B rồi sau chót là C. Ngược lại, Kubernetes bao gồm một tập các quy trình kiểm soát độc lập, có thể kết hợp, liên tục điều khiển trạng thái hiện tại theo trạng thái mong muốn đã cho. Nó không phải là vấn đề làm thế nào bạn có thể đi được từ A đến C. Kiểm soát tập trung cũng không bắt buộc. Điều này dẫn đến một hệ thống dễ sử dụng hơn, mạnh mẽ hơn, linh hoạt hơn và có thể mở rộng. "
+},
+{
+	"uri": "/vi/4-amazon-eks-pod-identity/4.1-introduction/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/1-introduce/1.1-kubernetes-security-primitives/",
+	"title": "Kubernetes Security Primitives",
+	"tags": [],
+	"description": "",
+	"content": "Kubernetes Security Primitives Secure Hosts Secure Kubernetes Chúng ta cần đưa ra hai loại quyết định:\nAi có thể truy cập? Họ có thể làm gì? Xác thực (Authentication) Ai có thể truy cập vào máy chủ API được xác định bởi các cơ chế xác thực. Ủy quyền (Authorization) Sau khi họ có quyền truy cập vào cụm, những gì họ có thể làm được được xác định bởi các cơ chế ủy quyền. Chứng chỉ TLS Tất cả các giao tiếp với cụm, giữa các thành phần khác nhau như Cụm ETCD, kube-controller-manager, lập lịch, máy chủ API, cũng như những thành phần đang chạy trên các nút làm việc như kubelet và kubeproxy đều được bảo vệ bằng mã hóa TLS. Chính sách Mạng Làm thế nào về giao tiếp giữa các ứng dụng trong cụm?\n"
+},
+{
+	"uri": "/vi/",
+	"title": "Kubernetes trên AWS",
+	"tags": [],
+	"description": "",
+	"content": "Kubernetes trên AWS Kubernetes là một nền tảng mã nguồn mở, linh hoạt, có khả năng mở rộng, phục vụ việc quản lý các ứng dụng được đóng gói và các dịch vụ liên quan, giúp việc cấu hình và tự động hóa quá trình triển khai ứng dụng trở nên thuận tiện hơn. Được biết đến như một hệ sinh thái lớn và phát triển nhanh chóng, Kubernetes cung cấp sự hỗ trợ rộng rãi qua các dịch vụ và công cụ đa dạng.\nTên Kubernetes bắt nguồn từ tiếng Hy Lạp, nghĩa là người lái tàu hoặc hoa tiêu. Kubernetes được Google công bố mã nguồn vào năm 2014, dựa trên gần một thập kỷ kinh nghiệm quản lý workload lớn trong thực tế của Google, kết hợp với các ý tưởng và best practices từ cộng đồng.\nQuay ngược thời gian Hãy xem xét tại sao Kubernetes lại quan trọng thông qua việc nhìn lại quá khứ.\nThời kỳ triển khai truyền thống: Ban đầu, các ứng dụng được chạy trực tiếp trên máy chủ vật lý, khiến việc phân bổ tài nguyên gặp khó khăn do không có cơ chế xác định ranh giới tài nguyên cho từng ứng dụng. Cách tiếp cận này dẫn đến nguy cơ một ứng dụng có thể sử dụng quá nhiều tài nguyên, ảnh hưởng đến hoạt động của các ứng dụng khác. Giải pháp là chạy mỗi ứng dụng trên một máy chủ vật lý riêng biệt, nhưng điều này lại không hiệu quả về mặt chi phí và tài nguyên.\nThời kỳ triển khai ảo hóa: Ảo hóa được giới thiệu như một giải pháp cho phép chạy nhiều Máy ảo (VM) trên cùng một máy chủ vật lý, giúp cô lập ứng dụng và tăng cường bảo mật. Ảo hóa cũng giúp cải thiện hiệu quả sử dụng tài nguyên và khả năng mở rộng.\nThời kỳ triển khai Container: Container giống như VM nhưng nhẹ hơn và chia sẻ Hệ điều hành (HĐH) với nhau. Container mang lại nhiều lợi ích như tạo mới và triển khai ứng dụng nhanh chóng, phát triển và triển khai liên tục, phân biệt rõ ràng giữa quá trình phát triển và vận hành, cung cấp tính nhất quán qua các môi trường, khả năng di chuyển giữa các cloud và HĐH, và quản lý ứng dụng tập trung.\nTại sao bạn cần Kubernetes và nó có thể làm gì? Container là phương tiện hiệu quả để đóng gói và chạy ứng dụng của bạn. Trong môi trường sản xuất, cần có cơ chế quản lý các container một cách hiệu quả, đảm bảo không có downtime. Kubernetes giúp quản lý các hệ thống phân tán mạnh mẽ, tự động hóa việc nhân rộng, cung cấp các mẫu triển khai và nhiều hơn nữa.\nKubernetes mang lại:\nPhát hiện dịch vụ và cân bằng tải Điều phối bộ nhớ Tự động rollouts và rollbacks Đóng gói tự động Tự phục hồi Quản lý cấu hình và bảo mật Những gì Kubernetes không phải là Kubernetes không phải là một hệ thống PaaS truyền thống, toàn diện. Nó hoạt động ở tầng container, cung cấp tính năng giống như PaaS như triển khai, nhân rộng, cân bằng tải, nhưng là một giải pháp linh hoạt và có thể mở rộng, không giới hạn loại ứng dụng được hỗ trợ, không triển khai mã nguồn hoặc build ứng dụng, không cung cấp dịch vụ ứng dụng cấp cao như middleware, databases, không bắt buộc sử dụng các giải pháp ghi nhật ký, giám sát hoặc cảnh báo, và không cung cấp hoặc áp dụng bất kỳ cấu hình toàn diện, bảo trì, quản lý hoặc hệ thống tự phục hồi. Kubernetes loại bỏ nhu cầu về điều phối truyền thống, thay vào đó là kiểm soát liên tục từ trạng thái hiện tại sang trạng thái mong muốn.\n"
+},
+{
+	"uri": "/vi/3-iam-roles-for-service-accounts/3.1-list-resource/",
+	"title": "Liệt kê tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Liệt kê tài nguyên Giới thiệu Thành phần giỏ hàng của kiến ​​trúc của chúng tôi sử dụng Amazon DynamoDB làm cơ sở dữ liệu lưu trữ của nó, đây là một trường hợp sử dụng phổ biến bạn sẽ thấy cho việc tích hợp cơ sở dữ liệu không quan hệ với Amazon EKS. Cách mà API giỏ hàng hiện đang triển khai sử dụng một phiên bản nhẹ của Amazon DynamoDB chạy như một container trong cụm EKS.\nBạn có thể thấy điều này bằng cách chạy lệnh sau:\nkubectl -n carts get pod NAME READY STATUS RESTARTS AGE carts-5d7fc9d8f-xm4hs 1/1 Running 0 14m carts-dynamodb-698674dcc6-hw2bg 1/1 Running 0 14m Trong trường hợp trên, Pod carts-dynamodb-698674dcc6-hw2bg là dịch vụ DynamoDB nhẹ của chúng tôi. Chúng ta có thể xác minh ứng dụng giỏ hàng của chúng ta đang sử dụng nó bằng cách kiểm tra môi trường của nó:\nkubectl -n carts exec deployment/carts -- env | grep CARTS_DYNAMODB_ENDPOINT CARTS_DYNAMODB_ENDPOINT=http://carts-dynamodb:8000 Cách tiếp cận này có thể hữu ích cho việc kiểm tra, nhưng chúng tôi muốn di chuyển ứng dụng của mình để sử dụng dịch vụ Amazon DynamoDB quản lý hoàn toàn để tận dụng đầy đủ quy mô và độ tin cậy mà nó cung cấp.\n"
+},
+{
+	"uri": "/vi/5-secrets-management/5.3-securing-secrets-using-sealed-secrets/5.3.1-sealed-secrets-for-kubernetes/",
+	"title": "Securing Secrets Using Sealed Secrets",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/5-secrets-management/5.2-managing-secrets-with-aws-secrets-manager/5.2.1-storing-secrets-in-aws-secrets-manager/",
+	"title": "Storing secrets in AWS Secrets Manager",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/5-secrets-management/5.2-managing-secrets-with-aws-secrets-manager/5.2.2-ascp/",
+	"title": "ASCP",
+	"tags": [],
+	"description": "",
+	"content": "ASCP "
+},
+{
+	"uri": "/vi/1-introduce/1.2-authentication/",
+	"title": "Authentication",
+	"tags": [],
+	"description": "",
+	"content": "Authentication Accounts Các người dùng khác nhau có thể truy cập vào bảo mật của cụm được quản lý bởi các ứng dụng tự quản lý bên trong cụm mà họ truy cập. Vậy, chúng ta còn lại 2 loại người dùng:\nNgười: như Quản trị viên và Nhà phát triển Robot: như các quy trình/dịch vụ hoặc ứng dụng đòi hỏi truy cập vào cụm. Tất cả quản lý truy cập người dùng đều được thực hiện bởi apiserver và tất cả các yêu cầu đi qua apiserver. Cơ chế Xác thực (Authentication Mechanisms) Có các cơ chế xác thực khác nhau có thể được cấu hình.\nAuthentication Mechanisms - Basic Cấu hình kube-apiserver Nếu bạn thiết lập thông qua kubeadm thì cập nhật tệp mẫu kube-apiserver.yaml với tùy chọn. Xác thực Người dùng (Authenticate User) Để xác thực bằng các thông tin đăng nhập cơ bản khi truy cập vào máy chủ API, chỉ định tên người dùng và mật khẩu trong một lệnh curl. $ curl -v -k http://master-node-ip:6443/api/v1/pods -u \u0026#34;user1:password123\u0026#34; Chúng ta có thể có thêm cột trong tập tin user-details.csv để gán người dùng vào các nhóm cụ thể.\nK8s Reference Docs https://kubernetes.io/docs/reference/access-authn-authz/authentication/ "
+},
+{
+	"uri": "/vi/2-prerequiste/",
+	"title": "Các Bước Chuẩn Bị",
+	"tags": [],
+	"description": "",
+	"content": "Các Bước Chuẩn Bị IAM Roles cho Service Accounts TRƯỚC KHI BẮT ĐẦU Chuẩn bị môi trường cho phần này:\nprepare-environment security/irsa Điều này sẽ thực hiện các thay đổi sau vào môi trường lab của bạn:\nTạo một bảng Amazon DynamoDB Tạo một vai trò IAM cho các tải trọng công việc AmazonEKS để truy cập vào bảng DynamoDB Cài đặt AWS Load Balancer Controller trong cụm Amazon EKS Ứng dụng trong các container của Pod có thể sử dụng AWS SDK hoặc AWS CLI để thực hiện các yêu cầu API đến các dịch vụ AWS bằng quyền IAM. Ví dụ, ứng dụng có thể cần tải lên các tệp vào một bucket S3 hoặc truy vấn một bảng DynamoDB. Để làm điều này, các ứng dụng phải ký các yêu cầu API AWS của họ bằng thông tin đăng nhập AWS. IAM Roles cho Service Accounts (IRSA) cung cấp khả năng quản lý thông tin đăng nhập cho các ứng dụng của bạn, tương tự như cách các Hồ sơ Thể hiện IAM cung cấp thông tin đăng nhập cho các thể hiện Amazon EC2. Thay vì tạo và phân phối thông tin đăng nhập AWS của bạn cho các container hoặc phụ thuộc vào Hồ sơ Thể hiện Amazon EC2 để cấp quyền, bạn kết hợp một Vai trò IAM với một Tài khoản Dịch vụ Kubernetes và cấu hình Pods của bạn để sử dụng Tài khoản Dịch vụ đó.\nTrong chương này, chúng tôi sẽ cấu hình lại một trong các thành phần ứng dụng mẫu để tận dụng một API AWS và cung cấp cho nó xác thực phù hợp.\n"
+},
+{
+	"uri": "/vi/6-amazon-guardduty-for-eks/6.2-eks-log-monitoring/",
+	"title": "Enable GuardDuty Protection on EKS",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/5-secrets-management/5.2-managing-secrets-with-aws-secrets-manager/",
+	"title": "Managing Secrets with AWS Secrets Manager",
+	"tags": [],
+	"description": "",
+	"content": "Managing Secrets with AWS Secrets Manager "
+},
+{
+	"uri": "/vi/5-secrets-management/5.3-securing-secrets-using-sealed-secrets/5.3.2-installing-sealed-secrets/",
+	"title": "Securing Secrets Using Sealed Secrets",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/4-amazon-eks-pod-identity/4.2-using-amazon-dynamodb/",
+	"title": "Sử dụng Amazon DynamoDB",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/3-iam-roles-for-service-accounts/3.2-using-dynamodb/",
+	"title": "Sử dụng DynamoDB",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/6-amazon-guardduty-for-eks/6.3-eks-runtime-monitoring/",
+	"title": "EKS Runtime Monitoring",
+	"tags": [],
+	"description": "",
+	"content": "EKS Runtime Monitoring "
+},
+{
+	"uri": "/vi/3-iam-roles-for-service-accounts/",
+	"title": "IAM Roles for Service Accounts",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/5-secrets-management/5.2-managing-secrets-with-aws-secrets-manager/5.2.3-mounting-aws-secrets-manager/",
+	"title": "Mounting AWS Secrets Manager secret on Kubernetes Pod",
+	"tags": [],
+	"description": "",
+	"content": "Mounting AWS Secrets Manager secret on Kubernetes Pod "
+},
+{
+	"uri": "/vi/5-secrets-management/5.3-securing-secrets-using-sealed-secrets/5.3.3-sealing-your-secrets/",
+	"title": "Sealing your Secrets",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/5-secrets-management/5.3-securing-secrets-using-sealed-secrets/",
+	"title": "Securing Secrets Using Sealed Secrets",
+	"tags": [],
+	"description": "",
+	"content": "Securing Secrets Using Sealed Secrets "
+},
+{
+	"uri": "/vi/1-introduce/1.3-tls-basics/",
+	"title": "TLS cơ bản",
+	"tags": [],
+	"description": "",
+	"content": "TLS cơ bản Chứng chỉ (TLS Basics) Chứng chỉ được sử dụng để đảm bảo sự tin tưởng giữa 2 bên trong quá trình giao dịch.\nVí dụ: khi một người dùng cố gắng truy cập máy chủ web, các chứng chỉ tls đảm bảo rằng giao tiếp giữa họ được mã hóa.\nMã hóa đối xứng Đây là một cách mã hóa an toàn, nhưng nó sử dụng cùng một khóa để mã hóa và giải mã dữ liệu và khóa phải được trao đổi giữa người gửi và người nhận, có nguy cơ một hacker có thể truy cập vào khóa và giải mã dữ liệu.\nMã hóa không đối xứng Thay vì sử dụng một khóa duy nhất để mã hóa và giải mã dữ liệu, mã hóa không đối xứng sử dụng một cặp khóa, một khóa riêng tư và một khóa công khai.\nLàm thế nào để xem xét một chứng chỉ và xác minh tính hợp lệ của nó? Ai đã ký và cấp phát chứng chỉ. Nếu bạn tạo ra chứng chỉ, sau đó bạn sẽ phải tự ký chứng chỉ đó; điều này được biết đến là chứng chỉ tự ký. Làm thế nào để tạo chứng chỉ hợp lệ? Làm thế nào để có được chứng chỉ của bạn được ký bởi một người có thẩm quyền? Đó là nơi mà Certificate Authority (CA) đến giúp bạn. Một số CA phổ biến là Symantec, DigiCert, Comodo, GlobalSign v.v.\nPublic Key Infrastructure Certificates naming convention "
+},
+{
+	"uri": "/vi/3-iam-roles-for-service-accounts/3.3-understanding-pod-iam/",
+	"title": "Understanding Pod IAM",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/4-amazon-eks-pod-identity/4.3-understanding-pod-iam/",
+	"title": "Understanding Pod IAM",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/3-iam-roles-for-service-accounts/3.4-applying-irsa/",
+	"title": "Applying IRSA",
+	"tags": [],
+	"description": "",
+	"content": "Applying IRSA "
+},
+{
+	"uri": "/vi/5-secrets-management/5.2-managing-secrets-with-aws-secrets-manager/5.2.4-external-secrets-operator/",
+	"title": "External Secrets Operator",
+	"tags": [],
+	"description": "",
+	"content": "External Secrets Operator "
+},
+{
+	"uri": "/vi/4-amazon-eks-pod-identity/",
+	"title": "IAM Roles for Service Accounts",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/5-secrets-management/5.3-securing-secrets-using-sealed-secrets/5.3.4-managing-the-sealing-key/",
+	"title": "Managing the Sealing Key",
+	"tags": [],
+	"description": "",
+	"content": "Managing the Sealing Key "
+},
+{
+	"uri": "/vi/1-introduce/1.4-tls-in-kubernetes/",
+	"title": "TLS in Kubernetes",
+	"tags": [],
+	"description": "",
+	"content": "TLS in Kubernetes Đảm bảo tất cả các dịch vụ khác nhau trong cụm sử dụng chứng chỉ máy chủ và tất cả các máy khách sử dụng chứng chỉ máy khách để xác minh họ là người họ nói họ là.\nServer Certificates for Servers Client Certificates for Clients Hãy xem các thành phần khác nhau trong cụm k8s và xác định các máy chủ và máy khách khác nhau cùng với việc ai nói chuyện với ai.\nGenerate Certificates Có các công cụ khác nhau như easyrsa, openssl hoặc cfssl vv. hoặc nhiều công cụ khác để tạo chứng chỉ.\nCertificate Authority (CA) Generate Keys $ openssl genrsa -out ca.key 2048 Generate CSR $ openssl req -new -key ca.key -subj \u0026#34;/CN=KUBERNETES-CA\u0026#34; -out ca.csr Sign certificates $ openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt Generating Client Certificates Generate Keys $ openssl genrsa -out admin.key 2048 Generate CSR $ openssl req -new -key admin.key -subj \u0026#34;/CN=kube-admin\u0026#34; -out admin.csr Sign certificates $ openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -out admin.crt Certificate with admin privilages $ openssl req -new -key admin.key -subj \u0026#34;/CN=kube-admin/O=system:masters\u0026#34; -out admin.csr "
+},
+{
+	"uri": "/vi/4-amazon-eks-pod-identity/4.4-using-eks-pod-identity/",
+	"title": "Using EKS Pod Identity",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/1-introduce/1.5-kubeconfig/",
+	"title": "KubeConfig",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, chúng ta sẽ tìm hiểu về kubeconfig trong Kubernetes.\nClient sử dụng tệp chứng chỉ và khóa để truy vấn API Rest của Kubernetes để lấy danh sách các pod bằng cách sử dụng curl.\nBạn có thể chỉ định điều này bằng cách sử dụng kubectl\nChúng ta có thể di chuyển các thông tin này vào một tệp cấu hình được gọi là kubeconfig. Và chỉ định tệp này như là tùy chọn kubeconfig trong câu lệnh.\n$ kubectl get pods --kubeconfig config ####Tệp Kubeconfig\nTệp kubeconfig có 3 phần\nCụm (Clusters) Ngữ cảnh (Contexts) Người dùng (Users) Để xem tệp hiện tại đang được sử dụng\n$ kubectl config view Bạn có thể chỉ định tệp kubeconfig với kubectl config view bằng cờ \u0026ldquo;\u0026ndash;kubeconfig\u0026rdquo;\n$ kubectl config veiw --kubeconfig=my-custom-config Làm thế nào để cập nhật ngữ cảnh hiện tại của bạn? Hoặc thay đổi ngữ cảnh hiện tại\n$ kubectl config view --kubeconfig=my-custom-config Trợ giúp của kubectl config\n$ kubectl config -h Tài liệu tham khảo K8s https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/ https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#config\n"
+},
+{
+	"uri": "/vi/5-secrets-management/",
+	"title": "Secrets Management",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/3-iam-roles-for-service-accounts/3.5-verifying-dynamodb-access/",
+	"title": "Verifying DynamoDB Access",
+	"tags": [],
+	"description": "",
+	"content": "Verifying DynamoDB Access "
+},
+{
+	"uri": "/vi/4-amazon-eks-pod-identity/4.5-verifying-dynamodb-access/",
+	"title": "Verifying DynamoDB Access",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/6-amazon-guardduty-for-eks/",
+	"title": "Amazon GuardDuty for EKS",
+	"tags": [],
+	"description": "",
+	"content": "Amazon GuardDuty for EKS "
+},
+{
+	"uri": "/vi/1-introduce/1.6-authorization/",
+	"title": "Authorization",
+	"tags": [],
+	"description": "",
+	"content": "Authorization There are different authorization mechanisms supported by kubernetes Node Authorization Attribute-based Authorization (ABAC) Role-Based Authorization (RBAC) Webhook K8s Reference Docs https://kubernetes.io/docs/reference/access-authn-authz/authorization/ "
+},
+{
+	"uri": "/vi/1-introduce/1.7-rbac/",
+	"title": "RBAC",
+	"tags": [],
+	"description": "",
+	"content": "RBAC Trong phần này, chúng ta sẽ tìm hiểu về RBAC\nLàm thế nào để tạo một vai trò? Mỗi vai trò có 3 phần apiGroups resources verbs Tạo vai trò bằng lệnh kubectl $ kubectl create -f developer-role.yaml Bước tiếp theo là liên kết người dùng với vai trò đó. Đối với điều này, chúng ta tạo một đối tượng khác được gọi là RoleBinding. Đối tượng liên kết vai trò này liên kết một đối tượng người dùng với một vai trò. Tạo liên kết vai trò bằng lệnh kubectl $ kubectl create -f devuser-developer-binding.yaml Cũng lưu ý rằng các vai trò và liên kết vai trò nằm trong phạm vi của namespace. apiVersion: rbac.authorization.k8s.io/v1 kind: Role metadata: name: developer rules: - apiGroups: [\u0026#34;\u0026#34;] # \u0026#34;\u0026#34; biểu thị nhóm API cốt lõi resources: [\u0026#34;pods\u0026#34;] verbs: [\u0026#34;get\u0026#34;, \u0026#34;list\u0026#34;, \u0026#34;update\u0026#34;, \u0026#34;delete\u0026#34;, \u0026#34;create\u0026#34;] - apiGroups: [\u0026#34;\u0026#34;] resources: [\u0026#34;ConfigMap\u0026#34;] verbs: [\u0026#34;create\u0026#34;] apiVersion: rbac.authorization.k8s.io/v1 kind: RoleBinding metadata: name: devuser-developer-binding subjects: - kind: User name: dev-user # \u0026#34;name\u0026#34; phân biệt chữ hoa chữ thường apiGroup: rbac.authorization.k8s.io roleRef: kind: Role name: developer apiGroup: rbac.authorization.k8s.io Xem RBAC Để liệt kê các vai trò\n$ kubectl get roles Để liệt kê các liên kết vai trò\n$ kubectl get rolebindings Để mô tả vai trò\n$ kubectl describe role developer Để mô tả liên kết vai trò\n$ kubectl describe rolebinding devuser-developer-binding Nếu bạn là một người dùng muốn xem liệu bạn có quyền truy cập vào một tài nguyên cụ thể trong cluster không. Kiểm tra quyền truy cập Bạn có thể sử dụng lệnh kubectl auth $ kubectl auth can-i create deployments $ kubectl auth can-i delete nodes $ kubectl auth can-i create deployments --as dev-user $ kubectl auth can-i create pods --as dev-user $ kubectl auth can-i create pods --as dev-user --namespace test Tên Tài Nguyên Lưu ý về tên tài nguyên, chúng ta vừa thấy cách bạn có thể cung cấp quyền truy cập cho người dùng đối với các tài nguyên như pods trong namespace. apiVersion: rbac.authorization.k8s.io/v1 kind: Role metadata: name: developer rules: - apiGroups: [\u0026#34;\u0026#34;] # \u0026#34;\u0026#34; biểu thị nhóm API cốt lõi resources: [\u0026#34;pods\u0026#34;] verbs: [\u0026#34;get\u0026#34;, \u0026#34;update\u0026#34;, \u0026#34;create\u0026#34;] resourceNames: [\u0026#34;blue\u0026#34;, \u0026#34;orange\u0026#34;] Tài liệu Tham Khảo K8s https://kubernetes.io/docs/reference/access-authn-authz/rbac/ https://kubernetes.io/docs/reference/access-authn-authz/rbac/#command-line-utilities "
+},
+{
+	"uri": "/vi/1-introduce/1.8-cluster-roles/",
+	"title": "Cluster Roles",
+	"tags": [],
+	"description": "",
+	"content": "Cluster Roles Trong phần này, chúng ta sẽ tìm hiểu về các vai trò cụm\nVai trò Vai trò và Rolebindings được gắn với không gian tên, có nghĩa là chúng được tạo trong các không gian tên. Không gian tên Bạn có thể nhóm hoặc cô lập các nút trong một không gian tên không?\nKhông, những thứ đó là tài nguyên phạm vi cụm hoặc phạm vi cụm. Chúng không thể được liên kết với bất kỳ không gian tên cụ thể nào. Vì vậy, các tài nguyên được phân loại là tài nguyên phạm vi tên hoặc phạm vi cụm.\nĐể xem tài nguyên phạm vi tên\n$ kubectl api-resources --namespaced=true Để xem tài nguyên không phạm vi tên\n$ $ kubectl api-resources --namespaced=false Vai trò cụm và Ràng buộc Vai trò cụm Vai trò cụm là các vai trò ngoại trừ chúng được sử dụng cho các tài nguyên phạm vi cụm. Loại như CLusterRole\napiVersion: rbac.authorization.k8s.io/v1\rkind: ClusterRole\rmetadata:\rname: cluster-administrator\rrules:\r- apiGroups: [\u0026#34;\u0026#34;] # \u0026#34;\u0026#34; chỉ ra nhóm API lõi\rresources: [\u0026#34;nodes\u0026#34;]\rverbs: [\u0026#34;get\u0026#34;, \u0026#34;list\u0026#34;, \u0026#34;delete\u0026#34;, \u0026#34;create\u0026#34;] apiVersion: rbac.authorization.k8s.io/v1\rkind: ClusterRoleBinding\rmetadata:\rname: cluster-admin-role-binding\rsubjects:\r- kind: User\rname: cluster-admin\rapiGroup: rbac.authorization.k8s.io\rroleRef:\rkind: ClusterRole\rname: cluster-administrator\rapiGroup: rbac.authorization.k8s.io $ kubectl create -f cluster-admin-role.yaml\r$ kubectl create -f cluster-admin-role-binding.yaml Bạn có thể tạo một vai trò cụm cho các tài nguyên không gian tên as well. Khi bạn làm điều đó, người dùng sẽ có quyền truy cập vào các tài nguyên này trên tất cả các không gian tên.\nTài liệu Tham khảo K8s https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole https://kubernetes.io/docs/reference/access-authn-authz/rbac/#command-line-utilities "
+},
+{
+	"uri": "/vi/1-introduce/1.9-image-security/",
+	"title": "Image Security",
+	"tags": [],
+	"description": "",
+	"content": "Image Security Trong phần này, chúng ta sẽ xem xét về Image Security\nImage Security apiVersion: v1\rkind: Pod\rmetadata:\rname: nginx-pod\rspec:\rcontainers:\r- name: nginx\rimage: nginx Private Registry Để đăng nhập vào registry\n$ docker login private-registry.io Chạy ứng dụng bằng hình ảnh có sẵn tại registry riêng tư\n$ docker run private-registry.io/apps/internal-app Để truyền thông tin xác thực cho docker không được gắn nhãn trên nút làm việc, trước tiên chúng ta tạo một đối tượng bí mật chứa thông tin xác thực.\n$ kubectl create secret docker-registry regcred \\\r--docker-server=private-registry.io \\ --docker-username=registry-user \\\r--docker-password=registry-password \\\r--docker-email=registry-user@org.com Sau đó, chúng ta chỉ định bí mật trong tệp định nghĩa pod của chúng ta trong phần imagePullSecret\napiVersion: v1\rkind: Pod\rmetadata:\rname: nginx-pod\rspec:\rcontainers:\r- name: nginx\rimage: private-registry.io/apps/internal-app\rimagePullSecrets:\r- name: regcred Tài Liệu Tham Khảo K8s https://kubernetes.io/docs/concepts/containers/images/ "
+},
+{
+	"uri": "/vi/1-introduce/1.10-security-context/",
+	"title": "Security-Context",
+	"tags": [],
+	"description": "",
+	"content": "Security-Context Bảo mật Ngữ cảnh Trong phần này, chúng ta sẽ xem xét về bảo mật ngữ cảnh\nBảo mật Container $ docker run --user=1001 ubuntu sleep 3600\r$ docker run -cap-add MAC_ADMIN ubuntu Bảo mật Kubernetes Bạn có thể chọn cấu hình các thiết lập bảo mật ở mức container hoặc mức pod. Ngữ cảnh Bảo mật Để thêm ngữ cảnh bảo mật vào container và một trường gọi là securityContext dưới phần spec.\napiVersion: v1\rkind: Pod\rmetadata:\rname: web-pod\rspec:\rsecurityContext:\rrunAsUser: 1000\rcontainers:\r- name: ubuntu\rimage: ubuntu\rcommand: [\u0026#34;sleep\u0026#34;, \u0026#34;3600\u0026#34;] Để đặt cùng một ngữ cảnh ở mức container, sau đó di chuyển toàn bộ phần dưới mục container.\napiVersion: v1\rkind: Pod\rmetadata:\rname: web-pod\rspec:\rcontainers:\r- name: ubuntu\rimage: ubuntu\rcommand: [\u0026#34;sleep\u0026#34;, \u0026#34;3600\u0026#34;]\rsecurityContext:\rrunAsUser: 1000 Để thêm khả năng sử dụng tùy chọn capabilities\napiVersion: v1\rkind: Pod\rmetadata:\rname: web-pod\rspec:\rcontainers:\r- name: ubuntu\rimage: ubuntu\rcommand: [\u0026#34;sleep\u0026#34;, \u0026#34;3600\u0026#34;]\rsecurityContext:\rrunAsUser: 1000\rcapabilities: add: [\u0026#34;MAC_ADMIN\u0026#34;] Tài liệu Tham khảo K8s https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ "
+},
+{
+	"uri": "/vi/1-introduce/1.11-network-policies/",
+	"title": "Network-Policies",
+	"tags": [],
+	"description": "",
+	"content": "Network-Policies Chính sách Mạng Lưu lượng đi qua một máy chủ web phục vụ phía trước cho người dùng một máy chủ ứng dụng phục vụ API phía sau và một máy chủ cơ sở dữ liệu Có hai loại lưu lượng Ingress Egress Bảo mật Mạng Chính sách Mạng Bộ chọn Chính sách Mạng Quy tắc Chính sách Mạng Tạo chính sách mạng Để tạo một chính sách mạng\napiVersion: networking.k8s.io/v1 kind: NetworkPolicy metadata: name: db-policy spec: podSelector: matchLabels: role: db policyTypes: - Ingress ingress: - from: - podSelector: matchLabels: role: api-pod ports: - protocol: TCP port: 3306 $ kubectl create -f policy-definition.yaml Ghi chú Bài giảng bổ sung về Phát triển Chính sách Mạng Tài liệu Tham khảo K8s https://kubernetes.io/docs/concepts/services-networking/network-policies/ https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/ "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

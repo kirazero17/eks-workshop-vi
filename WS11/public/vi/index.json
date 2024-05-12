@@ -1,0 +1,36 @@
+[
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Giới thiệu Trong bài wworkshop trước, chúng ta đã xác định các khái niệm về autoscaling compute, giờ đây chúng ta sẽ đi sâu vào các cách khác nhau để mở rộng tài nguyên và quản lý các công việc trong một cụm. Chúng ta sẽ tập trung vào hai cơ chế chính để tự động mở rộng:\nHorizontal Pod Autoscaler (HPA) Cluster Proportional Autoscaler (CPA) Trong chương này, chúng ta sẽ khám phá quá trình cấu hình và sử dụng Horizontal Pod Autoscaler (HPA) và Cluster Proportional Autoscaler (CPA) để quản lý các công việc trong một cụm.\n"
+},
+{
+	"uri": "/vi/",
+	"title": "Tự Động Mở Rộng trên AWS với Kubernetes",
+	"tags": [],
+	"description": "",
+	"content": "Tự Động Mở Rộng trên AWS với Kubernetes Tự động mở rộng giám sát các khối công việc của bạn và tự động điều chỉnh dung lượng để duy trì hiệu suất ổn định, dự đoán được đồng thời tối ưu hóa chi phí. Khi sử dụng Kubernetes, có hai cơ chế chính có liên quan mà có thể được sử dụng để tự động mở rộng:\nCompute (Tính toán): Khi các pods được mở rộng, tính toán cơ bản trong một cụm Kubernetes cũng phải thích ứng bằng cách điều chỉnh số lượng hoặc kích thước của các nút worker được sử dụng để chạy các Pods. Pods: Vì các pods được sử dụng để chạy các khối công việc trong một cụm Kubernetes, việc mở rộng một khối công việc chủ yếu được thực hiện bằng cách mở rộng Pods theo chiều ngang hoặc theo chiều dọc để phản ứng với các tình huống như thay đổi tải trên một ứng dụng cụ thể. Trong chương này, chúng ta sẽ khám phá các cơ chế khác nhau có sẵn để tự động mở rộng cả số lượng pods và khả năng tính toán của một cụm.\n"
+},
+{
+	"uri": "/vi/2-prerequiste/",
+	"title": "Các Bước Chuẩn Bị",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

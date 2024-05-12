@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Controllers on TERRAFORM ON AWS WORKSHOP</title>
+    <link>/vi/3-cluster/3.3-controllers/</link>
+    <description>Recent content in Controllers on TERRAFORM ON AWS WORKSHOP</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi</language>
+    <atom:link href="/vi/3-cluster/3.3-controllers/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
