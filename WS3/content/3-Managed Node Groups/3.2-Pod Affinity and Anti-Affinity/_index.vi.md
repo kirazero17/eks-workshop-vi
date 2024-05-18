@@ -36,7 +36,7 @@ Dựa vào kết quả trên, pod `checkout-698856df4d-vzkzw` đang chạy trên
 Trong môi trường của bạn, các pods có thể đang chạy trên cùng một node ban đầu
 
 
-Hãy thiết lập một chính sách `podAffinity` và `podAntiAffinity` trong deployment **checkout** để đảm bảo một pod `checkout` chạy trên mỗi node, và nó chỉ sẽ chạy trên các nodes nơi có pod `checkout-redis` đang chạy. Chúng ta sẽ sử dụng `requiredDuringSchedulingIgnoredDuringExecution` để làm cho điều này trở thành yêu cầu, thay vì một hành vi ưu tiên.
+Hãy thiết lập một chính sách `podAffinity` và `podAntiAffinity` trong deployment **checkout** để đảm bảo một pod `checkout` chạy trên mỗi node, và nó chỉ sẽ chạy trên các nodes có pod `checkout-redis` đang chạy. Chúng ta sẽ sử dụng `requiredDuringSchedulingIgnoredDuringExecution` để làm cho điều này trở thành yêu cầu, thay vì một hành vi được ưu tiên.
 
 Kustomization sau thêm một phần `affinity` vào deployment **checkout** chỉ định cả chính sách **podAffinity** và **podAntiAffinity**:
 
@@ -86,7 +86,7 @@ modules/fundamentals/affinity/checkout-redis/checkout-redis.yaml
 Deployment/checkout-redis
 ```
 
-Áp dụng nó với lệnh sau:
+Áp dụng quy tắc với lệnh sau:
 
 ```bash
 $ kubectl delete -n checkout deployment checkout-redis
@@ -132,7 +132,7 @@ checkout-redis-7979df659-57xcb  ip-10-42-11-142.us-west-2.compute.internal
 checkout-redis-7979df659-r7kkm  ip-10-42-12-31.us-west-2.compute.internal
 ```
 
-Mọi thứ trông tốt với việc lên lịch các pod, nhưng chúng ta có thể xác minh thêm bằng cách mở rộng pod `checkout` một lần nữa để xem pod thứ ba sẽ được triển khai ở đâu:
+Mọi thứ có vẻ tốt với việc lên lịch các pod, nhưng chúng ta có thể xác minh thêm bằng cách mở rộng pod `checkout` một lần nữa để xem pod thứ ba sẽ được triển khai ở đâu:
 
 ```bash
 $ kubectl scale --replicas=3 deployment/checkout --namespace checkout

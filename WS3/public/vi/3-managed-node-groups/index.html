@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.125.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Amazon EKS Managed Node Groups :: Kubernetes - EKS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1712388775" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1712388775" rel="stylesheet">
-    <link href="/css/hybrid.css?1712388775" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1712388775" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1712388775" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712388775" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1712388775" rel="stylesheet">
-    <link href="/css/theme.css?1712388775" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1712388775" rel="stylesheet">
+    <link href="/css/nucleus.css?1715736561" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1715736561" rel="stylesheet">
+    <link href="/css/hybrid.css?1715736561" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1715736561" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1715736561" rel="stylesheet">
+    <link href="/css/auto-complete.css?1715736561" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1715736561" rel="stylesheet">
+    <link href="/css/theme.css?1715736561" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1715736561" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1712388775" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1715736561" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1712388775"></script>
+    <script src="/js/jquery-3.3.1.min.js?1715736561"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1712388775"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1712388775"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1715736561"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1715736561"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1712388775"></script>
+<script type="text/javascript" src="/js/search.js?1715736561"></script>
 
     
   </div>
@@ -919,7 +919,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/3-managed-node-groups/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/3-managed-node-groups/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1050,7 +1050,7 @@
 <p>Một <strong>cluster EKS</strong> chứa một hoặc nhiều <strong>node EC2</strong> mà các <strong>Pod</strong> được lên lịch trên đó. Các <strong>node EKS</strong> chạy trong tài khoản AWS của bạn và kết nối với mặt điều khiển của cụm của bạn thông qua điểm cuối máy chủ API của cụm. Bạn triển khai một hoặc nhiều node vào một <strong>node group</strong>. Một node group là một hoặc nhiều trường hợp EC2 được triển khai trong một EC2 AutoScaling.</p>
 <p>Các <strong>node EKS</strong> là các trường hợp tiêu chuẩn của Amazon EC2. Bạn được tính phí cho chúng dựa trên giá của EC2. Để biết thêm thông tin, hãy xem <a href="https://aws.amazon.com/ec2/pricing/">Giá của Amazon EC2</a>.</p>
 <p><a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Các node group được quản lý của Amazon EKS</a> tự động hóa việc cung cấp và quản lý vòng đời của các node cho các cụm Amazon EKS. Điều này rất giúp đỡ trong các hoạt động vận hành như cập nhật liên tục cho các AMI mới hoặc triển khai phiên bản Kubernetes mới.</p>
-<p><img src="/images/4/00013.png?featherlight=false&amp;width=30pc" alt="EKS"></p>
+<p><img alt="EKS" src="/images/4/00013.png?featherlight=false&width=30pc"></p>
 <p>Các ưu điểm của việc chạy các node group được quản lý của Amazon EKS bao gồm:</p>
 <ul>
 <li>Tạo, cập nhật tự động hoặc chấm dứt các node với một hoạt động duy nhất bằng cách sử dụng bảng điều khiển Amazon EKS, <code>eksctl</code>, AWS CLI, AWS API, hoặc các công cụ mã hạ tầng như AWS CloudFormation và Terraform.</li>
@@ -1566,19 +1566,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1712388775"></script>
-    <script src="/js/perfect-scrollbar.min.js?1712388775"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1712388775"></script>
-    <script src="/js/jquery.sticky.js?1712388775"></script>
-    <script src="/js/featherlight.min.js?1712388775"></script>
-    <script src="/js/highlight.pack.js?1712388775"></script>
+    <script src="/js/clipboard.min.js?1715736561"></script>
+    <script src="/js/perfect-scrollbar.min.js?1715736561"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1715736561"></script>
+    <script src="/js/jquery.sticky.js?1715736561"></script>
+    <script src="/js/featherlight.min.js?1715736561"></script>
+    <script src="/js/highlight.pack.js?1715736561"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1712388775"></script>
-    <script src="/js/learn.js?1712388775"></script>
-    <script src="/js/hugo-learn.js?1712388775"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1715736561"></script>
+    <script src="/js/learn.js?1715736561"></script>
+    <script src="/js/hugo-learn.js?1715736561"></script>
 
-    <link href="/mermaid/mermaid.css?1712388775" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1712388775"></script>
+    <link href="/mermaid/mermaid.css?1715736561" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1715736561"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

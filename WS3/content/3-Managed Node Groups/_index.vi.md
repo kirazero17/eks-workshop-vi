@@ -21,7 +21,7 @@ Các ưu điểm của việc chạy các node group được quản lý của A
 - Tạo, cập nhật tự động hoặc chấm dứt các node với một hoạt động duy nhất bằng cách sử dụng bảng điều khiển Amazon EKS, `eksctl`, AWS CLI, AWS API, hoặc các công cụ mã hạ tầng như AWS CloudFormation và Terraform.
 - Các node được cung cấp chạy bằng các AMI tối ưu mới nhất của Amazon EKS.
 - Các node được cung cấp như là một phần của MNG tự động được gắn thẻ với siêu dữ liệu như AZ, kiến trúc CPU và loại trường hợp.
-- Cập nhật và chấm dứt node tự động và một cách lịch sự giúp đảm bảo rằng ứng dụng của bạn vẫn khả dụng.
+- Cập nhật và chấm dứt node tự động và một cách an toàn giúp đảm bảo rằng ứng dụng của bạn vẫn khả dụng.
 - Không có chi phí bổ sung để sử dụng các node group được quản lý của Amazon EKS, chỉ thanh toán cho các tài nguyên AWS được cung cấp.
 
 Các thực hành trong phần này đề cập đến các cách khác nhau mà các node group được quản lý của EKS có thể được sử dụng để cung cấp khả năng tính toán cho một cụm.

@@ -2,117 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/vi/5-spot-instances/5.1-instance-type-diversification/</loc>
+    <loc>//localhost:1313/vi/5-spot-instances/5.1-instance-type-diversification/</loc>
     <lastmod>2024-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/vi/</loc>
+    <loc>//localhost:1313/vi/</loc>
     <lastmod>2024-04-05T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="//localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/"
+                href="//localhost:1313/vi/"
                 />
   </url><url>
-    <loc>/vi/6-fargate/6.1-enabling-fargate/</loc>
+    <loc>//localhost:1313/vi/6-fargate/6.1-enabling-fargate/</loc>
   </url><url>
-    <loc>/vi/1-introduce/</loc>
+    <loc>//localhost:1313/vi/1-introduce/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduce/"
+                href="//localhost:1313/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduce/"
+                href="//localhost:1313/vi/1-introduce/"
                 />
   </url><url>
-    <loc>/vi/1-introduce/1.1-manual-scheduling/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.1-manual-scheduling/</loc>
   </url><url>
-    <loc>/vi/4-graviton-arm-instances/4.1-create-graviton-nodes/</loc>
+    <loc>//localhost:1313/vi/4-graviton-arm-instances/4.1-create-graviton-nodes/</loc>
   </url><url>
-    <loc>/vi/3-managed-node-groups/3.1-add-nodes/</loc>
+    <loc>//localhost:1313/vi/3-managed-node-groups/3.1-add-nodes/</loc>
   </url><url>
-    <loc>/vi/2-prerequiste/</loc>
+    <loc>//localhost:1313/vi/2-prerequiste/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-prerequiste/"
+                href="//localhost:1313/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-prerequiste/"
+                href="//localhost:1313/vi/2-prerequiste/"
                 />
   </url><url>
-    <loc>/vi/4-graviton-arm-instances/4.2-run-pods-on-graviton/</loc>
+    <loc>//localhost:1313/vi/4-graviton-arm-instances/4.2-run-pods-on-graviton/</loc>
   </url><url>
-    <loc>/vi/1-introduce/1.2-labels-and-selectors/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.2-labels-and-selectors/</loc>
   </url><url>
-    <loc>/vi/3-managed-node-groups/3.2-pod-affinity-and-anti-affinity/</loc>
+    <loc>//localhost:1313/vi/3-managed-node-groups/3.2-pod-affinity-and-anti-affinity/</loc>
   </url><url>
-    <loc>/vi/6-fargate/6.2-scheduling-on-fargate/</loc>
+    <loc>//localhost:1313/vi/6-fargate/6.2-scheduling-on-fargate/</loc>
   </url><url>
-    <loc>/vi/5-spot-instances/5.2-create-spot-capacity/</loc>
+    <loc>//localhost:1313/vi/5-spot-instances/5.2-create-spot-capacity/</loc>
   </url><url>
-    <loc>/vi/3-managed-node-groups/</loc>
+    <loc>//localhost:1313/vi/3-managed-node-groups/</loc>
   </url><url>
-    <loc>/vi/5-spot-instances/5.3-running-a-workload-on-spot/</loc>
+    <loc>//localhost:1313/vi/5-spot-instances/5.3-running-a-workload-on-spot/</loc>
   </url><url>
-    <loc>/vi/3-managed-node-groups/3.3-upgrading-amis/</loc>
+    <loc>//localhost:1313/vi/3-managed-node-groups/3.3-upgrading-amis/</loc>
   </url><url>
-    <loc>/vi/1-introduce/1.3-node-selectors/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.3-node-selectors/</loc>
   </url><url>
-    <loc>/vi/6-fargate/6.3-resource-allocation/</loc>
+    <loc>//localhost:1313/vi/6-fargate/6.3-resource-allocation/</loc>
   </url><url>
-    <loc>/vi/4-graviton-arm-instances/</loc>
+    <loc>//localhost:1313/vi/4-graviton-arm-instances/</loc>
   </url><url>
-    <loc>/vi/6-fargate/6.4-scaling-the-workload/</loc>
+    <loc>//localhost:1313/vi/6-fargate/6.4-scaling-the-workload/</loc>
   </url><url>
-    <loc>/vi/1-introduce/1.4-taints-and-tolerations/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.4-taints-and-tolerations/</loc>
   </url><url>
-    <loc>/vi/5-spot-instances/</loc>
+    <loc>//localhost:1313/vi/5-spot-instances/</loc>
     <lastmod>2024-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/vi/1-introduce/1.5-node-affinity/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.5-node-affinity/</loc>
   </url><url>
-    <loc>/vi/6-fargate/</loc>
+    <loc>//localhost:1313/vi/6-fargate/</loc>
   </url><url>
-    <loc>/vi/1-introduce/1.6-resource-limits/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.6-resource-limits/</loc>
   </url><url>
-    <loc>/vi/1-introduce/1.7-daemonsets/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.7-daemonsets/</loc>
   </url><url>
-    <loc>/vi/1-introduce/1.8-static-pods/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.8-static-pods/</loc>
   </url><url>
-    <loc>/vi/1-introduce/1.9-multiple-schedulers/</loc>
+    <loc>//localhost:1313/vi/1-introduce/1.9-multiple-schedulers/</loc>
   </url><url>
-    <loc>/vi/categories/</loc>
+    <loc>//localhost:1313/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="//localhost:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/categories/"
+                href="//localhost:1313/vi/categories/"
                 />
   </url><url>
-    <loc>/vi/tags/</loc>
+    <loc>//localhost:1313/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="//localhost:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/tags/"
+                href="//localhost:1313/vi/tags/"
                 />
   </url>
 </urlset>

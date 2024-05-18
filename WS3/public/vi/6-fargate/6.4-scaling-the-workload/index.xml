@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scaling the workload on Kubernetes - EKS Workshop</title>
-    <link>/vi/6-fargate/6.4-scaling-the-workload/</link>
+    <link>//localhost:1313/vi/6-fargate/6.4-scaling-the-workload/</link>
     <description>Recent content in Scaling the workload on Kubernetes - EKS Workshop</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="/vi/6-fargate/6.4-scaling-the-workload/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/6-fargate/6.4-scaling-the-workload/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
