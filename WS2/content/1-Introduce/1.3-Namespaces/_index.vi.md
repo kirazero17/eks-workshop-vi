@@ -9,7 +9,7 @@ pre: "<b> 1.3 </b>"
 #### Giới thiệu về Namespaces trong Kubernetes
 Trong phần này, chúng ta sẽ tìm hiểu về **Namespaces**.
 
-Kể từ khi bắt đầu workshop, đến thời điểm này, chúng ta đã tạo ra các đối tượng như **PODs**, **Deployments** và **Services** trong cluster của chúng ta. Mọi thứ chúng ta đã làm, đều nằm trong một **NAMESPACE**.
+Kể từ khi bắt đầu workshop, đến thời điểm này, chúng ta đã tạo ra các đối tượng như **PODs**, **Deployments** và **Services** trong cluster của chúng ta. Mọi thứ chúng ta đã làm, đều nằm trong cùng một **NAMESPACE**.
 
 **Namespace** mặc định trong Kubernetes là không gian mặc định được tạo tự động khi Kubernetes được thiết lập ban đầu.
 
