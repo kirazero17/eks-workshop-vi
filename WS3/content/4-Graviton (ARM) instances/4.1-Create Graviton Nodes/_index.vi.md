@@ -62,7 +62,7 @@ ip-10-42-172-231.us-west-2.compute.internal   Ready    <none>   2m5s   vVAR::KUB
 
 Lệnh trên sử dụng cờ `--selector` để truy vấn tất cả các node có labels `eks.amazonaws.com/nodegroup` khớp với tên của Amazon EKS Managed Node Groups của chúng ta `graviton`. Cờ `--label-columns` cũng cho phép chúng ta hiển thị giá trị của labels `eks.amazonaws.com/nodegroup` cũng như kiến trúc bộ xử lý trong đầu ra. Lưu ý rằng cột `ARCH` hiển thị Node Groups đã bị taint chạy Graviton `arm64`.
 
-Hãy khám phá cấu hình hiện tại của node của chúng ta. Lệnh sau sẽ liệt kê chi tiết của tất cả các node thuộc Amazon EKS Managed Node Groups của chúng tôi.
+Hãy khám phá cấu hình hiện tại của node của chúng ta. Lệnh sau sẽ liệt kê chi tiết của tất cả các node thuộc Amazon EKS Managed Node Groups.
 
 ```bash
 $ kubectl describe nodes \

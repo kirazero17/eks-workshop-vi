@@ -17,8 +17,7 @@ Trong phần này, chúng ta sẽ tìm hiểu về các khái niệm sau:
 #### **Sự khác biệt giữa ReplicaSet và Replication Controller**
 **Replication Controller** là công nghệ cũ được thay thế bằng **ReplicaSet**.
 **ReplicaSet** là cách mới để thiết lập replication.
-Tạo một **Replication Controller**
-File Định nghĩa **Replication Controller**
+File Định nghĩa **Replication Controller** có dạng:
 
 ```yaml
 apiVersion: v1
@@ -93,7 +92,7 @@ spec:
 
 ```
 
-**ReplicaSet** yêu cầu một định nghĩa **selector** so với **Replication Controller**.
+**ReplicaSet** yêu cầu thêm định nghĩa **selector** so với **Replication Controller**.
 Để tạo **ReplicaSet**
 
 ```

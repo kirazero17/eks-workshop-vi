@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.125.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>ReplicaSets :: TERRAFORM ON AWS WORKSHOP</title>
+    <title>ReplicaSets :: Kubernetes - EKS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1711702844" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711702844" rel="stylesheet">
-    <link href="/css/hybrid.css?1711702844" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711702844" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711702844" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711702844" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711702844" rel="stylesheet">
-    <link href="/css/theme.css?1711702844" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711702844" rel="stylesheet">
+    <link href="/css/nucleus.css?1715656511" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1715656511" rel="stylesheet">
+    <link href="/css/hybrid.css?1715656511" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1715656511" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1715656511" rel="stylesheet">
+    <link href="/css/auto-complete.css?1715656511" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1715656511" rel="stylesheet">
+    <link href="/css/theme.css?1715656511" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1715656511" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711702844" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1715656511" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711702844"></script>
+    <script src="/js/jquery-3.3.1.min.js?1715656511"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711702844"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711702844"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1715656511"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1715656511"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711702844"></script>
+<script type="text/javascript" src="/js/search.js?1715656511"></script>
 
     
   </div>
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.2-deployments/" title="Deployments" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.2-deployments/" title="Triển khai (Deployments) trong Kubernetes" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.2-deployments/">
-          <b> 1.2 </b>Deployments
+          <b> 1.2 </b>Triển khai (Deployments) trong Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -197,13 +197,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.4-kubernetes-services/" title="Kubernetes Services" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.4-kubernetes-services/" title="Dịch vụ Kubernetes" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.4-kubernetes-services/">
-          <b> 1.4 </b>Kubernetes Services
+          <b> 1.4 </b>Dịch vụ Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -225,13 +225,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.5-clusterip/" title="ClusterIP" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.5--clusterip/" title="ClusterIP trong Kubernetes" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/1.5-clusterip/">
-          <b> 1.5 </b>ClusterIP
+      <a href="/vi/1-introduce/1.5--clusterip/">
+          <b> 1.5 </b>ClusterIP trong Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -266,7 +266,7 @@
         
         ">
       <a href="/vi/2-prerequiste/">
-          <b> 2. </b>Các Bước Chuẩn Bị
+          <b>2.</b>Các Bước Chuẩn Bị
           
             <i class="fas fa-check read-icon"></i>
           
@@ -286,13 +286,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/" title="AWS Load Balancer Controller" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/">
-          <b> 3. </b>Giới thiệu
+          <b> 3. </b>AWS Load Balancer Controller
           
             <i class="fas fa-check read-icon"></i>
           
@@ -345,13 +345,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/" title="" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/" title="Tạo load balancer" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/">
-          
+          <b> 3.2 </b>Tạo load balancer
           
             <i class="fas fa-check read-icon"></i>
           
@@ -373,13 +373,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.3-ip-mode/" title="" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.3-ip-mode/" title="IP mode" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/3.3-ip-mode/">
-          
+          <b> 3.3 </b>IP mode
           
             <i class="fas fa-check read-icon"></i>
           
@@ -467,13 +467,13 @@
  
   
     
-    <li data-nav-id="/vi/4-ingress/4.2-creating-the-ingress/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/4-ingress/4.2-creating-the-ingress/" title="Tạo Ingress" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-ingress/4.2-creating-the-ingress/">
-          <b> 4.2 </b>Giới thiệu
+          <b> 4.2 </b>Tạo Ingress
           
             <i class="fas fa-check read-icon"></i>
           
@@ -495,13 +495,13 @@
  
   
     
-    <li data-nav-id="/vi/4-ingress/4.3-multiple-ingress-pattern/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/4-ingress/4.3-multiple-ingress-pattern/" title="Multiple Ingress pattern" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-ingress/4.3-multiple-ingress-pattern/">
-          <b> 4.3 </b>Giới thiệu
+          <b> 4.3 </b>Multiple Ingress pattern
           
             <i class="fas fa-check read-icon"></i>
           
@@ -563,7 +563,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/1-introduce/1.1-replicasets/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/1-introduce/1.1-replicasets/" selected>Tiếng Việt</option>
                     
                   
               
@@ -668,8 +668,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#replicaset">ReplicaSet</a></li>
-        <li><a href="#sự-khác-biệt-giữa-replicaset-và-replication-controller">Sự khác biệt giữa ReplicaSet và Replication Controller</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -697,15 +696,15 @@
 
 
 
-	<p>Trong phần này, chúng ta sẽ tìm hiểu về các khái niệm sau:</p>
-<h3 id="replicaset">ReplicaSet</h3>
-<p>Controllers là bộ não đằng sau Kubernetes.
-Replica là gì và tại sao chúng ta cần một replication controller?</p>
-<h3 id="sự-khác-biệt-giữa-replicaset-và-replication-controller">Sự khác biệt giữa ReplicaSet và Replication Controller</h3>
-<p>Replication Controller là công nghệ cũ được thay thế bằng ReplicaSet.
-ReplicaSet là cách mới để thiết lập replication.
-Tạo một Replication Controller
-File Định nghĩa Replication Controller</p>
+	<h4 id="replicasets">ReplicaSets</h4>
+<p>Trong phần này, chúng ta sẽ tìm hiểu về các khái niệm sau:</p>
+<h4 id="replicaset"><strong>ReplicaSet</strong></h4>
+<p><strong>Controllers</strong> là bộ não đằng sau <strong>Kubernetes</strong>.
+<strong>Replica</strong> là gì và tại sao chúng ta cần một <strong>replication controller</strong>?</p>
+<h4 id="sự-khác-biệt-giữa-replicaset-và-replication-controller"><strong>Sự khác biệt giữa ReplicaSet và Replication Controller</strong></h4>
+<p><strong>Replication Controller</strong> là công nghệ cũ được thay thế bằng <strong>ReplicaSet</strong>.
+<strong>ReplicaSet</strong> là cách mới để thiết lập replication.
+File Định nghĩa <strong>Replication Controller</strong> có dạng:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ReplicationController</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
@@ -725,15 +724,15 @@ File Định nghĩa Replication Controller</p>
 </span></span><span style="display:flex;"><span>     - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-container</span>
 </span></span><span style="display:flex;"><span>       <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
 </span></span><span style="display:flex;"><span> <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">3</span>
-</span></span></code></pre></div><p>Để tạo replication controller</p>
+</span></span></code></pre></div><p>Để tạo <strong>replication controller</strong></p>
 <pre tabindex="0"><code>$ kubectl create -f rc-definition.yaml
-</code></pre><p>Để liệt kê tất cả các replication controllers</p>
+</code></pre><p>Để liệt kê tất cả các <strong>replication controllers</strong></p>
 <pre tabindex="0"><code>
 $ kubectl get replicationcontroller
-</code></pre><p>Để liệt kê các pod được khởi chạy bởi replication controller</p>
+</code></pre><p>Để liệt kê các pod được khởi chạy bởi <strong>replication controller</strong></p>
 <pre tabindex="0"><code>$ kubectl get pods
-</code></pre><h4 id="tạo-một-replicaset">Tạo một ReplicaSet</h4>
-<p>File Định nghĩa ReplicaSet</p>
+</code></pre><h4 id="tạo-một-replicaset">Tạo một <strong>ReplicaSet</strong></h4>
+<p>File Định nghĩa <strong>ReplicaSet</strong></p>
 <pre tabindex="0"><code>apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
@@ -756,51 +755,51 @@ spec:
  selector:
    matchLabels:
     type: front-end
-</code></pre><p>ReplicaSet yêu cầu một định nghĩa selector so với Replication Controller.
-Để tạo ReplicaSet</p>
+</code></pre><p><strong>ReplicaSet</strong> yêu cầu thêm định nghĩa <strong>selector</strong> so với <strong>Replication Controller</strong>.
+Để tạo <strong>ReplicaSet</strong></p>
 <pre tabindex="0"><code>$ kubectl create -f replicaset-definition.yaml
-</code></pre><p>Để liệt kê tất cả các ReplicaSet</p>
+</code></pre><p>Để liệt kê tất cả các <strong>ReplicaSet</strong></p>
 <pre tabindex="0"><code>$ kubectl get replicaset
-</code></pre><p>Để liệt kê các pod được khởi chạy bởi ReplicaSet</p>
+</code></pre><p>Để liệt kê các pod được khởi chạy bởi <strong>ReplicaSet</strong></p>
 <pre tabindex="0"><code>$ kubectl get pods
 </code></pre><h4 id="nhãn-và-selector">Nhãn và Selector</h4>
-<p>Vấn đề với Nhãn và Selector là gì? Tại sao chúng ta đánh dấu các pod và đối tượng trong Kubernetes?</p>
+<p>Vấn đề với <strong>Nhãn và Selector</strong> là gì? Tại sao chúng ta đánh dấu các pod và đối tượng trong <strong>Kubernetes</strong>?</p>
 <ul>
-<li>Làm thế nào để mở rộng ReplicaSet</li>
-<li>Có nhiều cách để mở rộng ReplicaSet</li>
-<li>Cách đầu tiên là cập nhật số lượng bản sao trong file định nghĩa replicaset-definition.yaml. Ví dụ: replicas: 6 và sau đó chạy</li>
+<li>Làm thế nào để mở rộng <strong>ReplicaSet</strong></li>
+<li>Có nhiều cách để mở rộng <strong>ReplicaSet</strong></li>
+<li>Cách đầu tiên là cập nhật số lượng bản sao trong file định nghĩa <strong>replicaset-definition.yaml</strong>. Ví dụ: <strong>replicas: 6</strong> và sau đó chạy</li>
 </ul>
-<pre tabindex="0"><code>apiVersion: apps/v1
-kind: ReplicaSet
-metadata:
-  name: myapp-replicaset
-  labels:
-    app: myapp
-    type: front-end
-spec:
- template:
-    metadata:
-      name: myapp-pod
-      labels:
-        app: myapp
-        type: front-end
-    spec:
-     containers:
-     - name: nginx-container
-       image: nginx
- replicas: 6
- selector:
-   matchLabels:
-    type: front-end
-</code></pre><pre tabindex="0"><code>$ kubectl apply -f replicaset-definition.yaml
-</code></pre><p>Cách thứ hai là sử dụng lệnh kubectl scale.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ReplicaSet</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">myapp-replicaset</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app</span>: <span style="color:#ae81ff">myapp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">front-end</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">myapp-pod</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">myapp</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">type</span>: <span style="color:#ae81ff">front-end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>     - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-container</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">front-end</span>
+</span></span></code></pre></div><pre tabindex="0"><code>$ kubectl apply -f replicaset-definition.yaml
+</code></pre><p>Cách thứ hai là sử dụng lệnh <strong>kubectl scale</strong>.</p>
 <pre tabindex="0"><code>$ kubectl scale --replicas=6 -f replicaset-definition.yaml
-</code></pre><p>Cách thứ ba là sử dụng lệnh kubectl scale với loại và tên</p>
+</code></pre><p>Cách thứ ba là sử dụng lệnh <strong>kubectl scale</strong> với loại và tên</p>
 <pre tabindex="0"><code>$ kubectl scale --replicas=6 replicaset myapp-replicaset
 </code></pre><h4 id="tài-liệu-tham-khảo-k8s">Tài liệu Tham khảo K8s:</h4>
 <ul>
-<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/">https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/</a></li>
-<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/">https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/">Kubernetes: Replicaset</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/">Kubernetes: Replication Controller</a></li>
 </ul>
 
 
@@ -1100,7 +1099,7 @@ spec:
 			<a class="nav nav-prev" href="/vi/1-introduce/" title="Giới thiệu"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/1-introduce/1.2-deployments/" title="Deployments" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/1-introduce/1.2-deployments/" title="Triển khai (Deployments) trong Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1110,19 +1109,19 @@ spec:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711702844"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711702844"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711702844"></script>
-    <script src="/js/jquery.sticky.js?1711702844"></script>
-    <script src="/js/featherlight.min.js?1711702844"></script>
-    <script src="/js/highlight.pack.js?1711702844"></script>
+    <script src="/js/clipboard.min.js?1715656511"></script>
+    <script src="/js/perfect-scrollbar.min.js?1715656511"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1715656511"></script>
+    <script src="/js/jquery.sticky.js?1715656511"></script>
+    <script src="/js/featherlight.min.js?1715656511"></script>
+    <script src="/js/highlight.pack.js?1715656511"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711702844"></script>
-    <script src="/js/learn.js?1711702844"></script>
-    <script src="/js/hugo-learn.js?1711702844"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1715656511"></script>
+    <script src="/js/learn.js?1715656511"></script>
+    <script src="/js/hugo-learn.js?1715656511"></script>
 
-    <link href="/mermaid/mermaid.css?1711702844" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711702844"></script>
+    <link href="/mermaid/mermaid.css?1715656511" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1715656511"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

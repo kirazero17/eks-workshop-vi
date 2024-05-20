@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.125.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: TERRAFORM ON AWS WORKSHOP</title>
+    <title>IP mode :: Kubernetes - EKS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1711702844" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711702844" rel="stylesheet">
-    <link href="/css/hybrid.css?1711702844" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711702844" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711702844" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711702844" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711702844" rel="stylesheet">
-    <link href="/css/theme.css?1711702844" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711702844" rel="stylesheet">
+    <link href="/css/nucleus.css?1715648732" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1715648732" rel="stylesheet">
+    <link href="/css/hybrid.css?1715648732" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1715648732" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1715648732" rel="stylesheet">
+    <link href="/css/auto-complete.css?1715648732" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1715648732" rel="stylesheet">
+    <link href="/css/theme.css?1715648732" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1715648732" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711702844" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1715648732" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711702844"></script>
+    <script src="/js/jquery-3.3.1.min.js?1715648732"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711702844"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711702844"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1715648732"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1715648732"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711702844"></script>
+<script type="text/javascript" src="/js/search.js?1715648732"></script>
 
     
   </div>
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.2-deployments/" title="Deployments" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.2-deployments/" title="Triển khai (Deployments) trong Kubernetes" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.2-deployments/">
-          <b> 1.2 </b>Deployments
+          <b> 1.2 </b>Triển khai (Deployments) trong Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -197,13 +197,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.4-kubernetes-services/" title="Kubernetes Services" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.4-kubernetes-services/" title="Dịch vụ Kubernetes" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.4-kubernetes-services/">
-          <b> 1.4 </b>Kubernetes Services
+          <b> 1.4 </b>Dịch vụ Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -225,13 +225,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.5-clusterip/" title="ClusterIP" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.5--clusterip/" title="ClusterIP trong Kubernetes" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/1.5-clusterip/">
-          <b> 1.5 </b>ClusterIP
+      <a href="/vi/1-introduce/1.5--clusterip/">
+          <b> 1.5 </b>ClusterIP trong Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -266,7 +266,7 @@
         
         ">
       <a href="/vi/2-prerequiste/">
-          <b> 2. </b>Các Bước Chuẩn Bị
+          <b>2.</b>Các Bước Chuẩn Bị
           
             <i class="fas fa-check read-icon"></i>
           
@@ -286,13 +286,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/" title="AWS Load Balancer Controller" class="dd-item 
         parent
         
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/">
-          <b> 3. </b>Giới thiệu
+          <b> 3. </b>AWS Load Balancer Controller
           
             <i class="fas fa-check read-icon"></i>
           
@@ -345,13 +345,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/" title="" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/" title="Tạo load balancer" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/">
-          
+          <b> 3.2 </b>Tạo load balancer
           
             <i class="fas fa-check read-icon"></i>
           
@@ -373,13 +373,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.3-ip-mode/" title="" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.3-ip-mode/" title="IP mode" class="dd-item 
         
         active
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/3.3-ip-mode/">
-          
+          <b> 3.3 </b>IP mode
           
             <i class="fas fa-check read-icon"></i>
           
@@ -467,13 +467,13 @@
  
   
     
-    <li data-nav-id="/vi/4-ingress/4.2-creating-the-ingress/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/4-ingress/4.2-creating-the-ingress/" title="Tạo Ingress" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-ingress/4.2-creating-the-ingress/">
-          <b> 4.2 </b>Giới thiệu
+          <b> 4.2 </b>Tạo Ingress
           
             <i class="fas fa-check read-icon"></i>
           
@@ -495,13 +495,13 @@
  
   
     
-    <li data-nav-id="/vi/4-ingress/4.3-multiple-ingress-pattern/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/4-ingress/4.3-multiple-ingress-pattern/" title="Multiple Ingress pattern" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-ingress/4.3-multiple-ingress-pattern/">
-          <b> 4.3 </b>Giới thiệu
+          <b> 4.3 </b>Multiple Ingress pattern
           
             <i class="fas fa-check read-icon"></i>
           
@@ -563,7 +563,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/3-aws-load-balancer-controller/3.3-ip-mode/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/3-aws-load-balancer-controller/3.3-ip-mode/" selected>Tiếng Việt</option>
                     
                   
               
@@ -651,7 +651,7 @@
             
           
           
-            <a href='/vi/'>Kubernetes trên AWS</a> > <a href='/vi/3-aws-load-balancer-controller/'>Giới thiệu</a> > 
+            <a href='/vi/'>Kubernetes trên AWS</a> > <a href='/vi/3-aws-load-balancer-controller/'>AWS Load Balancer Controller</a> > IP mode
           
         
           
@@ -666,11 +666,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#pre-b-33-b">title: &ldquo;IP mode&rdquo;
-date: &ldquo;<code>r Sys.Date()</code>&rdquo;
-weight: 3
-chapter: false
-pre: &ldquo;<!-- raw HTML omitted --> 3.3 <!-- raw HTML omitted -->&rdquo;</a>
+    <li>
       <ul>
         <li></li>
         <li><a href="#tái-cấu-hình-nlb">Tái cấu hình NLB</a></li>
@@ -693,7 +689,7 @@ pre: &ldquo;<!-- raw HTML omitted --> 3.3 <!-- raw HTML omitted -->&rdquo;</a>
           
             <h1>
               
-              
+              IP mode
             </h1>
           
 
@@ -701,34 +697,29 @@ pre: &ldquo;<!-- raw HTML omitted --> 3.3 <!-- raw HTML omitted -->&rdquo;</a>
 
 
 
-	<h2 id="pre-b-33-b">title: &ldquo;IP mode&rdquo;
-date: &ldquo;<code>r Sys.Date()</code>&rdquo;
-weight: 3
-chapter: false
-pre: &ldquo;<!-- raw HTML omitted --> 3.3 <!-- raw HTML omitted -->&rdquo;</h2>
-<h4 id="ip-mode">IP mode</h4>
-<p>Như đã đề cập trước đó, NLB chúng ta đã tạo đang hoạt động ở chế độ &ldquo;instance mode&rdquo;. Chế độ mục tiêu instance hỗ trợ các pod đang chạy trên các máy EC2 của AWS. Trong chế độ này, AWS NLB gửi lưu lượng đến các instance và <code>kube-proxy</code> trên các nút làm việc cá nhân chuyển tiếp nó đến các pod thông qua một hoặc nhiều nút làm việc trong cụm Kubernetes.</p>
-<p>Bộ điều khiển Cân bằng Tải AWS cũng hỗ trợ tạo NLB hoạt động ở chế độ &ldquo;IP mode&rdquo;. Trong chế độ này, AWS NLB gửi lưu lượng trực tiếp đến các pod Kubernetes đằng sau dịch vụ, loại bỏ nhu cầu cho một bước nhảy mạng phụ qua các nút làm việc trong cụm Kubernetes. Chế độ mục tiêu IP hỗ trợ các pod đang chạy trên cả các máy EC2 của AWS và AWS Fargate.</p>
-<p><img src="./assets/ip-mode.png" alt="Chế độ IP"></p>
-<p>Có một số lý do mà chúng ta có thể muốn cấu hình NLB để hoạt động ở chế độ mục tiêu IP:</p>
+	<h4 id="ip-mode">IP mode</h4>
+<p>Như đã đề cập trước đó, <strong>NLB</strong> chúng ta đã tạo đang hoạt động ở chế độ &ldquo;<strong>instance mode</strong>&rdquo;. Chế độ mục tiêu instance hỗ trợ các <strong>pod</strong> đang chạy trên các máy <strong>EC2</strong> của <strong>AWS</strong>. Trong chế độ này, <strong>AWS NLB</strong> gửi lưu lượng đến các instance và <code>kube-proxy</code> trên các nút làm việc cá nhân chuyển tiếp nó đến các pod thông qua một hoặc nhiều nút làm việc trong cụm <strong>Kubernetes</strong>.</p>
+<p>Bộ điều khiển <strong>Cân bằng Tải AWS</strong> cũng hỗ trợ tạo <strong>NLB</strong> hoạt động ở chế độ &ldquo;<strong>IP mode</strong>&rdquo;. Trong chế độ này, <strong>AWS NLB</strong> gửi lưu lượng trực tiếp đến các pod <strong>Kubernetes</strong> đằng sau dịch vụ, loại bỏ nhu cầu cho một bước nhảy mạng phụ qua các nút làm việc trong cụm <strong>Kubernetes</strong>. Chế độ mục tiêu IP hỗ trợ các pod đang chạy trên cả các máy <strong>EC2</strong> của <strong>AWS</strong> và <strong>AWS Fargate</strong>.</p>
+<p><img alt="EKS" src="/images/1/00014.png?featherlight=false&width=60pc"></p>
+<p>Có một số lý do mà chúng ta có thể muốn cấu hình <strong>NLB</strong> để hoạt động ở chế độ mục tiêu IP:</p>
 <ol>
-<li>Tạo một đường mạng hiệu quả hơn cho các kết nối đến, bỏ qua <code>kube-proxy</code> trên nút làm việc EC2</li>
-<li>Loại bỏ nhu cầu xem xét các khía cạnh như <code>externalTrafficPolicy</code> và các tùy chọn cấu hình khác nhau của nó</li>
-<li>Một ứng dụng đang chạy trên Fargate thay vì EC2</li>
+<li>Tạo một đường mạng hiệu quả hơn cho các kết nối đến, bỏ qua <code>kube-proxy</code> trên nút làm việc <strong>EC2</strong>.</li>
+<li>Loại bỏ nhu cầu xem xét các khía cạnh như <code>externalTrafficPolicy</code> và các tùy chọn cấu hình khác nhau của nó.</li>
+<li>Một ứng dụng đang chạy trên <strong>Fargate</strong> thay vì <strong>EC2</strong>.</li>
 </ol>
 <h3 id="tái-cấu-hình-nlb">Tái cấu hình NLB</h3>
-<p>Hãy tái cấu hình NLB của chúng ta để sử dụng chế độ IP và xem xét tác động của nó đối với cơ sở hạ tầng.</p>
+<p>Hãy tái cấu hình <strong>NLB</strong> của chúng ta để sử dụng chế độ IP và xem xét tác động của nó đối với cơ sở hạ tầng.</p>
 <p>Đây là đoạn mã patch chúng ta sẽ áp dụng để tái cấu hình Dịch vụ:</p>
 <pre tabindex="0"><code class="language-kustomization" data-lang="kustomization">modules/exposing/load-balancer/ip-mode/nlb.yaml
 Service/ui-nlb
-</code></pre><p>Áp dụng các bản mẫu với kustomize:</p>
+</code></pre><p>Áp dụng các bản mẫu với <strong>kustomize</strong>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl apply -k ~/environment/eks-workshop/modules/exposing/load-balancer/ip-mode
 </span></span></code></pre></div><p>Sẽ mất vài phút để cấu hình của cân bằng tải được cập nhật. Chạy lệnh sau để đảm bảo chú thích được cập nhật:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl describe service/ui-nlb -n ui
 </span></span><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>Annotations:              service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
 </span></span><span style="display:flex;"><span>...
-</span></span></code></pre></div><p>Bạn nên có thể truy cập ứng dụng bằng cùng một URL như trước đó, với NLB bây giờ sử dụng chế độ IP để tiết lộ ứng dụng của bạn.</p>
+</span></span></code></pre></div><p>Bạn nên có thể truy cập ứng dụng bằng cùng một URL như trước đó, với <strong>NLB</strong> bây giờ sử dụng chế độ IP để tiết lộ ứng dụng của bạn.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ALB_ARN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws elbv2 describe-load-balancers --query <span style="color:#e6db74">&#39;LoadBalancers[?contains(LoadBalancerName, `k8s-ui-uinlb`) == `true`].LoadBalancerArn&#39;</span> | jq -r <span style="color:#e6db74">&#39;.[0]&#39;</span><span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>$ TARGET_GROUP_ARN<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws elbv2 describe-target-groups --load-balancer-arn $ALB_ARN | jq -r <span style="color:#e6db74">&#39;.TargetGroups[0].TargetGroupArn&#39;</span><span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>$ aws elbv2 describe-target-health --target-group-arn $TARGET_GROUP_ARN
@@ -749,7 +740,7 @@ Service/ui-nlb
 </span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p><strong>Chú ý:</strong> Chúng ta đã chuyển từ 3 mục tiêu mà chúng ta đã quan sát trong phần trước đó thành chỉ một mục tiêu. Tại sao lại như vậy? Thay vì đăng ký các EC2 instances trong cụm EKS của chúng ta, bộ điều khiển cân bằng tải hiện đang đăng ký các Pods cá nhân và gửi lưu lượng trực tiếp, tận dụng AWS VPC CNI và sự thật rằng mỗi Pod đều có địa chỉ IP VPC cấp đầu.</p>
+</span></span></code></pre></div><p><strong>Chú ý:</strong> Chúng ta đã chuyển từ 3 mục tiêu mà chúng ta đã quan sát trong phần trước đó thành chỉ một mục tiêu. Tại sao lại như vậy? Thay vì đăng ký các <strong>EC2 instances</strong> trong cụm <strong>EKS</strong> của chúng ta, bộ điều khiển cân bằng tải hiện đang đăng ký các <strong>Pods</strong> cá nhân và gửi lưu lượng trực tiếp, tận dụng <strong>AWS VPC CNI</strong> và sự thật rằng mỗi <strong>Pod</strong> đều có địa chỉ IP VPC cấp đầu.</p>
 <p>Hãy mở rộng thành phần ui lên 3 bản sao và xem điều gì xảy ra:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl scale -n ui deployment/ui --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
 </span></span><span style="display:flex;"><span>$ kubectl wait --for<span style="color:#f92672">=</span>condition<span style="color:#f92672">=</span>Ready pod -n ui -l app.kubernetes.io/name<span style="color:#f92672">=</span>ui --timeout<span style="color:#f92672">=</span>60s
@@ -763,7 +754,9 @@ Service/ui-nlb
 </span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Target&#34;</span>: <span style="color:#f92672">{</span>
 </span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Id&#34;</span>: <span style="color:#e6db74">&#34;10.42.180.181&#34;</span>,
 </span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Port&#34;</span>: 8080,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;AvailabilityZone&#34;</span>: <span style="color:#e6db74">&#34;us-west-2c&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;AvailabilityZone&#34;</span>: <span style="color:#e6db74">&#34;us
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">-west-2c&#34;</span>
 </span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>,
 </span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;HealthCheckPort&#34;</span>: <span style="color:#e6db74">&#34;8080&#34;</span>,
 </span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;TargetHealth&#34;</span>: <span style="color:#f92672">{</span>
@@ -1102,7 +1095,7 @@ Service/ui-nlb
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/" title="Tạo load balancer"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/4-ingress/" title="Ingress" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1115,19 +1108,19 @@ Service/ui-nlb
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711702844"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711702844"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711702844"></script>
-    <script src="/js/jquery.sticky.js?1711702844"></script>
-    <script src="/js/featherlight.min.js?1711702844"></script>
-    <script src="/js/highlight.pack.js?1711702844"></script>
+    <script src="/js/clipboard.min.js?1715648732"></script>
+    <script src="/js/perfect-scrollbar.min.js?1715648732"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1715648732"></script>
+    <script src="/js/jquery.sticky.js?1715648732"></script>
+    <script src="/js/featherlight.min.js?1715648732"></script>
+    <script src="/js/highlight.pack.js?1715648732"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711702844"></script>
-    <script src="/js/learn.js?1711702844"></script>
-    <script src="/js/hugo-learn.js?1711702844"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1715648732"></script>
+    <script src="/js/learn.js?1715648732"></script>
+    <script src="/js/hugo-learn.js?1715648732"></script>
 
-    <link href="/mermaid/mermaid.css?1711702844" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711702844"></script>
+    <link href="/mermaid/mermaid.css?1715648732" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1715648732"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,6 +9,8 @@ pre: "<b>2.</b>"
 #### Các Bước Chuẩn Bị
 #### Chuẩn bị môi trường cho phần này:
 
+Để thực hiện lab này, hãy xem lại cách triển khai tài nguyên lab trong phần 2 của workshop đầu tiên (Kubernetes trên AWS). Trên môi trường Cloud9 đã tạo ở bài đầu tiên, chạy lệnh sau:
+
 ```bash timeout=300 wait=30
 $ prepare-environment exposing/load-balancer
 ```

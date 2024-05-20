@@ -10,7 +10,7 @@ pre: "<b> 2. </b>"
 
 #### **Hướng dẫn thiết lập môi trường chạy lab trong tài khoản AWS của bạn**
 
-Phần này trình bày cách thiết lập môi trường để chạy các workshop trong tài khoản AWS của bạn. Hướng dẫn này đã được kiểm tra ở các khu vực (Region) AWS sau đây và không đảm bảo hoạt động ở các khu vực khác mà không cần chỉnh sửa:
+Phần này trình bày cách thiết lập môi trường để chạy tất cả các workshop trong tài khoản AWS của bạn. Hướng dẫn này đã được kiểm tra ở các vùng địa lý (Region) AWS sau đây và không đảm bảo hoạt động ở các khu vực khác mà không cần chỉnh sửa:
 
 - **`us-west-2`**
 - **`eu-west-1`**
@@ -20,7 +20,7 @@ Bước đầu tiên là tạo một IDE với mẫu CloudFormation được cun
 [https://console.aws.amazon.com/cloudshell/home](https://console.aws.amazon.com/cloudshell/home)
 
 
-Nếu sử dụng liên kết ở trên, đảm bảo bảng điều khiển **AWS** đã mở ở khu vực mà bạn muốn chạy các bài workshop.
+Nếu sử dụng liên kết ở trên, đảm bảo bảng điều khiển **AWS** đã mở ở vùng địa lý mà bạn muốn chạy các bài workshop.
 
 ![EKS](/images/1/00015.png?featherlight=false&width=90pc)
 
