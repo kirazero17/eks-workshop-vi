@@ -60,9 +60,9 @@ Nhấp vào daemonset kube-proxy và khám phá cấu hình. Bạn sẽ thấy c
 #### Deployments
 
 
-Deployment là một đối tượng Kubernetes cung cấp cập nhật theo cách tuyên bố cho các pods và replicaSets. Nó cho biết Kubernetes cách tạo ra hoặc sửa đổi các phiên bản của pods. Các Deployment giúp tự động mở rộng số lượng replica pods và cho phép triển khai hoặc quay lại phiên bản triển khai một cách kiểm soát. Trong ví dụ này (dưới đây), bạn có thể thấy 2 deployments cho namespace carts.
+Deployment là một đối tượng Kubernetes cho phép cập nhật khai báo cho các pods và replicaSets. Nó cho Kubernetes biết cách tạo ra hoặc sửa đổi các phiên bản của pods. Các Deployment giúp tự động mở rộng số lượng replica pods và cho phép phát hành hoặc quay lùi phiên bản triển khai một cách có kiểm soát. Trong ví dụ này (dưới đây), bạn có thể thấy 2 deployments cho namespace carts.
 
-Nhấp vào deployment orders và khám phá cấu hình. Bạn sẽ thấy chiến lược triển khai dưới mục Thông tin, chi tiết pod dưới mục Pods, các nhãn và phiên bản triển khai.
+Nhấp vào deployment orders và khám phá cấu hình. Bạn sẽ thấy chiến lược triển khai dưới mục Info, chi tiết pod dưới mục Pods, các nhãn và phiên bản triển khai.
 
 
 ![EKS workshop](/images/0005/00011.png?featherlight=false&width=90pc)

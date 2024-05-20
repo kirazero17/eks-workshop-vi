@@ -12,21 +12,21 @@
     <title>Pod Affinity and Anti-Affinity :: Kubernetes - EKS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1715736561" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1715736561" rel="stylesheet">
-    <link href="/css/hybrid.css?1715736561" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1715736561" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1715736561" rel="stylesheet">
-    <link href="/css/auto-complete.css?1715736561" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1715736561" rel="stylesheet">
-    <link href="/css/theme.css?1715736561" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1715736561" rel="stylesheet">
+    <link href="/css/nucleus.css?1716189609" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1716189609" rel="stylesheet">
+    <link href="/css/hybrid.css?1716189609" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1716189609" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1716189609" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716189609" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1716189609" rel="stylesheet">
+    <link href="/css/theme.css?1716189609" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1716189609" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1715736561" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1716189609" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1715736561"></script>
+    <script src="/js/jquery-3.3.1.min.js?1716189609"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1715736561"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1715736561"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1716189609"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1716189609"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1715736561"></script>
+<script type="text/javascript" src="/js/search.js?1716189609"></script>
 
     
   </div>
@@ -1067,7 +1067,7 @@
 </span></span><span style="display:flex;"><span>checkout-redis-6cfd7d8787-kxs8r ip-10-42-10-225.us-west-2.compute.internal
 </span></span></code></pre></div><p>Dựa vào kết quả trên, pod <code>checkout-698856df4d-vzkzw</code> đang chạy trên node <code>ip-10-42-11-142.us-west-2.compute.internal</code> và pod <code>checkout-redis-6cfd7d8787-kxs8r</code> đang chạy trên node <code>ip-10-42-10-225.us-west-2.compute.internal</code>.</p>
 <p>Trong môi trường của bạn, các pods có thể đang chạy trên cùng một node ban đầu</p>
-<p>Hãy thiết lập một chính sách <code>podAffinity</code> và <code>podAntiAffinity</code> trong deployment <strong>checkout</strong> để đảm bảo một pod <code>checkout</code> chạy trên mỗi node, và nó chỉ sẽ chạy trên các nodes nơi có pod <code>checkout-redis</code> đang chạy. Chúng ta sẽ sử dụng <code>requiredDuringSchedulingIgnoredDuringExecution</code> để làm cho điều này trở thành yêu cầu, thay vì một hành vi ưu tiên.</p>
+<p>Hãy thiết lập một chính sách <code>podAffinity</code> và <code>podAntiAffinity</code> trong deployment <strong>checkout</strong> để đảm bảo một pod <code>checkout</code> chạy trên mỗi node, và nó chỉ sẽ chạy trên các nodes có pod <code>checkout-redis</code> đang chạy. Chúng ta sẽ sử dụng <code>requiredDuringSchedulingIgnoredDuringExecution</code> để làm cho điều này trở thành yêu cầu, thay vì một hành vi được ưu tiên.</p>
 <p>Kustomization sau thêm một phần <code>affinity</code> vào deployment <strong>checkout</strong> chỉ định cả chính sách <strong>podAffinity</strong> và <strong>podAntiAffinity</strong>:</p>
 <pre tabindex="0"><code class="language-kustomization" data-lang="kustomization">modules/fundamentals/affinity/checkout/checkout.yaml
 Deployment/checkout
@@ -1095,7 +1095,7 @@ Deployment/checkout
 <p>Tiếp theo, chúng ta sẽ mở rộng <code>checkout-redis</code> thành hai instances cho hai nodes của chúng ta, nhưng trước hết hãy sửa đổi chính sách deployment <code>checkout-redis</code> để phân tán các instances <code>checkout-redis</code> của chúng ta qua mỗi node. Để làm điều này, chúng ta chỉ cần tạo một quy tắc <strong>podAntiAffinity</strong>.</p>
 <pre tabindex="0"><code class="language-kustomization" data-lang="kustomization">modules/fundamentals/affinity/checkout-redis/checkout-redis.yaml
 Deployment/checkout-redis
-</code></pre><p>Áp dụng nó với lệnh sau:</p>
+</code></pre><p>Áp dụng quy tắc với lệnh sau:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl delete -n checkout deployment checkout-redis
 </span></span><span style="display:flex;"><span>$ kubectl apply -k ~/environment/eks-workshop/modules/fundamentals/affinity/checkout-redis/
 </span></span><span style="display:flex;"><span>namespace/checkout unchanged
@@ -1125,7 +1125,7 @@ Deployment/checkout-redis
 </span></span><span style="display:flex;"><span>checkout-5b68c8cddf-clnps       ip-10-42-12-31.us-west-2.compute.internal
 </span></span><span style="display:flex;"><span>checkout-redis-7979df659-57xcb  ip-10-42-11-142.us-west-2.compute.internal
 </span></span><span style="display:flex;"><span>checkout-redis-7979df659-r7kkm  ip-10-42-12-31.us-west-2.compute.internal
-</span></span></code></pre></div><p>Mọi thứ trông tốt với việc lên lịch các pod, nhưng chúng ta có thể xác minh thêm bằng cách mở rộng pod <code>checkout</code> một lần nữa để xem pod thứ ba sẽ được triển khai ở đâu:</p>
+</span></span></code></pre></div><p>Mọi thứ có vẻ tốt với việc lên lịch các pod, nhưng chúng ta có thể xác minh thêm bằng cách mở rộng pod <code>checkout</code> một lần nữa để xem pod thứ ba sẽ được triển khai ở đâu:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl scale --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> deployment/checkout --namespace checkout
 </span></span></code></pre></div><p>Nếu chúng ta kiểm tra các pods đang chạy, chúng ta có thể thấy rằng pod <code>checkout</code> thứ ba đã được đặt trong trạng thái Pending vì hai node đã có pod được triển khai và node thứ ba không có pod <code>checkout-redis</code> đang chạy.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl get pods -n checkout
@@ -1647,19 +1647,19 @@ Deployment/checkout-redis
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1715736561"></script>
-    <script src="/js/perfect-scrollbar.min.js?1715736561"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1715736561"></script>
-    <script src="/js/jquery.sticky.js?1715736561"></script>
-    <script src="/js/featherlight.min.js?1715736561"></script>
-    <script src="/js/highlight.pack.js?1715736561"></script>
+    <script src="/js/clipboard.min.js?1716189609"></script>
+    <script src="/js/perfect-scrollbar.min.js?1716189609"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1716189609"></script>
+    <script src="/js/jquery.sticky.js?1716189609"></script>
+    <script src="/js/featherlight.min.js?1716189609"></script>
+    <script src="/js/highlight.pack.js?1716189609"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1715736561"></script>
-    <script src="/js/learn.js?1715736561"></script>
-    <script src="/js/hugo-learn.js?1715736561"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1716189609"></script>
+    <script src="/js/learn.js?1716189609"></script>
+    <script src="/js/hugo-learn.js?1716189609"></script>
 
-    <link href="/mermaid/mermaid.css?1715736561" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1715736561"></script>
+    <link href="/mermaid/mermaid.css?1716189609" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1716189609"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,11 +9,11 @@ pre: "<b> 3.2 </b>"
 
 #### Cluster
 
-Để xem tài nguyên của cụm Kubernetes, nhấp vào tab Resources. Tiếp tục vào phần Cluster và bạn có thể xem nhiều loại tài nguyên API Kubernetes mà là một phần của cụm. Chi tiết xem cụm hiển thị tất cả các thành phần của kiến trúc cụm như Nodes, Namespaces và API Services chạy các công việc.
+Để xem tài nguyên của cụm Kubernetes, nhấp vào tab Resources. Tiếp tục vào phần Cluster, bạn có thể xem nhiều loại tài nguyên API Kubernetes nếu chúng là một phần của cụm. Chi tiết xem cụm hiển thị tất cả các thành phần của kiến trúc cụm như Nodes, Namespaces và API Services chạy các công việc.
 
 #### Nodes
 
-Kubernetes chạy công việc của bạn bằng cách đặt các container vào các pod để chạy trên các Node. Một node có thể là máy ảo hoặc máy vật lý, tùy thuộc vào cụm. eks-workshop đang chạy 3 node mà trên đó các công việc được triển khai. Nhấp vào Nodes để liệt kê các node.
+Kubernetes chạy công việc của bạn bằng cách đặt các container vào các pod để chạy trên các Node. Một node có thể là máy ảo hoặc máy vật lý, tùy thuộc vào cụm. Cụm eks-workshop đang chạy 3 node với các công việc được triển khai trên đó. Nhấp vào Nodes để liệt kê các node.
 
 Nếu bạn nhấp vào bất kỳ tên node nào, bạn sẽ tìm thấy phần Thông tin có rất nhiều chi tiết về node - hệ điều hành, container runtime, loại instance, EC2 instance và Managed node group (giúp việc cung cấp khả năng tính toán cho cụm trở nên dễ dàng). Phần tiếp theo, Phân bổ dung lượng, hiển thị việc sử dụng và đặt hàng của các tài nguyên khác nhau trên các node worker EC2 được kết nối vào cụm.
 
