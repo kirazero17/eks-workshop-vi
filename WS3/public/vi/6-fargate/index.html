@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.125.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Fargate :: Kubernetes - EKS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1712388775" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1712388775" rel="stylesheet">
-    <link href="/css/hybrid.css?1712388775" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1712388775" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1712388775" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712388775" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1712388775" rel="stylesheet">
-    <link href="/css/theme.css?1712388775" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1712388775" rel="stylesheet">
+    <link href="/css/nucleus.css?1716188322" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1716188322" rel="stylesheet">
+    <link href="/css/hybrid.css?1716188322" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1716188322" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1716188322" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716188322" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1716188322" rel="stylesheet">
+    <link href="/css/theme.css?1716188322" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1716188322" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1712388775" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1716188322" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1712388775"></script>
+    <script src="/js/jquery-3.3.1.min.js?1716188322"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1712388775"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1712388775"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1716188322"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1716188322"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1712388775"></script>
+<script type="text/javascript" src="/js/search.js?1716188322"></script>
 
     
   </div>
@@ -919,7 +919,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/6-fargate/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/6-fargate/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1055,7 +1055,7 @@
 </ul>
 <p>Trong module trước đó, chúng ta đã thấy cách cung cấp các máy tính EC2 để chạy Pods trong cụm EKS của chúng ta, và cách các nhóm nút được quản lý giúp giảm bớt gánh nặng vận hành. Tuy nhiên, trong mô hình này, bạn vẫn phải chịu trách nhiệm về tính sẵn có, công suất và bảo dưỡng của cơ sở hạ tầng cơ bản.</p>
 <p><a href="https://aws.amazon.com/fargate/">AWS Fargate</a> là một công nghệ cung cấp dung lượng tính toán được kích thước đúng theo nhu cầu cho các container. Với AWS Fargate, bạn không cần phải cấu hình, cấu hình hoặc mở rộng các nhóm máy ảo một cách tự động để chạy các container. Bạn cũng không cần phải chọn loại máy chủ, quyết định khi nào để mở rộng các nhóm nút của bạn, hoặc tối ưu hóa việc đóng gói cụm. Bạn có thể kiểm soát các Pod nào bắt đầu trên Fargate và cách chúng chạy với các hồ sơ Fargate. Các hồ sơ Fargate được xác định như một phần của cụm Amazon EKS của bạn.</p>
-<p><img src="/images/4/00012.png?featherlight=false&amp;width=90pc" alt="EKS"></p>
+<p><img alt="EKS" src="/images/4/00012.png?featherlight=false&width=90pc"></p>
 <p>Amazon EKS tích hợp Kubernetes với AWS Fargate bằng cách sử dụng các bộ điều khiển được xây dựng bởi AWS bằng cách sử dụng mô hình mở rộng được cung cấp bởi Kubernetes. Những bộ điều khiển này chạy như một phần của mặt trận điều khiển Kubernetes quản lý của Amazon EKS và chịu trách nhiệm về lập lịch các Pod Kubernetes nguyên bản vào Fargate. Các bộ điều khiển Fargate bao gồm một trình lập lịch mới chạy song song với trình lập lịch Kubernetes mặc định cùng với một số bộ điều khiển nhập và xác nhận. Khi bạn bắt đầu một Pod đáp ứng các tiêu chí để chạy trên Fargate, các bộ điều khiển Fargate đang chạy trong cụm nhận ra, cập nhật và lên lịch cho Pod trên Fargate.</p>
 <p>Các lợi ích của Fargate bao gồm:</p>
 <ul>
@@ -1569,19 +1569,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1712388775"></script>
-    <script src="/js/perfect-scrollbar.min.js?1712388775"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1712388775"></script>
-    <script src="/js/jquery.sticky.js?1712388775"></script>
-    <script src="/js/featherlight.min.js?1712388775"></script>
-    <script src="/js/highlight.pack.js?1712388775"></script>
+    <script src="/js/clipboard.min.js?1716188322"></script>
+    <script src="/js/perfect-scrollbar.min.js?1716188322"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1716188322"></script>
+    <script src="/js/jquery.sticky.js?1716188322"></script>
+    <script src="/js/featherlight.min.js?1716188322"></script>
+    <script src="/js/highlight.pack.js?1716188322"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1712388775"></script>
-    <script src="/js/learn.js?1712388775"></script>
-    <script src="/js/hugo-learn.js?1712388775"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1716188322"></script>
+    <script src="/js/learn.js?1716188322"></script>
+    <script src="/js/hugo-learn.js?1716188322"></script>
 
-    <link href="/mermaid/mermaid.css?1712388775" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1712388775"></script>
+    <link href="/mermaid/mermaid.css?1716188322" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1716188322"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
