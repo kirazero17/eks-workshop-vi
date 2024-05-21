@@ -1,34 +1,34 @@
 [
 {
-	"uri": "/1-introduce/",
+	"uri": "//localhost:1400/1-introduce/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/2-prerequiste/",
+	"uri": "//localhost:1400/2-prerequiste/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/",
+	"uri": "//localhost:1400/",
 	"title": "",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/categories/",
+	"uri": "//localhost:1400/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/tags/",
+	"uri": "//localhost:1400/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

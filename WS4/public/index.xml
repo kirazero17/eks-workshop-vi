@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TERRAFORM ON AWS WORKSHOP</title>
-    <link>/</link>
+    <link>//localhost:1400/</link>
     <description>Recent content on TERRAFORM ON AWS WORKSHOP</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1400/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
