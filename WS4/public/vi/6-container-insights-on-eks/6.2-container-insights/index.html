@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1400&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.125.7">
@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Container Insights metrics in Amazon CloudWatch :: TERRAFORM ON AWS WORKSHOP</title>
+    <title>Số liệu Container Insights trong Amazon CloudWatch :: TERRAFORM ON AWS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1716262413" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1716262413" rel="stylesheet">
-    <link href="/css/hybrid.css?1716262413" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1716262413" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1716262413" rel="stylesheet">
-    <link href="/css/auto-complete.css?1716262413" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1716262413" rel="stylesheet">
-    <link href="/css/theme.css?1716262413" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1716262413" rel="stylesheet">
+    <link href="/css/nucleus.css?1716518683" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1716518683" rel="stylesheet">
+    <link href="/css/hybrid.css?1716518683" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1716518683" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1716518683" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716518683" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1716518683" rel="stylesheet">
+    <link href="/css/theme.css?1716518683" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1716518683" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1716262413" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1716518683" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1716262413"></script>
+    <script src="/js/jquery-3.3.1.min.js?1716518683"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1716262413"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1716262413"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1716518683"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1716518683"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1400\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1716262413"></script>
+<script type="text/javascript" src="/js/search.js?1716518683"></script>
 
     
   </div>
@@ -847,13 +847,13 @@
  
   
     
-    <li data-nav-id="/vi/6-container-insights-on-eks/6.2-container-insights/" title="Container Insights metrics in Amazon CloudWatch" class="dd-item 
+    <li data-nav-id="/vi/6-container-insights-on-eks/6.2-container-insights/" title="Số liệu Container Insights trong Amazon CloudWatch" class="dd-item 
         
         active
         
         ">
       <a href="/vi/6-container-insights-on-eks/6.2-container-insights/">
-          <b> 6.2 </b>Container Insights metrics in Amazon CloudWatch
+          <b> 6.2 </b>Số liệu Container Insights trong Amazon CloudWatch
           
             <i class="fas fa-check read-icon"></i>
           
@@ -875,13 +875,13 @@
  
   
     
-    <li data-nav-id="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Container Insights metrics in Amazon CloudWatch" class="dd-item 
+    <li data-nav-id="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Dữ liệu Container Insights với CloudWatch Logs Insights" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-container-insights-on-eks/6.3-container-insights-data/">
-          <b> 6.3 </b>Container Insights metrics in Amazon CloudWatch
+          <b> 6.3 </b>Dữ liệu Container Insights với CloudWatch Logs Insights
           
             <i class="fas fa-check read-icon"></i>
           
@@ -971,7 +971,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1400/vi/6-container-insights-on-eks/6.2-container-insights/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/6-container-insights-on-eks/6.2-container-insights/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1059,7 +1059,7 @@
             
           
           
-            <a href='/vi/'>Observability</a> > <a href='/vi/6-container-insights-on-eks/'>Container Insights on EKS</a> > Container Insights metrics in Amazon CloudWatch
+            <a href='/vi/'>Observability</a> > <a href='/vi/6-container-insights-on-eks/'>Container Insights on EKS</a> > Số liệu Container Insights trong Amazon CloudWatch
           
         
           
@@ -1096,7 +1096,7 @@
           
             <h1>
               
-              Container Insights metrics in Amazon CloudWatch
+              Số liệu Container Insights trong Amazon CloudWatch
             </h1>
           
 
@@ -1104,20 +1104,20 @@
 
 
 
-	<h4 id="metrics-container-insights-trong-amazon-cloudwatch">Metrics Container Insights trong Amazon CloudWatch</h4>
+	<h4 id="số-liệu-container-insights-trong-amazon-cloudwatch">Số liệu Container Insights trong Amazon CloudWatch</h4>
 <ol>
 <li>
-<p>Trong bài thực hành này, chúng ta sẽ trực quan hóa các metrics Container Insights bằng cách sử dụng CloudWatch.</p>
+<p>Trong bài thực hành này, chúng ta sẽ trực quan hóa các số liệu Container Insights bằng cách sử dụng CloudWatch.</p>
 </li>
 <li>
-<p>Để xem các metrics, trước tiên hãy mở bảng điều khiển CloudWatch và điều hướng đến Container Insights: <a href="https://console.aws.amazon.com/cloudwatch/home#container-insights:infrastructure">https://console.aws.amazon.com/cloudwatch/home#container-insights:infrastructure</a></p>
+<p>Để xem các số liệu, trước tiên hãy mở bảng điều khiển CloudWatch và điều hướng đến Container Insights: <a href="https://console.aws.amazon.com/cloudwatch/home#container-insights:infrastructure">https://console.aws.amazon.com/cloudwatch/home#container-insights:infrastructure</a></p>
 </li>
 <li>
-<p>Chọn &ldquo;Performance Monitoring&rdquo; từ menu dropdown ở đầu trang, và sau đó chọn loại tài nguyên mà bạn muốn xem. Ví dụ, chọn &ldquo;EKS Pods&rdquo; để có các metrics cơ bản như CPU, bộ nhớ và sự sử dụng cho các Pods đang chạy trong cụm EKS của chúng ta:</p>
+<p>Chọn &ldquo;Performance Monitoring&rdquo; từ menu dropdown ở đầu trang, và sau đó chọn loại tài nguyên mà bạn muốn xem. Ví dụ, chọn &ldquo;EKS Pods&rdquo; để có các số liệu cơ bản như CPU, bộ nhớ và sự sử dụng cho các Pods đang chạy trong cụm EKS của chúng ta:</p>
 </li>
 </ol>
 <p><img alt="EKS workshop" src="/images/0007/0001.jpg?featherlight=false&width=90pc"></p>
-<p>Bạn có thể thiết lập một cảnh báo CloudWatch trên bất kỳ metric nào mà Container Insights thu thập.</p>
+<p>Bạn có thể thiết lập một cảnh báo CloudWatch trên bất kỳ số liệu nào mà Container Insights thu thập.</p>
 
 
 
@@ -1638,7 +1638,7 @@
 			<a class="nav nav-prev" href="/vi/6-container-insights-on-eks/6.1-enabling-container-insights/" title="Container Insights on EKS"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Container Insights metrics in Amazon CloudWatch" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Dữ liệu Container Insights với CloudWatch Logs Insights" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1648,19 +1648,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1716262413"></script>
-    <script src="/js/perfect-scrollbar.min.js?1716262413"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1716262413"></script>
-    <script src="/js/jquery.sticky.js?1716262413"></script>
-    <script src="/js/featherlight.min.js?1716262413"></script>
-    <script src="/js/highlight.pack.js?1716262413"></script>
+    <script src="/js/clipboard.min.js?1716518683"></script>
+    <script src="/js/perfect-scrollbar.min.js?1716518683"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1716518683"></script>
+    <script src="/js/jquery.sticky.js?1716518683"></script>
+    <script src="/js/featherlight.min.js?1716518683"></script>
+    <script src="/js/highlight.pack.js?1716518683"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1716262413"></script>
-    <script src="/js/learn.js?1716262413"></script>
-    <script src="/js/hugo-learn.js?1716262413"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1716518683"></script>
+    <script src="/js/learn.js?1716518683"></script>
+    <script src="/js/hugo-learn.js?1716518683"></script>
 
-    <link href="/mermaid/mermaid.css?1716262413" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1716262413"></script>
+    <link href="/mermaid/mermaid.css?1716518683" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1716518683"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

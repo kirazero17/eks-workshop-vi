@@ -32,7 +32,7 @@ Mở Console CloudWatch Logs để kiểm tra các log này xuất hiện:
 
 [https://console.aws.amazon.com/cloudwatch/home?#logsV2:log-groups](https://console.aws.amazon.com/cloudwatch/home?#logsV2:log-groups)
 
-Lọc cho fluentbit-cloudwatch để tìm các nhóm log được tạo bởi Fluent Bit:
+Bộ lọc cho fluentbit-cloudwatch để tìm các nhóm log được tạo bởi Fluent Bit:
 
 Chọn /aws/eks/fluentbit-cloudwatch/workload/ui để xem các luồng log, mỗi luồng tương ứng với một pod cá nhân:
 

@@ -25,7 +25,7 @@ Các loại nhật ký điều khiển cụm sau đây có sẵn. Mỗi loại n
 
 - Nhật ký thành phần máy chủ API Kubernetes (api) – Máy chủ API của cụm của bạn là thành phần bảng điều khiển mà tiếp xúc với API Kubernetes.
 - Kiểm tra (audit) – Nhật ký kiểm tra Kubernetes cung cấp một bản ghi về các người dùng, quản trị viên hoặc các thành phần hệ thống cá nhân đã ảnh hưởng đến cụm của bạn.
-- Xác thực viên (authenticator) – Nhật ký xác thực viên là duy nhất đối với Amazon EKS. Nhật ký này đại diện cho thành phần bảng điều khiển mà Amazon EKS sử dụng cho Xác thực dựa trên Vai trò (RBAC) của Kubernetes bằng cách sử dụng các thông tin xác thực IAM.
+- Trình xác thực (authenticator) – Nhật ký trình xác thực là duy nhất đối với Amazon EKS. Nhật ký này đại diện cho thành phần bảng điều khiển mà Amazon EKS sử dụng cho Xác thực dựa trên Vai trò (RBAC) của Kubernetes bằng cách sử dụng các thông tin xác thực IAM.
 - Bộ điều khiển quản lý (controllerManager) – Bộ điều khiển quản lý quản lý các vòng lặp điều khiển cốt lõi được gửi kèm với Kubernetes.
 - Lập lịch (scheduler) – Thành phần lập lịch quản lý khi nào và nơi chạy các pod trong cụm của bạn.
 

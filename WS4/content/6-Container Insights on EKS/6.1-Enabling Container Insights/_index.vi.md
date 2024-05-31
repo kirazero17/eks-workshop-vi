@@ -8,13 +8,13 @@ pre: "<b> 6.1 </b>"
 
 #### Kích hoạt Container Insights sử dụng AWS Distro for OpenTelemetry
 
-Trong bài thực hành này, chúng ta sẽ tìm hiểu cách kích hoạt các số liệu Container Insights của CloudWatch bằng cách sử dụng ADOT Collector cho một cụm EKS.
+Trong bài thực hành này, chúng ta sẽ tìm hiểu cách kích hoạt các số liệu Container Insights của CloudWatch bằng cách sử dụng ADOT Collector (bộ thu thập ADOT) cho một cụm EKS.
 
-1. Bây giờ, hãy tạo các tài nguyên để cấp quyền cho ADOT Collector theo đúng những gì nó cần. Chúng ta sẽ bắt đầu với ClusterRole, cung cấp quyền cho collector để truy cập API của Kubernetes:
+1. Bây giờ, hãy tạo các tài nguyên để cấp quyền cho ADOT Collector theo đúng những gì nó cần. Chúng ta sẽ bắt đầu với ClusterRole, cung cấp quyền cho bộ thu thập để truy cập API của Kubernetes:
 
 **~/environment/eks-workshop/modules/observability/container-insights/adot/clusterrole.yaml**
 
-```
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -65,7 +65,7 @@ aws iam list-attached-role-policies \
 
 **~/environment/eks-workshop/modules/observability/container-insights/adot/serviceaccount.yaml**
 
-```
+``` yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -116,7 +116,7 @@ kubectl -n other get opentelemetrycollector adot-container-ci -o jsonpath='{.spe
 
 - CloudWatch EMF exporter gửi các chỉ số đến API CloudWatch.
 
-Bộ thu này cũng được cấu hình để chạy như một DaemonSet với một đại lý thu thập chạy trên mỗi nút.
+Bộ thu thập này cũng được cấu hình để chạy như một DaemonSet với một đại lý thu thập chạy trên mỗi nút.
 
 
 ```
@@ -127,9 +127,13 @@ kubectl -n other get opentelemetrycollector adot-container-ci -o jsonpath='{.spe
 
 8. Chúng tôi có thể xác nhận điều đó bằng cách kiểm tra các Pods thu thập ADOT Container Insights metrics đang chạy:
 
-```
+``` bash
 
-kubectl get pods -n other
+~$ kubectl get pods -n other
+
+NAME                               READY   STATUS    RESTARTS   AGE
+adot-container-ci-collector-5lp5g  1/1     Running   0          15s
+adot-container-ci-collector-ctvgs  1/1     Running   0          15s
 
 ```
 

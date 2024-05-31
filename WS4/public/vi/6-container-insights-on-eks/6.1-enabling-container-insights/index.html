@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1400&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.125.7">
@@ -12,21 +12,21 @@
     <title>Container Insights on EKS :: TERRAFORM ON AWS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1716262413" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1716262413" rel="stylesheet">
-    <link href="/css/hybrid.css?1716262413" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1716262413" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1716262413" rel="stylesheet">
-    <link href="/css/auto-complete.css?1716262413" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1716262413" rel="stylesheet">
-    <link href="/css/theme.css?1716262413" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1716262413" rel="stylesheet">
+    <link href="/css/nucleus.css?1716518683" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1716518683" rel="stylesheet">
+    <link href="/css/hybrid.css?1716518683" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1716518683" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1716518683" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716518683" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1716518683" rel="stylesheet">
+    <link href="/css/theme.css?1716518683" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1716518683" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1716262413" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1716518683" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1716262413"></script>
+    <script src="/js/jquery-3.3.1.min.js?1716518683"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1716262413"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1716262413"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1716518683"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1716518683"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1400\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1716262413"></script>
+<script type="text/javascript" src="/js/search.js?1716518683"></script>
 
     
   </div>
@@ -847,13 +847,13 @@
  
   
     
-    <li data-nav-id="/vi/6-container-insights-on-eks/6.2-container-insights/" title="Container Insights metrics in Amazon CloudWatch" class="dd-item 
+    <li data-nav-id="/vi/6-container-insights-on-eks/6.2-container-insights/" title="Số liệu Container Insights trong Amazon CloudWatch" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-container-insights-on-eks/6.2-container-insights/">
-          <b> 6.2 </b>Container Insights metrics in Amazon CloudWatch
+          <b> 6.2 </b>Số liệu Container Insights trong Amazon CloudWatch
           
             <i class="fas fa-check read-icon"></i>
           
@@ -875,13 +875,13 @@
  
   
     
-    <li data-nav-id="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Container Insights metrics in Amazon CloudWatch" class="dd-item 
+    <li data-nav-id="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Dữ liệu Container Insights với CloudWatch Logs Insights" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-container-insights-on-eks/6.3-container-insights-data/">
-          <b> 6.3 </b>Container Insights metrics in Amazon CloudWatch
+          <b> 6.3 </b>Dữ liệu Container Insights với CloudWatch Logs Insights
           
             <i class="fas fa-check read-icon"></i>
           
@@ -971,7 +971,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1400/vi/6-container-insights-on-eks/6.1-enabling-container-insights/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/6-container-insights-on-eks/6.1-enabling-container-insights/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1105,46 +1105,46 @@
 
 
 	<h4 id="kích-hoạt-container-insights-sử-dụng-aws-distro-for-opentelemetry">Kích hoạt Container Insights sử dụng AWS Distro for OpenTelemetry</h4>
-<p>Trong bài thực hành này, chúng ta sẽ tìm hiểu cách kích hoạt các số liệu Container Insights của CloudWatch bằng cách sử dụng ADOT Collector cho một cụm EKS.</p>
+<p>Trong bài thực hành này, chúng ta sẽ tìm hiểu cách kích hoạt các số liệu Container Insights của CloudWatch bằng cách sử dụng ADOT Collector (bộ thu thập ADOT) cho một cụm EKS.</p>
 <ol>
-<li>Bây giờ, hãy tạo các tài nguyên để cấp quyền cho ADOT Collector theo đúng những gì nó cần. Chúng ta sẽ bắt đầu với ClusterRole, cung cấp quyền cho collector để truy cập API của Kubernetes:</li>
+<li>Bây giờ, hãy tạo các tài nguyên để cấp quyền cho ADOT Collector theo đúng những gì nó cần. Chúng ta sẽ bắt đầu với ClusterRole, cung cấp quyền cho bộ thu thập để truy cập API của Kubernetes:</li>
 </ol>
 <p><strong>~/environment/eks-workshop/modules/observability/container-insights/adot/clusterrole.yaml</strong></p>
-<pre tabindex="0"><code>apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: otel-ci-role
-rules:
-  - apiGroups: [&#34;&#34;]
-    resources: [&#34;pods&#34;, &#34;nodes&#34;, &#34;endpoints&#34;]
-    verbs: [&#34;list&#34;, &#34;watch&#34;, &#34;get&#34;]
-  - apiGroups: [&#34;apps&#34;]
-    resources: [&#34;replicasets&#34;]
-    verbs: [&#34;list&#34;, &#34;watch&#34;, &#34;get&#34;]
-  - apiGroups: [&#34;batch&#34;]
-    resources: [&#34;jobs&#34;]
-    verbs: [&#34;list&#34;, &#34;watch&#34;]
-  - apiGroups: [&#34;&#34;]
-    resources: [&#34;nodes/proxy&#34;]
-    verbs: [&#34;get&#34;]
-  - apiGroups: [&#34;&#34;]
-    resources: [&#34;nodes/stats&#34;, &#34;configmaps&#34;, &#34;events&#34;]
-    verbs: [&#34;create&#34;, &#34;get&#34;]
-  - apiGroups: [&#34;&#34;]
-    resources: [&#34;configmaps&#34;]
-    verbs: [&#34;update&#34;]
-  - apiGroups: [&#34;&#34;]
-    resources: [&#34;configmaps&#34;]
-    resourceNames: [&#34;otel-container-insight-clusterleader&#34;]
-    verbs: [&#34;get&#34;,&#34;update&#34;, &#34;create&#34;]
-  - apiGroups: [&#34;coordination.k8s.io&#34;]
-    resources: [&#34;leases&#34;]
-    verbs: [&#34;create&#34;,&#34;get&#34;, &#34;update&#34;]
-  - apiGroups: [&#34;coordination.k8s.io&#34;]
-    resources: [&#34;leases&#34;]
-    resourceNames: [&#34;otel-container-insight-clusterleader&#34;]
-    verbs: [&#34;get&#34;,&#34;update&#34;, &#34;create&#34;]
-</code></pre><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">rbac.authorization.k8s.io/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ClusterRole</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">otel-ci-role</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;pods&#34;</span>, <span style="color:#e6db74">&#34;nodes&#34;</span>, <span style="color:#e6db74">&#34;endpoints&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;list&#34;</span>, <span style="color:#e6db74">&#34;watch&#34;</span>, <span style="color:#e6db74">&#34;get&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;apps&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;replicasets&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;list&#34;</span>, <span style="color:#e6db74">&#34;watch&#34;</span>, <span style="color:#e6db74">&#34;get&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;batch&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;jobs&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;list&#34;</span>, <span style="color:#e6db74">&#34;watch&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;nodes/proxy&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;get&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;nodes/stats&#34;</span>, <span style="color:#e6db74">&#34;configmaps&#34;</span>, <span style="color:#e6db74">&#34;events&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;create&#34;</span>, <span style="color:#e6db74">&#34;get&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;configmaps&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;update&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;configmaps&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resourceNames</span>: [<span style="color:#e6db74">&#34;otel-container-insight-clusterleader&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;get&#34;</span>,<span style="color:#e6db74">&#34;update&#34;</span>, <span style="color:#e6db74">&#34;create&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;coordination.k8s.io&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;leases&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;create&#34;</span>,<span style="color:#e6db74">&#34;get&#34;</span>, <span style="color:#e6db74">&#34;update&#34;</span>]
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">apiGroups</span>: [<span style="color:#e6db74">&#34;coordination.k8s.io&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resources</span>: [<span style="color:#e6db74">&#34;leases&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">resourceNames</span>: [<span style="color:#e6db74">&#34;otel-container-insight-clusterleader&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">verbs</span>: [<span style="color:#e6db74">&#34;get&#34;</span>,<span style="color:#e6db74">&#34;update&#34;</span>, <span style="color:#e6db74">&#34;create&#34;</span>]
+</span></span></code></pre></div><ol start="2">
 <li>Chúng ta sẽ sử dụng chính sách IAM quản lý CloudWatchAgentServerPolicy để cung cấp cho bộ thu thập các quyền IAM cần thiết thông qua IAM Roles for Service Accounts.</li>
 </ol>
 <pre tabindex="0"><code>
@@ -1154,13 +1154,13 @@ aws iam list-attached-role-policies \
 <li>Vai trò IAM này sẽ được thêm vào ServiceAccount cho bộ thu thập:</li>
 </ol>
 <p><strong>~/environment/eks-workshop/modules/observability/container-insights/adot/serviceaccount.yaml</strong></p>
-<pre tabindex="0"><code>apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: adot-collector-ci
-  annotations:
-    eks.amazonaws.com/role-arn: ${ADOT_IAM_ROLE_CI}
-</code></pre><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ServiceAccount</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">adot-collector-ci</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">annotations</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">eks.amazonaws.com/role-arn</span>: <span style="color:#ae81ff">${ADOT_IAM_ROLE_CI}</span>
+</span></span></code></pre></div><ol start="4">
 <li>Tạo tài nguyên:</li>
 </ol>
 <pre tabindex="0"><code>
@@ -1192,15 +1192,19 @@ kubectl -n other get opentelemetrycollector adot-container-ci -o jsonpath=&#39;{
 <ul>
 <li>CloudWatch EMF exporter gửi các chỉ số đến API CloudWatch.</li>
 </ul>
-<p>Bộ thu này cũng được cấu hình để chạy như một DaemonSet với một đại lý thu thập chạy trên mỗi nút.</p>
+<p>Bộ thu thập này cũng được cấu hình để chạy như một DaemonSet với một đại lý thu thập chạy trên mỗi nút.</p>
 <pre tabindex="0"><code>
 kubectl -n other get opentelemetrycollector adot-container-ci -o jsonpath=&#39;{.spec.mode}{&#34;\n&#34;}&#39;
 </code></pre><ol start="8">
 <li>Chúng tôi có thể xác nhận điều đó bằng cách kiểm tra các Pods thu thập ADOT Container Insights metrics đang chạy:</li>
 </ol>
-<pre tabindex="0"><code>
-kubectl get pods -n other
-</code></pre><p>Nếu kết quả của lệnh này bao gồm nhiều pods ở trạng thái Running như hiển thị (phía trên), bộ thu thập đang chạy và thu thập các số liệu từ cụm. Bộ thu thập tạo một nhóm log có tên là aws/containerinsights/cluster-name/performance và gửi dữ liệu số liệu dưới dạng sự kiện log hiệu suất theo định dạng EMF.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>~$ kubectl get pods -n other
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                               READY   STATUS    RESTARTS   AGE
+</span></span><span style="display:flex;"><span>adot-container-ci-collector-5lp5g  1/1     Running   <span style="color:#ae81ff">0</span>          15s
+</span></span><span style="display:flex;"><span>adot-container-ci-collector-ctvgs  1/1     Running   <span style="color:#ae81ff">0</span>          15s
+</span></span></code></pre></div><p>Nếu kết quả của lệnh này bao gồm nhiều pods ở trạng thái Running như hiển thị (phía trên), bộ thu thập đang chạy và thu thập các số liệu từ cụm. Bộ thu thập tạo một nhóm log có tên là aws/containerinsights/cluster-name/performance và gửi dữ liệu số liệu dưới dạng sự kiện log hiệu suất theo định dạng EMF.</p>
 
 
 
@@ -1718,7 +1722,7 @@ kubectl get pods -n other
 			<a class="nav nav-prev" href="/vi/6-container-insights-on-eks/" title="Container Insights on EKS"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/6-container-insights-on-eks/6.2-container-insights/" title="Container Insights metrics in Amazon CloudWatch" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/6-container-insights-on-eks/6.2-container-insights/" title="Số liệu Container Insights trong Amazon CloudWatch" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1728,19 +1732,19 @@ kubectl get pods -n other
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1716262413"></script>
-    <script src="/js/perfect-scrollbar.min.js?1716262413"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1716262413"></script>
-    <script src="/js/jquery.sticky.js?1716262413"></script>
-    <script src="/js/featherlight.min.js?1716262413"></script>
-    <script src="/js/highlight.pack.js?1716262413"></script>
+    <script src="/js/clipboard.min.js?1716518683"></script>
+    <script src="/js/perfect-scrollbar.min.js?1716518683"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1716518683"></script>
+    <script src="/js/jquery.sticky.js?1716518683"></script>
+    <script src="/js/featherlight.min.js?1716518683"></script>
+    <script src="/js/highlight.pack.js?1716518683"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1716262413"></script>
-    <script src="/js/learn.js?1716262413"></script>
-    <script src="/js/hugo-learn.js?1716262413"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1716518683"></script>
+    <script src="/js/learn.js?1716518683"></script>
+    <script src="/js/hugo-learn.js?1716518683"></script>
 
-    <link href="/mermaid/mermaid.css?1716262413" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1716262413"></script>
+    <link href="/mermaid/mermaid.css?1716518683" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1716518683"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

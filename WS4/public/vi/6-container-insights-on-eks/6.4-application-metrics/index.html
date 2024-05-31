@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1400&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.125.7">
@@ -12,21 +12,21 @@
     <title>Application Metrics in Amazon CloudWatch :: TERRAFORM ON AWS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1716262413" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1716262413" rel="stylesheet">
-    <link href="/css/hybrid.css?1716262413" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1716262413" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1716262413" rel="stylesheet">
-    <link href="/css/auto-complete.css?1716262413" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1716262413" rel="stylesheet">
-    <link href="/css/theme.css?1716262413" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1716262413" rel="stylesheet">
+    <link href="/css/nucleus.css?1716518683" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1716518683" rel="stylesheet">
+    <link href="/css/hybrid.css?1716518683" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1716518683" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1716518683" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716518683" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1716518683" rel="stylesheet">
+    <link href="/css/theme.css?1716518683" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1716518683" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1716262413" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1716518683" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1716262413"></script>
+    <script src="/js/jquery-3.3.1.min.js?1716518683"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1716262413"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1716262413"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1716518683"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1716518683"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/localhost:1400\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1716262413"></script>
+<script type="text/javascript" src="/js/search.js?1716518683"></script>
 
     
   </div>
@@ -847,13 +847,13 @@
  
   
     
-    <li data-nav-id="/vi/6-container-insights-on-eks/6.2-container-insights/" title="Container Insights metrics in Amazon CloudWatch" class="dd-item 
+    <li data-nav-id="/vi/6-container-insights-on-eks/6.2-container-insights/" title="Số liệu Container Insights trong Amazon CloudWatch" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-container-insights-on-eks/6.2-container-insights/">
-          <b> 6.2 </b>Container Insights metrics in Amazon CloudWatch
+          <b> 6.2 </b>Số liệu Container Insights trong Amazon CloudWatch
           
             <i class="fas fa-check read-icon"></i>
           
@@ -875,13 +875,13 @@
  
   
     
-    <li data-nav-id="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Container Insights metrics in Amazon CloudWatch" class="dd-item 
+    <li data-nav-id="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Dữ liệu Container Insights với CloudWatch Logs Insights" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-container-insights-on-eks/6.3-container-insights-data/">
-          <b> 6.3 </b>Container Insights metrics in Amazon CloudWatch
+          <b> 6.3 </b>Dữ liệu Container Insights với CloudWatch Logs Insights
           
             <i class="fas fa-check read-icon"></i>
           
@@ -971,7 +971,7 @@
                   
                     
                     
-                      <option id="vi" value="//localhost:1400/vi/6-container-insights-on-eks/6.4-application-metrics/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/6-container-insights-on-eks/6.4-application-metrics/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1105,7 +1105,9 @@
 
 
 	<h4 id="đo-lường-ứng-dụng-trong-amazon-cloudwatch">Đo lường Ứng dụng trong Amazon CloudWatch</h4>
-<p>1.Trong phần này, chúng ta sẽ tìm hiểu cách nhận được thông tin về các chỉ số được tiết lộ bởi các công việc của chúng ta và hiển thị các chỉ số đó bằng cách sử dụng Amazon CloudWatch Insights Prometheus. Một số ví dụ về các chỉ số này có thể là:</p>
+<ol>
+<li>Trong phần này, chúng ta sẽ tìm hiểu cách nhận được thông tin về các chỉ số được tiết lộ bởi các công việc của chúng ta và hiển thị các chỉ số đó bằng cách sử dụng Amazon CloudWatch Insights Prometheus. Một số ví dụ về các chỉ số này có thể là:</li>
+</ol>
 <ul>
 <li>Các chỉ số hệ thống như chỉ số Java heap hoặc trạng thái của bể kết nối cơ sở dữ liệu</li>
 <li>Các chỉ số ứng dụng liên quan đến các chỉ số KPI kinh doanh</li>
@@ -1115,7 +1117,7 @@
 <p>Hãy xem cách nhập các chỉ số ứng dụng bằng cách sử dụng AWS Distro cho OpenTelemetry và hiển thị các chỉ số bằng cách sử dụng Amazon CloudWatch.</p>
 </li>
 <li>
-<p>Mỗi trong các thành phần trong bộ công cụ này đã được trang bị để cung cấp các chỉ số Prometheus bằng cách sử dụng các thư viện phù hợp với ngôn ngữ lập trình hoặc framework cụ thể. Chúng ta có thể xem một ví dụ về các chỉ số này từ dịch vụ đặt hàng như sau:</p>
+<p>Mỗi thành phần trong bộ công cụ này đã được trang bị để cung cấp các chỉ số Prometheus bằng cách sử dụng các thư viện phù hợp với ngôn ngữ lập trình hoặc framework cụ thể. Chúng ta có thể xem một ví dụ về các chỉ số này từ dịch vụ đặt hàng như sau:</p>
 </li>
 </ol>
 <pre tabindex="0"><code>
@@ -1729,7 +1731,7 @@ kubectl delete pod load-generator -n other
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Container Insights metrics in Amazon CloudWatch"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/6-container-insights-on-eks/6.3-container-insights-data/" title="Dữ liệu Container Insights với CloudWatch Logs Insights"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/6-container-insights-on-eks/6.1-enabling-container-insights/" title="Container Insights on EKS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1742,19 +1744,19 @@ kubectl delete pod load-generator -n other
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1716262413"></script>
-    <script src="/js/perfect-scrollbar.min.js?1716262413"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1716262413"></script>
-    <script src="/js/jquery.sticky.js?1716262413"></script>
-    <script src="/js/featherlight.min.js?1716262413"></script>
-    <script src="/js/highlight.pack.js?1716262413"></script>
+    <script src="/js/clipboard.min.js?1716518683"></script>
+    <script src="/js/perfect-scrollbar.min.js?1716518683"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1716518683"></script>
+    <script src="/js/jquery.sticky.js?1716518683"></script>
+    <script src="/js/featherlight.min.js?1716518683"></script>
+    <script src="/js/highlight.pack.js?1716518683"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1716262413"></script>
-    <script src="/js/learn.js?1716262413"></script>
-    <script src="/js/hugo-learn.js?1716262413"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1716518683"></script>
+    <script src="/js/learn.js?1716518683"></script>
+    <script src="/js/hugo-learn.js?1716518683"></script>
 
-    <link href="/mermaid/mermaid.css?1716262413" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1716262413"></script>
+    <link href="/mermaid/mermaid.css?1716518683" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1716518683"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

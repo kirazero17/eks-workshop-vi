@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scraping metrics sử dụng AWS Distro cho OpenTelemetry on TERRAFORM ON AWS WORKSHOP</title>
-    <link>//localhost:1400/vi/5-eks-open-source-observability/5.1-aws-distro/</link>
+    <link>//localhost:1313/vi/5-eks-open-source-observability/5.1-aws-distro/</link>
     <description>Recent content in Scraping metrics sử dụng AWS Distro cho OpenTelemetry on TERRAFORM ON AWS WORKSHOP</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="//localhost:1400/vi/5-eks-open-source-observability/5.1-aws-distro/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/5-eks-open-source-observability/5.1-aws-distro/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -110,16 +110,17 @@ Dưới đây là cấu hình một  OpenTelemetry pipeline với cấu trúc sa
 
 - **Receivers**
 
-- Prometheus receiver: được thiết kế để thu thập số liệu từ các mục tiêu mà mở ra một điểm cuối Prometheus.
+- **Prometheus receiver**: được thiết kế để thu thập số liệu từ các mục tiêu mà mở ra một điểm cuối Prometheus.
 
 - **Processors**
 
-Không có trong ống dẫn này.
+Không có trong pipeline này.
 
 - **Exporters**
 
-- Prometheus remote write exporter: gửi số liệu tới một điểm cuối ghi xa Prometheus như AMP.
-- Collector này cũng được cấu hình để chạy như một Deployment với một đại diện của bộ thu thập đang chạy.
+  - Prometheus remote write exporter: gửi số liệu tới một điểm cuối ghi xa Prometheus như AMP.
+  
+Collector này cũng được cấu hình để chạy như một Deployment với một đại diện của bộ thu thập đang chạy.
 
 ```
 

@@ -14,9 +14,9 @@ pre: "<b> 3.3 </b>"
 
 ![EKS workshop](/images/0005/00019.png?featherlight=false&width=90pc)
 
-2. Nếu bạn chọn service cart, phần hiển thị sẽ bao gồm thông tin về dịch vụ trong phần Info bao gồm selector (Tập hợp các pods mà dịch vụ đích đến thường được xác định bởi một selector), giao thức và cổng mà nó đang chạy và bất kỳ labels và annotations nào.
+2. Nếu bạn chọn service cart, phần hiển thị sẽ bao gồm thông tin về dịch vụ trong phần Info bao gồm selector (Tập hợp các pods mà dịch vụ đích đến thường được xác định bởi một selector), giao thức và cổng nó đang chạy và bất kỳ labels và annotations nào.
 
-3. Pods expose chính mình thông qua các endpoints đến một dịch vụ. Một endpoint là một resource mà nhận một địa chỉ IP và cổng của các pods được gán động đến nó. Một endpoint được tham chiếu bởi một dịch vụ Kubernetes.
+3. Pods expose chính nó thông qua các endpoints đến một dịch vụ. Một endpoint là một resource mà nhận một địa chỉ IP và cổng của các pods được gán động đến nó. Một endpoint được tham chiếu bởi một dịch vụ Kubernetes.
 
 
 ![EKS workshop](/images/0005/00020.png?featherlight=false&width=90pc)

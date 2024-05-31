@@ -10,7 +10,7 @@ pre: "<b> 6. </b>"
 
 1. Chuẩn bị môi trường cho phần này:
 
-```
+``` bash
 prepare-environment observability/container-insights
 
 ```
@@ -28,4 +28,4 @@ prepare-environment observability/container-insights
 
 6. Dữ liệu vận hành được thu thập dưới dạng sự kiện log hiệu suất. Đây là các mục nhập sử dụng một lược đồ JSON có cấu trúc cho phép dữ liệu với độ phức tạp cao được hấp thụ và lưu trữ tỉ lệ. Từ dữ liệu này, CloudWatch tạo ra các chỉ số tổng hợp ở cấp độ cluster, node, pod, task và service như là các chỉ số CloudWatch.
 
-7.Chúng ta sẽ thiết lập Container Insights để thu thập các chỉ số từ cluster Amazon EKS bằng cách sử dụng bộ thu thập AWS Distro for OpenTelemetry.
+7. Chúng ta sẽ thiết lập Container Insights để thu thập các chỉ số từ cluster Amazon EKS bằng cách sử dụng bộ thu thập AWS Distro for OpenTelemetry.
