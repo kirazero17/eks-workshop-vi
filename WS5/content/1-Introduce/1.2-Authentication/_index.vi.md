@@ -1,5 +1,5 @@
 ---
-title: "Authentication"
+title: "Xác thực (Authentication)"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: false
@@ -7,9 +7,7 @@ pre: "<b> 1.2 </b>"
 ---
 
 
-#### Authentication
-
-#### Accounts
+#### Tài khoản (Accounts)
 
 ![EKS](/images/0001/0004.png?featherlight=false&width=90pc)
 
@@ -35,7 +33,7 @@ Có các cơ chế xác thực khác nhau có thể được cấu hình.
 
 ![EKS](/images/0001/0008.png?featherlight=false&width=90pc)
 
-#### Authentication Mechanisms - Basic
+#### Cơ chế Xác thực cơ bản
 
 ![EKS](/images/0001/0009.png?featherlight=false&width=90pc)
 

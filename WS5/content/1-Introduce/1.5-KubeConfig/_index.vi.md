@@ -18,7 +18,7 @@ $ kubectl get pods --kubeconfig config
 
 ```
 
-####Tệp Kubeconfig
+#### Tệp Kubeconfig
 
 Tệp kubeconfig có 3 phần
 - Cụm (Clusters)
@@ -46,7 +46,7 @@ $ kubectl config view --kubeconfig=my-custom-config
 
 ```
 
-Trợ giúp của kubectl config
+Xem các trợ giúp của kubectl config
 
 ```
 $ kubectl config -h

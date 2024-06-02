@@ -78,9 +78,12 @@ Trong phần này, chúng ta sẽ tìm hiểu về RBAC
   $ kubectl describe rolebinding devuser-developer-binding
   ```
   
-
   
-#### Nếu bạn là một người dùng muốn xem liệu bạn có quyền truy cập vào một tài nguyên cụ thể trong cluster không.
+
+**Nếu bạn là một người dùng muốn xem, liệu bạn có quyền truy cập vào một tài nguyên cụ thể trong cluster không?**
+
+
+
 #### Kiểm tra quyền truy cập
 
 - Bạn có thể sử dụng lệnh kubectl auth

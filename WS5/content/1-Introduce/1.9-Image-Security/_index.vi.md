@@ -38,7 +38,7 @@ Trong phần này, chúng ta sẽ xem xét về Image Security
   
   
 - Để truyền thông tin xác thực cho docker không được gắn nhãn trên nút làm việc, trước tiên chúng ta tạo một đối tượng bí mật chứa thông tin xác thực.
-  ```
+  ```bash
   $ kubectl create secret docker-registry regcred \
     --docker-server=private-registry.io \ 
     --docker-username=registry-user \

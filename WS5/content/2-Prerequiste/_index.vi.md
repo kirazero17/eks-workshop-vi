@@ -6,11 +6,9 @@ chapter: false
 pre: "<b> 2. </b>"
 ---
 
-#### Các Bước Chuẩn Bị
+#### Các Bước Chuẩn Bị IAM Roles cho Service Accounts
 
-#### IAM Roles cho Service Accounts
-
-#### TRƯỚC KHI BẮT ĐẦU
+##### Trước Khi Bắt Đầu
 Chuẩn bị môi trường cho phần này:
 
 ```bash

@@ -36,5 +36,5 @@ Chúng ta cần đưa ra hai loại quyết định:
 ![EKS](/images/0001/0003.png?featherlight=false&width=90pc)
 
 #### Chính sách Mạng
-Làm thế nào về giao tiếp giữa các ứng dụng trong cụm?
+Cách giao tiếp giữa các ứng dụng trong cụm.
 

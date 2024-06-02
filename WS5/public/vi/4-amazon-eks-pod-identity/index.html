@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.125.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>IAM Roles for Service Accounts :: TERRAFORM ON AWS WORKSHOP</title>
+    <title>Amazon EKS Pod Identity :: TERRAFORM ON AWS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1710731175" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1710731175" rel="stylesheet">
-    <link href="/css/hybrid.css?1710731175" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1710731175" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1710731175" rel="stylesheet">
-    <link href="/css/auto-complete.css?1710731175" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1710731175" rel="stylesheet">
-    <link href="/css/theme.css?1710731175" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1710731175" rel="stylesheet">
+    <link href="/css/nucleus.css?1717119076" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1717119076" rel="stylesheet">
+    <link href="/css/hybrid.css?1717119076" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1717119076" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1717119076" rel="stylesheet">
+    <link href="/css/auto-complete.css?1717119076" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1717119076" rel="stylesheet">
+    <link href="/css/theme.css?1717119076" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1717119076" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1710731175" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1717119076" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1710731175"></script>
+    <script src="/js/jquery-3.3.1.min.js?1717119076"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1710731175"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1710731175"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1717119076"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1717119076"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1710731175"></script>
+<script type="text/javascript" src="/js/search.js?1717119076"></script>
 
     
   </div>
@@ -253,12 +253,12 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.6-authorization/" title="Authorization" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.6--authorization/" title="Authorization" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/1.6-authorization/">
+      <a href="/vi/1-introduce/1.6--authorization/">
           <b> 1.6 </b>Authorization
           
             <i class="fas fa-check read-icon"></i>
@@ -632,13 +632,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-eks-pod-identity/" title="IAM Roles for Service Accounts" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-eks-pod-identity/" title="Amazon EKS Pod Identity" class="dd-item 
         
         active
         
         ">
       <a href="/vi/4-amazon-eks-pod-identity/">
-          <b> 4. </b>IAM Roles for Service Accounts
+          <b> 4. </b>Amazon EKS Pod Identity
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1294,6 +1294,278 @@
  
 
           
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-pod-security-standards/" title="Pod Security Standards" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-pod-security-standards/">
+          <b> 7. </b>Pod Security Standards
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-pod-security-standards/7.1-privileged-pss-profile/" title="Khám phá hồ sơ PSS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-pod-security-standards/7.1-privileged-pss-profile/">
+          <b> 7.1 </b>Khám phá hồ sơ PSS
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-pod-security-standards/7.2-baseline-pss-profile/" title="Hạn chế quyền cho Pod trong Kubernetes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-pod-security-standards/7.2-baseline-pss-profile/">
+          <b> 7.2 </b>Hạn chế quyền cho Pod trong Kubernetes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-pod-security-standards/7.3-restricted-pss-profile/" title="Restricted profile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/7-pod-security-standards/7.3-restricted-pss-profile/">
+          <b> 7.3 </b>Restricted profile
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/8-policy-management-with-kyverno/" title="Policy management with Kyverno" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/8-policy-management-with-kyverno/">
+          <b> 8. </b>Policy management with Kyverno
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/8-policy-management-with-kyverno/8.1-creating-a-simple-policy/" title="Creating a Simple Policy" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/8-policy-management-with-kyverno/8.1-creating-a-simple-policy/">
+          <b> 8.1 </b>Creating a Simple Policy
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/8-policy-management-with-kyverno/8.2-enforcing-pod-security-standards/" title="Enforcing Pod Security Standards" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/8-policy-management-with-kyverno/8.2-enforcing-pod-security-standards/">
+          <b> 8.2 </b>Enforcing Pod Security Standards
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/8-policy-management-with-kyverno/8.3-restricting-image-registries/" title="Creating a Simple Policy" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/8-policy-management-with-kyverno/8.3-restricting-image-registries/">
+          <b> 8.3 </b>Creating a Simple Policy
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/8-policy-management-with-kyverno/8.4-reports--auditing/" title="Creating a Simple Policy" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/8-policy-management-with-kyverno/8.4-reports--auditing/">
+          <b> 8.4 </b>Creating a Simple Policy
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
          
     </ul>
 
@@ -1335,7 +1607,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/4-amazon-eks-pod-identity/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/4-amazon-eks-pod-identity/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1419,7 +1691,7 @@
             
           
           
-            <a href='/vi/'>Kubernetes trên AWS</a> > IAM Roles for Service Accounts
+            <a href='/vi/'>Kubernetes trên AWS</a> > Amazon EKS Pod Identity
           
         
           
@@ -1430,7 +1702,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1446,7 +1726,7 @@
           
             <h1>
               
-              IAM Roles for Service Accounts
+              Amazon EKS Pod Identity
             </h1>
           
 
@@ -1454,7 +1734,18 @@
 
 
 
-	
+	<h4 id="chuẩn-bị-môi-trường-của-bạn-cho-phần-này">Chuẩn bị môi trường của bạn cho phần này:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ prepare-environment security/eks-pod-identity
+</span></span></code></pre></div><p>Điều này sẽ thực hiện các thay đổi sau đây vào môi trường lab của bạn:</p>
+<ul>
+<li>Tạo một bảng Amazon DynamoDB</li>
+<li>Tạo một vai trò IAM cho các tải trọng công việc AmazonEKS để truy cập vào bảng DynamoDB</li>
+<li>Cài đặt EKS Managed Addon cho EKS Pod Identity Agent</li>
+<li>Cài đặt AWS Load Balancer Controller trong cụm Amazon EKS</li>
+</ul>
+<p>Ứng dụng trong các container của một Pod có thể sử dụng một SDK AWS được hỗ trợ hoặc AWS CLI để thực hiện các yêu cầu API đến các dịch vụ AWS bằng cách sử dụng quyền quản lý danh tính và truy cập (IAM) AWS. Ví dụ, các ứng dụng có thể cần tải tệp lên một bucket S3 hoặc truy vấn một bảng DynamoDB, và để làm điều đó, họ phải ký các yêu cầu API AWS của mình bằng các thông tin đăng nhập AWS. <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html">Các Danh tính Pod EKS</a> cung cấp khả năng quản lý thông tin đăng nhập cho các ứng dụng của bạn, tương tự như cách Mẫu Thể hiện Amazon EC2 cung cấp thông tin đăng nhập cho các thể hiện. Thay vì tạo và phân phối thông tin đăng nhập AWS của bạn cho các container hoặc sử dụng Vai trò của thể hiện Amazon EC2, bạn có thể liên kết một Vai trò IAM với một Tài khoản Dịch vụ Kubernetes và cấu hình Pods của bạn với nó. Kiểm tra tài liệu EKS <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-id-minimum-sdk.html">tại đây</a> để biết danh sách chính xác các phiên bản được hỗ trợ.</p>
+<p>Trong chương này, chúng ta sẽ cấu hình lại một trong các thành phần ứng dụng mẫu để tận dụng API AWS và cung cấp cho nó các đặc quyền phù hợp.</p>
+
 
 
 
@@ -2166,6 +2457,154 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -2188,19 +2627,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1710731175"></script>
-    <script src="/js/perfect-scrollbar.min.js?1710731175"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1710731175"></script>
-    <script src="/js/jquery.sticky.js?1710731175"></script>
-    <script src="/js/featherlight.min.js?1710731175"></script>
-    <script src="/js/highlight.pack.js?1710731175"></script>
+    <script src="/js/clipboard.min.js?1717119076"></script>
+    <script src="/js/perfect-scrollbar.min.js?1717119076"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1717119076"></script>
+    <script src="/js/jquery.sticky.js?1717119076"></script>
+    <script src="/js/featherlight.min.js?1717119076"></script>
+    <script src="/js/highlight.pack.js?1717119076"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1710731175"></script>
-    <script src="/js/learn.js?1710731175"></script>
-    <script src="/js/hugo-learn.js?1710731175"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1717119076"></script>
+    <script src="/js/learn.js?1717119076"></script>
+    <script src="/js/hugo-learn.js?1717119076"></script>
 
-    <link href="/mermaid/mermaid.css?1710731175" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1710731175"></script>
+    <link href="/mermaid/mermaid.css?1717119076" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1717119076"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

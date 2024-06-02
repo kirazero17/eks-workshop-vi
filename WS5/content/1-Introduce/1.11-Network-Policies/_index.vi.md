@@ -1,18 +1,12 @@
 ---
-title: "Network-Policies"
+title: "Network-Policies (Chính sách Mạng)"
 date: "`r Sys.Date()`"
 weight: 11
 chapter: false
 pre: "<b> 1.11 </b>"
 ---
 
-#### Network-Policies
-
-
-#### Chính sách Mạng
-
-
-#### Lưu lượng đi qua một máy chủ web phục vụ phía trước cho người dùng một máy chủ ứng dụng phục vụ API phía sau và một máy chủ cơ sở dữ liệu
+Lưu lượng đi qua một máy chủ web frontend cho người dùng một máy chủ ứng dụng phục vụ API phía sau và một máy chủ cơ sở dữ liệu.
 
 - Có hai loại lưu lượng
   - Ingress

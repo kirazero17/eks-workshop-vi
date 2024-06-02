@@ -1,6 +1,6 @@
 
 ---
-title: "Authorization"
+title: "Cấp quyền (Authorization)"
 date: "`r Sys.Date()`"
 weight: 6
 chapter: false
@@ -8,12 +8,12 @@ pre: "<b> 1.6 </b>"
 ---
 
 
-####  Authorization
+####  Cấp quyền (Authorization)
 
-- There are different authorization mechanisms supported by kubernetes
-  - Node Authorization
-  - Attribute-based Authorization (ABAC)
-  - Role-Based Authorization (RBAC)
+- Kubernetes hỗ trợ một số cơ chế cấp quyền khác nhau, bao gồm:
+  - Node Authorization (Xác thực node)
+  - Xác thực dựa trên thuộc tính (Attribute-based Authorization - ABAC)
+  - Xác thực dựa trên vai trò (Role-Based Authorization - RBAC)
   - Webhook
 
 #### K8s Reference Docs

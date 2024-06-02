@@ -44,7 +44,7 @@ Thay vì sử dụng một khóa duy nhất để mã hóa và giải mã dữ l
 
 #### Làm thế nào để tạo chứng chỉ hợp lệ? Làm thế nào để có được chứng chỉ của bạn được ký bởi một người có thẩm quyền?
 
-Đó là nơi mà Certificate Authority (CA) đến giúp bạn. Một số CA phổ biến là Symantec, DigiCert, Comodo, GlobalSign v.v.
+Đó là phần Nhà cung cấp chứng chỉ (Certificate Authority - CA) sẽ làm giúp bạn. Một số CA phổ biến là Symantec, DigiCert, Comodo, GlobalSign v.v.
 
 ![EKS](/images/0002/0008.png?featherlight=false&width=90pc)
 
