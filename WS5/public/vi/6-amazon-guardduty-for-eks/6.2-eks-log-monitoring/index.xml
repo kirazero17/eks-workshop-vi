@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Enable GuardDuty Protection on EKS on TERRAFORM ON AWS WORKSHOP</title>
+    <title>Giám sát log EKS on TERRAFORM ON AWS WORKSHOP</title>
     <link>//localhost:1313/vi/6-amazon-guardduty-for-eks/6.2-eks-log-monitoring/</link>
-    <description>Recent content in Enable GuardDuty Protection on EKS on TERRAFORM ON AWS WORKSHOP</description>
+    <description>Recent content in Giám sát log EKS on TERRAFORM ON AWS WORKSHOP</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <atom:link href="//localhost:1313/vi/6-amazon-guardduty-for-eks/6.2-eks-log-monitoring/index.xml" rel="self" type="application/rss+xml" />

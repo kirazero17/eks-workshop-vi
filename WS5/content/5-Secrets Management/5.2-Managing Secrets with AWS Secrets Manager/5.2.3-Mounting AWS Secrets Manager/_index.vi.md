@@ -1,14 +1,14 @@
 ---
-title: "Mounting AWS Secrets Manager secret on Kubernetes Pod"
+title: "Gắn secret trong AWS Secrets Manager lên Pod Kubernetes"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 5.2.3 </b>"
 ---
 
-#### Mounting AWS Secrets Manager secret on Kubernetes Pod
+#### Gắn secret trong AWS Secrets Manager lên Pod Kubernetes
 
-Bây giờ chúng ta đã lưu một bí mật trong AWS Secrets Manager và đồng bộ hóa với một Secret trong Kubernetes, hãy gắn nó vào trong Pod. Đầu tiên, chúng ta nên xem qua `catalog` Deployment và các Secrets hiện có trong namespace `catalog`.
+Bây giờ chúng ta đã lưu một Secret trong AWS Secrets Manager và đồng bộ hóa với một Secret trong Kubernetes, hãy gắn nó vào trong Pod. Đầu tiên, chúng ta nên xem qua `catalog` Deployment và các Secrets hiện có trong namespace `catalog`.
 
 Deployment `catalog` truy cập các thông tin xác thực cơ sở dữ liệu sau từ secret `catalog-db` thông qua biến môi trường:
 
@@ -126,6 +126,4 @@ Chúng ta có thể xác nhận điều này bằng cách kiểm tra các biến
 $ kubectl -n catalog exec -ti deployment/catalog -- env | grep DB_
 ```
 
-Bây giờ chúng ta đã có một Kubernetes Secret tích hợp hoàn toàn với AWS Secrets Manager có thể tận dụng quá trình rotation secret, đây là một thực hành tố
-
-t cho Quản lý Secrets. Mỗi khi một secret được rotationhoặc cập nhật trên AWS Secrets Manager, chúng ta có thể triển khai một phiên bản mới của Deployment để CSI Secret Store driver có thể đồng bộ nội dung của Kubernetes Secrets với giá trị đã được xoay.
+Bây giờ chúng ta đã có một Kubernetes Secret tích hợp hoàn toàn với AWS Secrets Manager có thể tận dụng quá trình secret rotation. Đây là một thực hành tốt cho Quản lý Secrets. Mỗi khi một secret được rotate hoặc cập nhật trên AWS Secrets Manager, chúng ta có thể triển khai một phiên bản mới của Deployment để CSI Secret Store driver có thể đồng bộ nội dung của Kubernetes Secrets với giá trị đã được xoay.

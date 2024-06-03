@@ -1,5 +1,5 @@
 ---
-title: "Enable GuardDuty Protection on EKS"
+title: "Giám sát log EKS"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: false
@@ -8,7 +8,7 @@ pre: "<b> 6.2 </b>"
 
 #### Giám sát nhật ký kiểm tra EKS
 
-Khi kích hoạt, việc Giám sát Nhật ký Kiểm tra EKS ngay lập tức bắt đầu giám sát nhật ký kiểm tra Kubernetes từ các cụm của bạn và phân tích chúng để phát hiện hoạt động có thể độc hại và nghi ngờ. Nó tiêu thụ các sự kiện nhật ký kiểm tra Kubernetes trực tiếp từ tính năng nhật ký điều khiển Amazon EKS thông qua một luồng nhật ký dòng độc lập và trùng lặp.
+Khi kích hoạt, Trình Giám sát Nhật ký Kiểm tra EKS ngay lập tức bắt đầu giám sát nhật ký kiểm tra Kubernetes từ các cụm của bạn và phân tích chúng để phát hiện hoạt động có thể độc hại và nghi ngờ. Nó tiêu thụ các sự kiện nhật ký kiểm tra Kubernetes trực tiếp từ tính năng nhật ký điều khiển Amazon EKS thông qua một luồng nhật ký dòng độc lập và trùng lặp.
 
 Trong bài thực hành này, chúng ta sẽ tạo ra một số phát hiện giám sát kiểm tra Kubernetes trong cụm Amazon EKS của bạn, được liệt kê dưới đây.
 
@@ -22,7 +22,7 @@ Trong bài thực hành này, chúng ta sẽ tạo ra một số phát hiện gi
 - `Persistence:Kubernetes/ContainerWithSensitiveMount`
 
 
-# Phát hiện này cho thấy rằng một lệnh đã được thực thi bên trong một Pod trong Namespace `kube-system` trên Cụm EKS.
+**Phát hiện này cho thấy rằng một lệnh đã được thực thi bên trong một Pod trong Namespace `kube-system` trên Cụm EKS.**
 
 Trước tiên hãy chạy một Pod trong Namespace `kube-system` cung cấp truy cập vào môi trường shell của nó.
 
@@ -53,7 +53,7 @@ Nó cũng cung cấp cho bạn lựa chọn để điều tra phát hiện bằn
 
 ![](assets/investigate.png)
 
-Một thông tin quan trọng đáng xem xét là **Hành động** của phát hiện, trên mục này (Loại giám sát nhật ký), chúng ta có thể thấy rằng liên quan đến một `KUBERNETES_API_CALL`.
+Một thông tin quan trọng đáng xem xét là **Hành động** được phát hiện, trên mục này (Loại giám sát nhật ký), chúng ta có thể thấy rằng liên quan đến một `KUBERNETES_API_CALL`.
 
 ![](assets/finding-action.png)
 
@@ -81,9 +81,9 @@ Xóa liên kết Vai trò của kẻ phạm tội bằng cách chạy lệnh sau
 $ kubectl -n default delete rolebinding sa-default-admin 
 ```
 
-## Phát hiện này thông báo cho bạn biết rằng bảng điều khiển Cluster EKS của bạn đã được tiếp cận từ internet thông qua dịch vụ Load Balancer. Một bảng điều khiển được tiếp cận khiến giao diện quản lý của cụm của bạn có thể truy cập công khai từ internet và cho phép kẻ tấn công xấu khai thác bất kỳ khe hở xác thực và kiểm soát truy cập nào có thể tồn tại.
+**Phát hiện này thông báo cho bạn biết rằng bảng điều khiển Cluster EKS của bạn đã được tiếp cận từ internet thông qua dịch vụ Load Balancer. Một bảng điều khiển được tiếp cận khiến giao diện quản lý của cụm của bạn có thể truy cập công khai từ internet và cho phép kẻ tấn công xấu khai thác bất kỳ khe hở xác thực và kiểm soát truy cập nào có thể tồn tại.**
 
-Để mô phỏng điều này, chúng ta cần cài đặt thành phần bảng điều khiển Kubernetes. Chúng tôi sẽ sử dụng phiên bản v2.7.0 của bảng điều khiển, đây là phiên bản tương thích mới nhất với Cluster EKS phiên bản VAR::KUBERNETES_VERSION dựa trên [ghi chú phát hành](https://github.com/kubernetes/dashboard/releases/tag/v2.7.0).
+Để mô phỏng điều này, chúng ta cần cài đặt thành phần bảng điều khiển Kubernetes. Chúng tôi sẽ sử dụng phiên bản v2.7.0 của bảng điều khiển, đây là phiên bản tương thích mới nhất với Cluster EKS phiên bản v1.29 dựa trên [ghi chú phát hành](https://github.com/kubernetes/dashboard/releases/tag/v2.7.0).
 Sau đó, chúng ta có thể tiếp cận bảng điều khiển từ Internet với loại Dịch vụ `LoadBalancer`, điều này sẽ tạo ra một Load Balancer Mạng (NLB) trong tài khoản AWS của bạn.
 
 Chạy các lệnh sau để cài đặt thành phần bảng điều khiển Kubernetes. Điều này sẽ tạo ra một Namespace mới gọi là `kubernetes-dashboard`, và tất cả các tài nguyên sẽ được triển khai ở đó.

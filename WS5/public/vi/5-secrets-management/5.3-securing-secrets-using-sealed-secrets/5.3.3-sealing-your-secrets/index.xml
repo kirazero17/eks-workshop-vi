@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sealing your Secrets on TERRAFORM ON AWS WORKSHOP</title>
+    <title>Niêm phong khoá bí mật on TERRAFORM ON AWS WORKSHOP</title>
     <link>//localhost:1313/vi/5-secrets-management/5.3-securing-secrets-using-sealed-secrets/5.3.3-sealing-your-secrets/</link>
-    <description>Recent content in Sealing your Secrets on TERRAFORM ON AWS WORKSHOP</description>
+    <description>Recent content in Niêm phong khoá bí mật on TERRAFORM ON AWS WORKSHOP</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <atom:link href="//localhost:1313/vi/5-secrets-management/5.3-securing-secrets-using-sealed-secrets/5.3.3-sealing-your-secrets/index.xml" rel="self" type="application/rss+xml" />

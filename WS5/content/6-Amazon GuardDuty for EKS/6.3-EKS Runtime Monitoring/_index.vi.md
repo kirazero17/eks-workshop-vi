@@ -6,11 +6,9 @@ chapter: false
 pre: "<b> 6.3 </b>"
 ---
 
-#### EKS Runtime Monitoring
+#### Giám sát EKS Runtime
 
-# Giám Sát Thời Gian Chạy EKS
-
-Giám sát thời gian chạy (EKS Runtime Monitoring) cung cấp khả năng phát hiện mối đe dọa trong thời gian chạy cho các nút và container Amazon EKS. Nó sử dụng agent bảo mật GuardDuty (phần mở rộng EKS) để cung cấp khả năng nhìn thấy thời gian chạy vào các công việc EKS cụ thể, ví dụ như truy cập tệp, thực thi quy trình, tăng quyền và kết nối mạng nhận dạng các container cụ thể có thể bị xâm nhập.
+Giám sát runtime (EKS Runtime Monitoring) cung cấp khả năng phát hiện mối đe dọa trong runtime cho các nút và container Amazon EKS. Nó sử dụng agent bảo mật GuardDuty (phần mở rộng EKS) để cung cấp khả năng hiển thị runtime trong các công việc EKS cụ thể, ví dụ như truy cập tệp, thực thi quy trình, tăng quyền và kết nối mạng nhận dạng các container cụ thể có thể bị xâm nhập.
 
 Khi bạn kích hoạt Giám sát Thời Gian Chạy EKS, GuardDuty có thể bắt đầu giám sát các sự kiện thời gian chạy trong cụm EKS của bạn. Nếu cụm EKS của bạn không có agent bảo mật được triển khai tự động thông qua GuardDuty hoặc thủ công, GuardDuty sẽ không thể nhận các sự kiện thời gian chạy của các cụm EKS của bạn, có nghĩa là agent phải được triển khai trên các nút EKS trong các cụm EKS của bạn. Bạn có thể chọn GuardDuty để quản lý agent bảo mật tự động hoặc bạn có thể quản lý việc triển khai và cập nhật agent bảo mật thủ công.
 
@@ -52,6 +50,6 @@ Phát hiện đầu tiên là `Execution:Runtime/NewBinaryExecuted` liên quan �
 
 Hãy xem xét kỹ các chi tiết của phát hiện này, bởi vì chúng liên quan đến giám sát thời gian chạy của GuardDuty, hiển thị thông tin cụ thể về thời gian chạy, ngữ cảnh và quy trình.
 
-Hai và ba phát hiện còn lại liên quan đến các phát hiện `CryptoCurrency:Runtime/BitcoinTool.B!DNS`. Lưu ý một lần nữa rằng các chi tiết phát hiện mang lại thông tin khác nhau, lần này hiển thị hành động `DNS_REQUEST`, và **Bằng chứng tình báo Mối đe dọa**.
+Phát hiện thứ hai và ba liên quan đến các phát hiện `CryptoCurrency:Runtime/BitcoinTool.B!DNS`. Lưu ý một lần nữa rằng các chi tiết phát hiện mang lại thông tin khác nhau, lần này hiển thị hành động `DNS_REQUEST`, và **Bằng chứng tình báo Mối đe dọa**.
 
 ![](assets/crypto-runtime.png)

@@ -1,18 +1,18 @@
 ---
-title: "Understanding Pod IAM"
+title: "Hiểu về Pod IAM"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 3.3 </b>"
 ---
 
-Điểm đầu tiên để tìm vấn đề là trong nhật ký của dịch vụ `carts`:
+Điểm đầu tiên để tìm vấn đề là trong log của dịch vụ `carts`:
 
 ```bash
 $ kubectl logs -n carts deployment/carts
 ```
 
-Điều này sẽ trả về nhiều nhật ký, vì vậy hãy lọc để có cái nhìn ngắn gọn về vấn đề:
+Điều này sẽ trả về nhiều log, vì vậy hãy lọc để có cái nhìn ngắn gọn về vấn đề:
 
 ```bash
 $ kubectl -n carts logs deployment/carts \

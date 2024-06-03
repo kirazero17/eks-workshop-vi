@@ -1,5 +1,5 @@
 ---
-title: "Creating a Simple Policy"
+title: "Hạn chế Image Registry"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
@@ -7,9 +7,9 @@ pre: "<b> 8.3 </b>"
 ---
 
 
-Sử dụng hình ảnh container từ các nguồn không rõ trên các Cụm EKS của bạn, có thể không được quét để phát hiện Các Lỗ Hổng và Công Bố (CVE), đại diện cho một yếu tố nguy cơ đối với tổng thể an ninh của môi trường của bạn. Khi lựa chọn nguồn hình ảnh container, bạn cần đảm bảo rằng chúng có nguồn gốc từ Các Đăng Ký Đáng Tin Cậy, nhằm giảm thiểu nguy cơ tiếp xúc và khai thác các lỗ hổng. Một số tổ chức lớn cũng có Hướng Dẫn Về An Ninh giới hạn việc sử dụng hình ảnh container từ hệ thống đăng ký hình ảnh riêng được lưu trữ của họ.
+Sử dụng hình ảnh container từ các nguồn không rõ trên các Cụm EKS của bạn, có thể không được quét để phát hiện Các Lỗ Hổng và Công Bố (CVE), đại diện cho một yếu tố nguy cơ đối với tổng thể an ninh của môi trường của bạn. Khi lựa chọn nguồn hình ảnh container, bạn cần đảm bảo rằng chúng có nguồn gốc từ Các Đăng Ký Đáng Tin Cậy, nhằm giảm thiểu nguy cơ tiếp xúc và khai thác các lỗ hổng. Một số tổ chức lớn cũng có Hướng Dẫn Về An Ninh giới hạn việc sử dụng hình ảnh container từ hệ thống Image Registry riêng được lưu trữ của họ.
 
-Trong phần này, bạn sẽ thấy làm thế nào Kyverno có thể giúp bạn chạy các tải công việc container an toàn bằng cách hạn chế Các Đăng Ký Hình Ảnh có thể được sử dụng trong cụm của bạn.
+Trong phần này, bạn sẽ thấy làm thế nào Kyverno có thể giúp bạn chạy các tải công việc container an toàn bằng cách hạn chế các Image Registry có thể được sử dụng trong cụm của bạn.
 
 Như đã thấy trong các phòng thí nghiệm trước đó, bạn có thể chạy Pods với các hình ảnh từ bất kỳ đăng ký nào có sẵn, vì vậy hãy chạy một Pod mẫu bằng cách sử dụng đăng ký mặc định trỏ đến `docker.io`.
 
@@ -24,9 +24,9 @@ $ kubectl describe pod nginx | grep Image
     Image ID:       docker.io/library/nginx@sha256:4c0fdaa8b6341bfdeca5f18f7837462c80cff90527ee35ef185571e1c327beac
 ```
 
-Trong trường hợp này, chỉ là một hình ảnh cơ sở `nginx` được kéo từ Đăng Ký Công Cộng. Một kẻ tấn công có thể kéo bất kỳ hình ảnh có lỗ hổng nào và chạy trên Cụm EKS, khai thác tài nguyên được cấp trong cụm.
+Trong trường hợp này, chỉ là một hình ảnh cơ sở `nginx` được kéo từ registry công khai. Một kẻ tấn công có thể kéo bất kỳ hình ảnh có lỗ hổng nào và chạy trên Cụm EKS, khai thác tài nguyên được cấp trong cụm.
 
-Tiếp theo, như một thực hành tốt nhất, bạn sẽ xác định một chính sách sẽ hạn chế việc sử dụng bất kỳ Đăng Ký Hình Ảnh không được ủy quyền nào và chỉ phụ thuộc vào Các Đăng Ký Đáng Tin Cậy được chỉ định.
+Tiếp theo, như một thực hành tốt nhất, bạn sẽ xác định một chính sách sẽ hạn chế việc sử dụng bất kỳ Image Registry không được ủy quyền nào và chỉ phụ thuộc vào Các Đăng Ký Đáng Tin Cậy được chỉ định.
 
 Trong phòng thí nghiệm này, bạn sẽ sử dụng [Amazon ECR Public Gallery](https://public.ecr.aws/) làm Đăng Ký Đáng Tin Cậy, chặn bất kỳ container nào sử dụng Hình Ảnh được lưu trữ trong các đăng ký khác để chạy. Dưới đây là một chính sách Kyverno mẫu để hạn chế việc kéo hình ảnh cho trường hợp sử dụng này.
 

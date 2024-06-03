@@ -1,5 +1,5 @@
 ---
-title: "Pod Security Standards"
+title: "Tiêu chuẩn an toàn cho pod"
 date: "`r Sys.Date()`"
 weight: 7
 chapter: false
@@ -34,7 +34,7 @@ Bộ kiểm soát thẩm định PSA triển khai các điều khiển, được
 * **kiểm tra:** Vi phạm chính sách sẽ gây ra việc thêm chú thích kiểm tra vào sự kiện được ghi lại trong [bản ghi kiểm tra](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/), nhưng nó vẫn được phép.
 * **cảnh báo:** Vi phạm chính sách sẽ gây ra một cảnh báo phù hợp với người dùng, nhưng vẫn được phép.
 
-### Kiểm Soát Thẩm Định Bảo Mật Pods tích hợp sẵn
+### Kiểm Soát Thẩm Định Bảo Mật Pods (PSA) tích hợp sẵn
 
 Từ phiên bản Kubernetes 1.23, Cổng tính năng PodSecurity [gate](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) được kích hoạt mặc định trong Dịch vụ Kubernetes Đàn Elastic của Amazon. Các [cài đặt mặc định của PSS và PSA](https://kubernetes.io/docs/tasks/configure-pod-container/enforce-standards-admission-controller/#configure-the-admission-controller) cho phiên bản Kubernetes 1.23 từ nguồn
 
@@ -64,7 +64,7 @@ Các cài đặt trên cấu hình kịch bản toàn cụm như sau:
 * Không có các miễn trừ PSA được cấu hình khi khởi động máy chủ API Kubernetes.
 * Hồ sơ PSS Đặc quyền được cấu hình theo mặc định cho tất cả các chế độ PSA, và được đặt thành các phiên bản mới nhất.
 
-#### Nhãn Kiểm Soát Thẩm Định Bảo Mật Pods cho Namespaces
+#### Nhãn Kiểm Soát Thẩm Định Bảo Mật Pods (PSA) cho Namespaces
 
 Dựa trên cấu hình mặc định trên, bạn phải cấu hình các hồ sơ PSS cụ thể và các chế độ PSA tại cấp độ Kubernetes Namespace, để lựa chọn Namespaces vào Pod security được cung cấp bởi PSA và PSS. Bạn có thể cấu hình Namespaces để xác định chế độ kiểm soát thẩm định bạn muốn sử dụng cho bảo mật Pods. Với [nhãn Kubernetes](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels), bạn có thể chọn một trong các cấp độ PSS được xác định trước mà bạn muốn sử dụng cho Pods trong một Namespace cụ thể. Nhãn bạn chọn xác định hành động mà PSA thực hiện nếu phát hiện ra vi phạm tiềm ẩn. Như dưới đây, bạn có thể cấu hình bất kỳ hoặc tất cả các chế độ, hoặc thậm chí đặt một cấp độ khác nhau cho các chế độ khác nhau. Đối với mỗi chế độ, có hai nhãn có thể xác định chính sách được sử dụng.
 

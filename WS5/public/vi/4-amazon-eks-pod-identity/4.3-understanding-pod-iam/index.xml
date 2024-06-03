@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Understanding Pod IAM on TERRAFORM ON AWS WORKSHOP</title>
+    <title>Hiểu về Pod IAM on TERRAFORM ON AWS WORKSHOP</title>
     <link>//localhost:1313/vi/4-amazon-eks-pod-identity/4.3-understanding-pod-iam/</link>
-    <description>Recent content in Understanding Pod IAM on TERRAFORM ON AWS WORKSHOP</description>
+    <description>Recent content in Hiểu về Pod IAM on TERRAFORM ON AWS WORKSHOP</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <atom:link href="//localhost:1313/vi/4-amazon-eks-pod-identity/4.3-understanding-pod-iam/index.xml" rel="self" type="application/rss+xml" />

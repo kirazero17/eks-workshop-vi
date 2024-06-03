@@ -1,5 +1,5 @@
 ---
-title: "Enforcing Pod Security Standards"
+title: "Áp dụng tiêu chuẩn an toàn"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: false
@@ -55,8 +55,6 @@ Như đã thấy, việc tạo không thành công, vì nó không tuân thủ v
 
 ### Lưu ý về Chính sách Tự tạo
 
-PSA hoạt động ở cấp độ Pod, nhưng trong thực tế Pods thường được quản lý bởi các điều khiển Pod, như Deployments. Không có chỉ dẫn về các lỗi bảo mật Pod ở cấp độ điều khiển Pod có thể làm cho các vấn đề trở nên phức tạp trong việc sửa lỗi. Chế độ áp dụng của PSA là chế độ duy nhất của PSA ngăn các Pod từ việc được tạo, tuy nhiên việc áp dụng PSA không hoạt động ở cấp độ điều khiển Pod. Để cải thi
+PSA hoạt động ở cấp độ Pod, nhưng trong thực tế Pods thường được quản lý bởi các bộ điều khiển Pod, như Deployments. Không có chỉ dẫn về các lỗi bảo mật Pod ở cấp độ điều khiển Pod có thể làm cho các vấn đề trở nên phức tạp trong việc sửa lỗi. Chế độ áp dụng của PSA là chế độ duy nhất của PSA ngăn các Pod từ việc được tạo, tuy nhiên việc áp dụng PSA không hoạt động ở cấp độ điều khiển Pod. Để cải thiện trải nghiệm này, khuyến nghị sử dụng các chế độ cảnh báo và kiểm tra của PSA cùng với chế độ áp dụng. Với điều đó, PSA sẽ chỉ ra rằng các tài nguyên điều khiển đang cố gắng tạo các Pod sẽ thất bại với cấp độ PSS được áp dụng.
 
-ện trải nghiệm này, khuyến nghị sử dụng các chế độ cảnh báo và kiểm tra của PSA cùng với chế độ áp dụng. Với điều đó, PSA sẽ chỉ ra rằng các tài nguyên điều khiển đang cố gắng tạo các Pod sẽ thất bại với cấp độ PSS được áp dụng.
-
-Sử dụng các giải pháp PaC với Kubernetes đặt ra một thách thức khác là viết và duy trì các chính sách để bao gồm tất cả các tài nguyên khác nhau được sử dụng trong các cụm. Với tính năng [Quy tắc Tự tạo của Kyverno cho Các điều khiển Pod](https://kyverno.io/docs/writing-policies/autogen/), các chính sách Pod sẽ tự động tạo ra các chính sách điều khiển Pod liên quan (Deployment, DaemonSet, v.v.). Tính năng của Kyverno này tăng tính biểu diễn của các chính sách và giảm bớt công sức để duy trì các chính sách cho các tài nguyên liên quan. cải thiện trải nghiệm người dùng PSA trong đó các tài nguyên điều khiển không bị ngăn cản khỏi tiến triển, trong khi các Pod cơ bản đều là.
+Sử dụng các giải pháp PaC với Kubernetes đặt ra một thách thức khác là viết và duy trì các chính sách để bao gồm tất cả các tài nguyên khác nhau được sử dụng trong các cụm. Với tính năng [Quy tắc Tự tạo của Kyverno cho Các điều khiển Pod](https://kyverno.io/docs/writing-policies/autogen/), các chính sách Pod sẽ tự động tạo ra các chính sách điều khiển Pod liên quan (Deployment, DaemonSet, v.v.). Tính năng của Kyverno này tăng khả năng thể hiện của các chính sách và giảm bớt công sức để duy trì các chính sách cho các tài nguyên liên quan. cải thiện trải nghiệm người dùng PSA trong đó các tài nguyên điều khiển không bị ngăn cản khỏi tiến triển, trong khi các Pod cơ bản đều là.

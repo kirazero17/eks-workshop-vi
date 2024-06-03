@@ -1,20 +1,20 @@
 ---
-title: "Applying IRSA"
+title: "Áp dụng IRSA"
 date: "`r Sys.Date()`"
 weight: 4
 chapter: false
 pre: "<b> 3.4 </b>"
 ---
 
-#### Applying IRSA
+#### Áp dụng IRSA
  
-Để sử dụng IAM Role cho các Service Account trong EKS clustercủa bạn, một `IAM OIDC Identity Provider` phải được tạo và liên kết với một cụm. Một OIDC đã được cung cấp và liên kết với EKS clusterEKS của bạn:
+Để sử dụng IAM Role cho các Service Account trong EKS cluster của bạn, một `IAM OIDC Identity Provider` phải được tạo và liên kết với một cụm. Một OIDC đã được cung cấp và liên kết với EKS clusterEKS của bạn:
 
-Đi đến Nhà cung cấp Danh tính trong Bảng điều khiển IAM:
+Đi đến Identity Providers trong Bảng điều khiển IAM:
 
 [https://console.aws.amazon.com/iamv2/home#/identity_providers](https://console.aws.amazon.com/iamv2/home#/identity_providers)
 
-Bạn sẽ thấy một nhà cung cấp OIDC đã được tạo cho EKS clusterEKS của bạn:
+Bạn sẽ thấy một nhà cung cấp OIDC đã được tạo cho cluster EKS của bạn:
 
 ![Nhà cung cấp IAM OIDC](./assets/oidc.png)
 

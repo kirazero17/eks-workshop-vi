@@ -1,12 +1,12 @@
 ---
-title: "Understanding Pod IAM"
+title: "Hiểu về Pod IAM"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 4.3 </b>"
 ---
 
-#### Understanding Pod IAM
+#### Hiểu về Pod IAM
 
 Điểm đầu tiên để tìm vấn đề là logs của dịch vụ `carts`:
 

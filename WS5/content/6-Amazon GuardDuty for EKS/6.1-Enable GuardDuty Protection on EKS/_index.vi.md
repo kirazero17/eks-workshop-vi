@@ -1,5 +1,5 @@
 ---
-title: "Enable GuardDuty Protection on EKS"
+title: "Kích hoạt lớp bảo vệ GuardDuty trên EKS"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
@@ -8,7 +8,7 @@ pre: "<b> 6.1 </b>"
 
 Trong lab này, chúng ta sẽ kích hoạt Amazon GuardDuty EKS Protection. Điều này sẽ cung cấp phạm vi phát hiện mối đe dọa cho EKS Audit Log Monitoring và EKS Runtime Monitoring để giúp bảo vệ các cụm của bạn.
 
-EKS Audit Log Monitoring sử dụng các nhật ký kiểm toán của Kubernetes để ghi lại các hoạt động theo thứ tự thời gian từ người dùng, ứng dụng sử dụng API Kubernetes và mặt bằng điều khiển để tìm kiếm các hoạt động có thể nghi ngờ.
+EKS Audit Log Monitoring sử dụng các log kiểm tra của Kubernetes để ghi lại các hoạt động theo thứ tự thời gian từ người dùng, ứng dụng sử dụng API Kubernetes và mặt bằng điều khiển để tìm kiếm các hoạt động có thể nghi ngờ.
 
 EKS Runtime Monitoring sử dụng các sự kiện cấp độ hệ điều hành để giúp bạn phát hiện các mối đe dọa tiềm ẩn trong các nút và container Amazon EKS.
 

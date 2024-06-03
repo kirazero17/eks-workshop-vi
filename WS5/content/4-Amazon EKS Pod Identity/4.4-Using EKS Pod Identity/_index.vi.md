@@ -31,7 +31,7 @@ $ aws eks create-addon --cluster-name $EKS_CLUSTER_NAME --addon-name eks-pod-ide
 $ aws eks wait addon-active --cluster-name $EKS_CLUSTER_NAME --addon-name eks-pod-identity-agent
 ```
 
-Bây giờ hãy xem cái gì đã được tạo ra trong cụm EKS của bạn bởi tiện ích mới. Bạn có thể thấy một DaemonSet được triển khai trên Namespace `kube-system`, sẽ chạy một Pod trên mỗi Node trong Cụm của chúng tôi.
+Bây giờ hãy xem tiện ích mới đã tạo ra những gì trong cụm EKS của bạn. Bạn có thể thấy một DaemonSet được triển khai trên Namespace `kube-system`, sẽ chạy một Pod trên mỗi Node trong Cụm của chúng tôi.
 
 ```bash
 $ kubectl -n kube-system get daemonset eks-pod-identity-agent 

@@ -1,14 +1,14 @@
 ---
-title: "Sealing your Secrets"
+title: "Niêm phong khoá bí mật"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 5.3.3 </b>"
 ---
 
-#### Sealing your Secrets
+### Niêm phong khoá bí mật
 
-### Khám phá Pod trong danh mục
+#### Khám phá Pod trong danh mục
 
 Việc triển khai `catalog` trong Namespace `catalog` truy cập các giá trị cơ sở dữ liệu sau từ secret `catalog-db` thông qua biến môi trường:
 

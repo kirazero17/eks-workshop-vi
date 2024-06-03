@@ -1,5 +1,5 @@
 ---
-title: "Creating a Simple Policy"
+title: "Báo cáo & Kiểm tra"
 date: "`r Sys.Date()`"
 weight: 4
 chapter: false
@@ -12,7 +12,7 @@ Kyverno cũng bao gồm một công cụ [Báo cáo Chính sách](https://kyvern
 
 Cho đến nay trong buổi thực hành, chúng ta đã tạo một số Chính sách cho các quy tắc cụ thể. Khi một tài nguyên được phù hợp với một hoặc nhiều quy tắc theo định nghĩa của chính sách và vi phạm bất kỳ quy tắc nào, một mục sẽ được tạo ra trong báo cáo cho mỗi vi phạm, dẫn đến nhiều mục nếu cùng một tài nguyên phù hợp và vi phạm nhiều quy tắc. Khi các tài nguyên bị xóa, mục của chúng sẽ được loại bỏ khỏi các báo cáo, có nghĩa là Báo cáo Kyverno luôn đại diện cho trạng thái hiện tại của cụm và không ghi lại thông tin lịch sử.
 
-Như đã thấy trước đó, Kyverno có hai loại `validationFailureAction`, chế độ `Kiểm tra` sẽ cho phép tài nguyên được tạo ra và báo cáo hành động trong các Báo cáo Chính sách, hoặc `Bắt buộc` sẽ từ chối việc tạo tài nguyên, nhưng cũng không thêm mục vào các Báo cáo Chính sách. Ví dụ, nếu một Chính sách trong chế độ `Kiểm tra` chứa một quy tắc đơn giản yêu cầu tất cả các tài nguyên phải thiết lập nhãn `CostCenter` và một Pod được tạo ra mà không có nhãn đó, Kyverno sẽ cho phép tạo Pod nhưng ghi lại nó là kết quả `FAIL` trong một Báo cáo Chính sách do vi phạm quy tắc. Nếu Chính sách này cùng chế độ `Bắt buộc`, Kyverno sẽ ngăn chặn ngay lập tức việc tạo tài nguyên và điều này sẽ không tạo ra một mục trong Báo cáo Chính sách, tuy nhiên nếu Pod được tạo ra tuân thủ quy tắc, nó sẽ được báo cáo là `PASS` trong báo cáo. Có thể kiểm tra các hành động bị chặn trong các sự kiện Kubernetes cho Namespace nơi hành động được yêu cầu.
+Như đã thấy trước đó, Kyverno có hai loại `validationFailureAction`, chế độ `Kiểm tra` sẽ cho phép tài nguyên được tạo ra và báo cáo hành động trong các Báo cáo Chính sách, hoặc `Bắt buộc` sẽ từ chối việc tạo tài nguyên, nhưng cũng không thêm mục vào các Báo cáo Chính sách. Ví dụ, nếu một Chính sách trong chế độ `Kiểm tra` chứa một quy tắc đơn giản yêu cầu tất cả các tài nguyên phải thiết lập nhãn `CostCenter` và một Pod được tạo ra mà không có nhãn đó, Kyverno sẽ cho phép tạo Pod nhưng ghi lại nó là kết quả `FAIL` trong một Báo cáo Chính sách do vi phạm quy tắc. Nếu Chính sách này cùng chế độ `Bắt buộc`, Kyverno sẽ ngăn chặn ngay lập tức việc tạo tài nguyên và điều này sẽ không tạo ra một mục trong Báo cáo Chính sách, tuy nhiên nếu Pod được tạo ra tuân thủ quy tắc, nó sẽ được báo cáo là `PASS` trong báo cáo. Có thể kiểm tra các hành động bị chặn trong các sự kiện Kubernetes cho namespace nơi hành động được yêu cầu.
 
 Bây giờ, chúng ta sẽ kiểm tra trạng thái tuân thủ của cụm của chúng ta đối với các chính sách chúng ta đã tạo cho đến nay trong buổi thực hành này với một tổng quan về các Báo cáo Chính sách được tạo ra.
 
@@ -56,9 +56,9 @@ ui            cpol-restrict-image-registries   3      0      0      0       0   
 
 > Đầu ra có thể thay đổi.
 
-Vì chúng ta chỉ làm việc với ClusterPolicies, bạn có thể thấy trong đầu ra trên một số Báo cáo đã được tạo ra trên tất cả các Namespaces, như `cpol-verify-image`, `cpol-baseline-policy`, và `cpol-restrict-image-registries` và không chỉ trong Namespace `default`, nơi chúng ta đã tạo các tài nguyên để được xác nhận. Bạn cũng có thể nhìn thấy trạng thái của các đối tượng như `PASS`, `FAIL`, `WARN`, `ERROR`, và `SKIP`.
+Vì chúng ta chỉ làm việc với ClusterPolicies, bạn có thể thấy trong đầu ra trên một số Báo cáo đã được tạo ra trên tất cả các namespaces, như `cpol-verify-image`, `cpol-baseline-policy`, và `cpol-restrict-image-registries` và không chỉ trong namespace `default`, nơi chúng ta đã tạo các tài nguyên để được xác nhận. Bạn cũng có thể nhìn thấy trạng thái của các đối tượng như `PASS`, `FAIL`, `WARN`, `ERROR`, và `SKIP`.
 
-Như đã đề cập trước đó, các hành động bị chặn sẽ tồn tại trong các sự kiện Namespace, hãy xem xét những sự kiện đó bằng cách sử dụng lệnh dưới đây.
+Như đã đề cập trước đó, các hành động bị chặn sẽ tồn tại trong các sự kiện namespace, hãy xem xét những sự kiện đó bằng cách sử dụng lệnh dưới đây.
 
 ```shell
 $ kubectl get events | grep block
@@ -68,7 +68,7 @@ $ kubectl get events | grep block
 
 > Đầu ra có thể thay đổi.
 
-Bây giờ, hãy xem xét kỹ hơn các Báo cáo Chính sách cho Namespace `default` được sử dụng trong các bài thực hành.
+Bây giờ, hãy xem xét kỹ hơn các Báo cáo Chính sách cho namespace `default` được sử dụng trong các bài thực hành.
 
 ```shell
 $ kubectl get policyreports

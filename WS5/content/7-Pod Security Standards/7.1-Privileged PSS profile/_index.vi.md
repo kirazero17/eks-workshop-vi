@@ -95,7 +95,7 @@ volumes:
 
 Trong cấu hình bảo mật Pod trên, `securityContext` là nil ở cấp độ Pod. Ở cấp độ container, `securityContext` được cấu hình để loại bỏ tất cả các khả năng Linux và `readOnlyRootFilesystem` được đặt thành false. Việc triển khai và Pod đã chạy cho thấy rằng PSA (được cấu hình cho hồ sơ PSS Privileged theo mặc định) đã cho phép cấu hình bảo mật Pod trên.
 
-Nhưng các điều kiện bảo mật khác mà PSA này cho phép là gì? Để kiểm tra điều đó, hãy thêm một số quyền hạn khác vào cấu hình bảo mật Pod trên và kiểm tra xem PSA có vẫn cho phép nó hay không trong không gian tên `assets`. Cụ thể, hãy thêm các cờ `privileged` và `runAsUser:0` vào Pod trên, điều này có nghĩa là nó có thể truy cập vào tài nguyên máy chủ mà thường được yêu cầu cho các công việc như các đại lý giám sát và các sidecar của mạng dịch vụ, và cũng được phép chạy dưới dạng người dùng `root`:
+Nhưng các điều kiện bảo mật khác mà PSA này cho phép là gì? Để kiểm tra điều đó, hãy thêm một số quyền hạn khác vào cấu hình bảo mật Pod trên và kiểm tra xem PSA có vẫn cho phép nó hay không trong không gian tên `assets`. Cụ thể, hãy thêm các cờ `privileged` và `runAsUser:0` vào Pod trên, điều này có nghĩa là nó có thể truy cập vào tài nguyên máy chủ mà thường được yêu cầu cho các công việc như các agent giám sát và các sidecar của mạng dịch vụ, và cũng được phép chạy dưới dạng người dùng `root`:
 
 ```kustomization
 modules/security/pss-psa/privileged-workload/deployment.yaml
