@@ -9,7 +9,10 @@ pre: "<b> 2. </b>"
 #### Các Bước Chuẩn Bị IAM Roles cho Service Accounts
 
 ##### Trước Khi Bắt Đầu
-Chuẩn bị môi trường cho phần này:
+
+Xem lại hướng dẫn trong workshop đầu tiên để tạo CloudFormation Stack nếu chưa có.
+
+Tiếp theo, chuẩn bị môi trường cho phần này:
 
 ```bash
 prepare-environment security/irsa
