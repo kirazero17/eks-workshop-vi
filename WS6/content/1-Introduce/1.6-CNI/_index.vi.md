@@ -7,7 +7,7 @@ pre: "<b> 1.6 </b>"
 ---
 
 
-Trong phần này, chúng ta sẽ xem xét **Giao diện Mạng Contain** được yêu cầu trước (**Pre-requisite Container Network Interface(CNI)**).
+Trong phần này, chúng ta sẽ xem xét **Giao diện Mạng Container tiên quyết** (**Pre-requisite Container Network Interface(CNI)**).
 
 ![EKS](/images/0004/0006.png?featherlight=false&width=90pc)
 

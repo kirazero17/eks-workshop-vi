@@ -1,5 +1,5 @@
 ---
-title: "DNS in Kubernetes"
+title: "DNS trong Kubernetes"
 date: "`r Sys.Date()`"
 weight: 13
 chapter: false

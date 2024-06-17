@@ -1,16 +1,16 @@
 ---
-title: "Pod Networking"
+title: "Xây dựng mạng Pod"
 date: "`r Sys.Date()`"
 weight: 8
 chapter: false
 pre: "<b> 1.8 </b>"
 ---
 
-#### Pod Networking
+#### Xây dựng mạng Pod
 
 Trong phần này, chúng ta sẽ xem xét **Mạng Pod**
 
-- Để thêm mạng cầu trên mỗi nút
+- Để thêm mạng bridge trên mỗi nút
 
 > node01
 ```
@@ -43,7 +43,7 @@ $ ip link set dev v-net-0 up
 $ ip link set dev v-net-0 up
 ```
 
-- Đặt địa chỉ IP cho giao diện cầu
+- Đặt địa chỉ IP cho giao diện bridge
 
 > node01
 ```

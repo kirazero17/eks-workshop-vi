@@ -1,6 +1,6 @@
 
 ---
-title: "Using Amazon RDS"
+title: "Sử dụng Amazon RDS"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: false
@@ -18,10 +18,12 @@ eks-workshop-catalog.cluster-cjkatqd1cnrz.us-west-2.rds.amazonaws.com:3306
 $ export CATALOG_RDS_PASSWORD=$(aws ssm get-parameter --name $EKS_CLUSTER_NAME-catalog-db --region $AWS_REGION --query "Parameter.Value" --output text --with-decryption)
 ```
 
-Bước đầu tiên trong quy trình này là cấu hình lại dịch vụ danh mục để sử dụng một cơ sở dữ liệu Amazon RDS đã được tạo trước đó. Ứng dụng tải hầu hết cấu hình của mình từ một ConfigMap, hãy xem nó:
+Bước đầu tiên trong quy trình này là cấu hình lại dịch vụ `catalog` để sử dụng một cơ sở dữ liệu Amazon RDS đã được tạo trước đó. Ứng dụng tải hầu hết cấu hình của nó từ một ConfigMap, hãy xem nó:
 
 ```bash
 $ kubectl -n catalog get -o yaml cm catalog
+```
+```yaml
 apiVersion: v1
 data:
   DB_ENDPOINT: catalog-mysql:3306
@@ -32,7 +34,7 @@ metadata:
   namespace: catalog
 ```
 
-Kustomization sau đây ghi đè ConfigMap, thay đổi điểm kết nối MySQL để ứng dụng sẽ kết nối với cơ sở dữ liệu Amazon RDS đã được tạo sẵn cho chúng ta đang được lấy từ biến môi trường `CATALOG_RDS_ENDPOINT`.
+Kustomization sau đây ghi đè ConfigMap, thay điểm kết nối MySQL theo biến môi trường `CATALOG_RDS_ENDPOINT` để ứng dụng sẽ kết nối với cơ sở dữ liệu Amazon RDS đã được tạo sẵn cho chúng ta.
 
 ```kustomization
 modules/networking/securitygroups-for-pods/rds/kustomization.yaml
@@ -62,7 +64,7 @@ metadata:
   namespace: catalog
 ```
 
-Bây giờ chúng ta cần tái chế các Pods danh mục để lấy nội dung ConfigMap mới của chúng ta:
+Bây giờ chúng ta cần tái tạo các Pods `catalog` để lấy nội dung ConfigMap mới của chúng ta:
 
 ```bash expectError=true
 $ kubectl delete pod -n catalog -l app.kubernetes.io/component=service
@@ -72,7 +74,7 @@ Waiting for deployment "catalog" rollout to finish: 1 old replicas are pending t
 error: timed out waiting for the condition
 ```
 
-Chúng ta nhận được một lỗi, dường như các Pods danh mục của chúng ta đã không khởi động lại kịp thời. Điều gì đã sai? Hãy kiểm tra log của Pod để xem đã xảy ra gì:
+Chúng ta nhận được một lỗi, dường như các Pods danh mục của chúng ta đã không khởi động lại kịp thời. Đã xảy ra vấn đề gì? Hãy kiểm tra log của Pod để xem đã xảy ra gì:
 
 ```bash
 $ kubectl -n catalog logs deployment/catalog
@@ -86,6 +88,8 @@ Pod của chúng ta không thể kết nối được đến cơ sở dữ liệ
 ```bash
 $ aws ec2 describe-security-groups \
     --filters Name=vpc-id,Values=$VPC_ID Name=tag:Name,Values=$EKS_CLUSTER_NAME-catalog-rds | jq '.'
+```
+```yaml
 {
   "SecurityGroups": [
     {
@@ -123,8 +127,6 @@ $ aws ec2 describe-security-groups \
 }
 ```
 
-Bạn cũng có thể xem Security group của RDS instance thông qua bảng điều khiển AWS:
-
-https://console.aws.amazon.com/rds/home#database:id=eks-workshop-catalog;is-cluster=false
+Bạn cũng có thể xem Security group của RDS instance thông qua [bảng điều khiển AWS](https://console.aws.amazon.com/rds/home#database:id=eks-workshop-catalog;is-cluster=false).
 
 Security group này chỉ cho phép lưu lượng truy cập vào cơ sở dữ liệu RDS trên cổng `3306` nếu nó đến từ một nguồn có một Security group cụ thể, trong ví dụ trên là `sg-037ec36e968f1f5e7`.

@@ -1,14 +1,14 @@
 ---
-title: "Khám phá hồ sơ PSS"
+title: "Cấu hình PSS được cấp quyền"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
 pre: "<b> 7.1 </b>"
 ---
 
-#### Khám phá hồ sơ PSS
+#### Quan sát hồ sơ PSS
 
-Chúng ta sẽ bắt đầu khám phá hồ sơ Privileged (PSS) bằng cách khám phá hồ sơ Privileged, là hồ sơ linh hoạt nhất và cho phép việc nâng cao đặc quyền đã biết.
+Chúng ta sẽ bắt đầu quan sát hồ sơ Privileged (PSS) bằng cách quan sát hồ sơ Privileged, là hồ sơ linh hoạt nhất và cho phép việc nâng cao đặc quyền đã biết.
 
 Kể từ phiên bản Kubernetes 1.23, theo mặc định, tất cả các chế độ PSA (tức là enforce, audit và warn) đều được kích hoạt cho hồ sơ PSS Privileged ở cấp độ cluster. Điều đó có nghĩa, theo mặc định, PSA cho phép triển khai (Deployments) hoặc các Pod với hồ sơ PSS Privileged (tức là không có bất kỳ hạn chế nào) trên tất cả các không gian tên (namespace). Các thiết lập mặc định này cung cấp ít ảnh hưởng đến các cluster và giảm thiểu tác động tiêu cực đối với các ứng dụng. Như chúng ta sẽ thấy, nhãn Namespace có thể được sử dụng để lựa chọn vào các thiết lập hạn chế hơn.
 

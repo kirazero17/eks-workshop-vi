@@ -1,12 +1,12 @@
 ---
-title: "Implementing Ingress Controls"
+title: "Cài đặt các Ingress Control"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 3.3 </b>"
 ---
 
-#### Implementing Ingress Controls
+#### Cài đặt các Ingress Control
 
 ![EKS](/images/0004/00015.png?featherlight=false&width=60pc)
 
@@ -85,7 +85,7 @@ curl: (28) Failed to connect to catalog.catalog port 80 after 5001 ms: Timeout w
 
 Như bạn đã thấy từ các đầu ra trên, chỉ có thành phần 'ui' có thể giao tiếp với thành phần dịch vụ 'catalog', và thành phần dịch vụ 'orders' không thể.
 
-Nhưng điều này vẫn để mở cửa cho thành phần cơ sở dữ liệu 'catalog', vì vậy hãy triển khai một chính sách mạng để đảm bảo chỉ có thành phần dịch vụ 'catalog' mới có thể giao tiếp với thành phần cơ sở dữ liệu 'catalog'.
+Nhưng điều này vẫn để mở cửa với mọi truy cập vào thành phần cơ sở dữ liệu 'catalog', vì vậy hãy triển khai một chính sách mạng để đảm bảo chỉ có thành phần dịch vụ 'catalog' mới có thể giao tiếp với thành phần cơ sở dữ liệu 'catalog'.
 
 ```file
 manifests/modules/networking/network-policies/apply-network-policies/allow-catalog-ingress-db.yaml

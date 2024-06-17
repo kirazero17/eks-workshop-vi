@@ -51,7 +51,7 @@ $ curl http://web
 
 #### DNS
 
-- Mỗi máy có tệp cấu hình giải quyết DNS tại `/etc/resolv.conf`.
+- Mỗi máy có tệp cấu hình phân giải DNS tại `/etc/resolv.conf`.
 
 ```bash
 $ cat /etc/resolv.conf
@@ -59,7 +59,7 @@ nameserver 127.0.0.53
 options edns0
 ```
 
-- Để thay đổi thứ tự giải quyết dns, chúng ta cần thay đổi trong tệp `/etc/nsswitch.conf`.
+- Để thay đổi thứ tự phân giải DNS, chúng ta cần thay đổi trong tệp `/etc/nsswitch.conf`.
 
 ```bash
 $ cat /etc/nsswitch.conf
@@ -77,7 +77,7 @@ ping: www.github.com: Temporary failure in name resolution
 
 ```
 
-- Thêm máy chủ tên công cộng được biết đến vào tệp `/etc/resolv.conf`.
+- Thêm nameserver công cộng đã biết vào tệp `/etc/resolv.conf`.
 
 ```bash
 $ cat /etc/resolv.conf
@@ -110,7 +110,7 @@ PING github.com (140.82.121.3) 56(84) bytes of data.
 
 #### Networking Tools
 
-- Công cụ mạng hữu ích để kiểm tra giải quyết tên dns.
+- Công cụ mạng hữu ích để kiểm tra phân giải DNS.
 
 #### nslookup 
 

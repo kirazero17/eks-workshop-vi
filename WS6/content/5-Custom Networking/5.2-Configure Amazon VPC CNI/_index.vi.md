@@ -30,7 +30,7 @@ $ aws ec2 describe-vpcs --vpc-ids $VPC_ID | jq '.Vpcs[0].CidrBlockAssociationSet
 ]
 ```
 
-Điều này có nghĩa là chúng ta hiện có một phạm vi CIDR riêng biệt mà chúng ta có thể sử dụng bổ sung vào phạm vi CIDR mặc định, trong đầu ra trên là `10.42.0.0/16`. Từ phạm vi CIDR mới này, chúng ta đã thêm 3 mạng con mới vào VPC sẽ được sử dụng để chạy các pods của chúng ta:
+Điều này có nghĩa là chúng ta hiện có một dải CIDR riêng biệt mà chúng ta có thể sử dụng bổ sung vào dải CIDR mặc định, trong đầu ra trên là `10.42.0.0/16`. Từ dải CIDR mới này, chúng ta đã thêm 3 mạng con mới vào VPC sẽ được sử dụng để chạy các pods của chúng ta:
 
 ```bash wait=30
 $ echo "Mạng con phụ trong AZ $SUBNET_AZ_1 là $SECONDARY_SUBNET_1"

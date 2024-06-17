@@ -34,28 +34,28 @@ NAME    READY   STATUS    RESTARTS   AGE
 nginx   1/1     Running   0          28s
 ```
 
-Tiếp theo chạy lệnh dưới đây để tạo ra phát hiện `Execution:Kubernetes/ExecInKubeSystemPod`:
+Tiếp theo chạy lệnh dưới đây để tạo ra mục phát hiện `Execution:Kubernetes/ExecInKubeSystemPod`:
 
 ```bash
 $ kubectl -n kube-system exec nginx -- pwd
 /
 ```
 
-Trong vài phút, chúng ta sẽ thấy phát hiện `Execution:Kubernetes/ExecInKubeSystemPod` trên [bảng điều khiển Findings của GuardDuty](https://console.aws.amazon.com/guardduty/home#/findings).
+Trong vài phút, chúng ta sẽ thấy mục phát hiện `Execution:Kubernetes/ExecInKubeSystemPod` trên [bảng điều khiển Findings của GuardDuty](https://console.aws.amazon.com/guardduty/home#/findings).
 
-![](assets/exec-finding.png)
+![](/images/p6/p62/6.2-1-FindingsMenu.png)
 
-Nếu bạn nhấp vào phát hiện, nó sẽ mở một tab ở bên phải màn hình, hiển thị chi tiết về phát hiện và một giải thích ngắn gọn về nó.
+Nếu bạn nhấp vào mục phát hiện này, nó sẽ mở một tab ở bên phải màn hình, hiển thị chi tiết về phát hiện và một giải thích ngắn gọn về nó.
 
-![](assets/finding-details.png)
+![](/images/p6/p62/6.2-2-FindingDetails.png)
 
 Nó cũng cung cấp cho bạn lựa chọn để điều tra phát hiện bằng cách sử dụng Amazon Detective.
 
-![](assets/investigate.png)
+![](/images/p6/p62/6.2-3-DetectiveOnFinding.png)
 
 Một thông tin quan trọng đáng xem xét là **Hành động** được phát hiện, trên mục này (Loại giám sát nhật ký), chúng ta có thể thấy rằng liên quan đến một `KUBERNETES_API_CALL`.
 
-![](assets/finding-action.png)
+![](/images/p6/p62/6.2-4-Actions.png)
 
 Dọn dẹp Pod gây ra phát hiện:
 
@@ -71,11 +71,11 @@ Trong bài thực hành tiếp theo này, chúng ta sẽ cấp quyền quản tr
 $ kubectl -n default create rolebinding sa-default-admin --clusterrole cluster-admin --serviceaccount default:default
 ```
 
-Trong vài phút, bạn sẽ thấy phát hiện `Policy:Kubernetes/AdminAccessToDefaultServiceAccount` trên [bảng điều khiển Phát hiện GuardDuty](https://console.aws.amazon.com/guardduty/home#/findings). Dành chút thời gian để phân tích chi tiết của Phát hiện, Hành động và Điều tra Phát hiện.
+Trong vài phút, bạn sẽ thấy phát hiện `Policy:Kubernetes/AdminAccessToDefaultServiceAccount` trên [bảng điều khiển Phát hiện GuardDuty](https://console.aws.amazon.com/guardduty/home#/findings). Dành chút thời gian để phân tích chi tiết của Finding, Action và Detective Investigation.
 
-![](assets/admin-access-sa.png)
+![](/images/p6/p62/6.2-5-IAM.png)
 
-Xóa liên kết Vai trò của kẻ phạm tội bằng cách chạy lệnh sau.
+Xóa RoleBinding vi phạm bằng cách chạy lệnh sau.
 
 ```bash
 $ kubectl -n default delete rolebinding sa-default-admin 
@@ -112,9 +112,9 @@ dashboard-metrics-scraper   ClusterIP      172.20.8.169     <none>              
 kubernetes-dashboard        LoadBalancer   172.20.218.132   ad0fbc5914a2c4d1baa8dcc32101196b-2094501166.us-west-2.elb.amazonaws.com   443:32762/TCP   3m1s
 ```
 
-Nếu bạn quay lại [bảng điều khiển Phát hiện GuardDuty](https://console.aws.amazon.com/guardduty/home#/findings), bạn sẽ thấy phát hiện `Policy:Kubernetes/ExposedDashboard`. Một lần nữa, hãy sử dụng một vài thời gian để phân tích chi tiết của Phát hiện, Hành động và Điều tra phát hiện.
+Nếu bạn quay lại [bảng điều khiển Phát hiện GuardDuty](https://console.aws.amazon.com/guardduty/home#/findings), bạn sẽ thấy phát hiện `Policy:Kubernetes/ExposedDashboard`. Một lần nữa, hãy sử dụng một vài thời gian để phân tích chi tiết của _Phát hiện_, _Hành động_ và _Điều tra phát hiện_.
 
-![](assets/exposed-dashboard.png)
+![](/images/p6/p62/6.2-6-Dashboard.png)
 
 Gỡ cài đặt các thành phần bảng điều khiển Kubernetes bằng cách chạy lệnh sau:
 
@@ -141,11 +141,11 @@ $ kubectl apply -f ~/environment/eks-workshop/modules/security/Guardduty/mount/p
 
 Trong vài phút tới, chúng ta sẽ thấy hai kết quả `PrivilegeEscalation:Kubernetes/PrivilegedContainer` và `Persistence:Kubernetes/ContainerWithSensitiveMount` trên [bảng điều khiển Tìm thấy của GuardDuty](https://console.aws.amazon.com/guardduty/home#/findings).
 
-![](assets/privileged-container.png)
+![](/images/p6/p62/6.2-7-Privilege.png)
 
-![](assets/sensitive-mount.png)
+![](/images/p6/p62/6.2-8-Persistence.png)
 
-Một lần nữa, hãy dành một ít thời gian để phân tích chi tiết Tìm thấy, Hành động và Điều tra pháp lý.
+Một lần nữa, hãy dành một ít thời gian để phân tích chi tiết _Finding_, _Action_ và _Detective Investigation_.
 
 Dọn dẹp Pod bằng cách chạy lệnh dưới đây:
 

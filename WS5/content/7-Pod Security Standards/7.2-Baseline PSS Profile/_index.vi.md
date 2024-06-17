@@ -1,5 +1,5 @@
 ---
-title: "Hạn chế quyền cho Pod trong Kubernetes"
+title: "Cấu hình PSS cơ bản"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: false

@@ -1,12 +1,12 @@
 ---
-title: "Service Networking"
+title: "Xây dựng mạng dịch vụ"
 date: "`r Sys.Date()`"
 weight: 12
 chapter: false
 pre: "<b> 1.12 </b>"
 ---
 
-#### Service Networking
+#### Xây dựng mạng dịch vụ
 
 Trong phần này, chúng ta sẽ xem xét **Dịch Vụ Mạng**
 

@@ -6,7 +6,7 @@ chapter: false
 pre: "<b> 6.1 </b>"
 ---
 
-Trước khi chúng ta bắt đầu, hãy xác nhận xem VPC CNI đã được cài đặt và đang chạy không.
+Trước khi chúng ta bắt đầu, hãy xác nhận rằng VPC CNI đã được cài đặt và đang chạy:
 
 ```bash
 $ kubectl get pods --selector=k8s-app=aws-node -n kube-system
@@ -16,15 +16,13 @@ aws-node-xwkf2   1/1     Running   0          107m
 aws-node-zd5rg   1/1     Running   0          107m
 ```
 
-Xác nhận phiên bản CNI. Phiên bản CNI phải là 1.9.0 hoặc mới hơn.
+Xác nhận phiên bản CNI bằng 1.9.0 hoặc mới hơn:
 
 ```bash
 $ kubectl describe daemonset aws-node --namespace kube-system | grep Image | cut -d "/" -f 2
 amazon-k8s-cni-init:v1.12.0-eksbuild.1
 amazon-k8s-cni:v1.12.0-eksbuild.1
 ```
-
-Bạn sẽ thấy đầu ra tương tự như trên.
 
 Xác nhận xem VPC CNI đã được cấu hình để chạy ở chế độ tiền tố không. Giá trị `ENABLE_PREFIX_DELEGATION` phải được đặt thành "true":
 
@@ -80,4 +78,4 @@ $ aws ec2 describe-instances --filters "Name=tag-key,Values=eks:cluster-name" \
 ]
 ```
 
-Như chúng ta có thể thấy, hiện có các tiền tố được gán cho các nút worker của chúng ta. Việc ủy quyền tiền tố đang hoạt động thành công!
+Như chúng ta có thể thấy, hiện có các tiền tố được gán cho các nút worker của chúng ta. Việc ủy quyền tiền tố đã thành công!

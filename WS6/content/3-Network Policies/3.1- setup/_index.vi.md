@@ -10,7 +10,7 @@ Trong lab này, chúng ta sẽ triển khai các chính sách mạng cho ứng d
 
 ![EKS](/images/0004/00014.png?featherlight=false&width=60pc)
 
-Mỗi thành phần trong ứng dụng mẫu được triển khai trong không gian tên riêng của nó. Ví dụ, thành phần **'ui'** được triển khai trong không gian tên **'ui'**, trong khi dịch vụ web **'catalog'** và cơ sở dữ liệu MySQL **'catalog'** được triển khai trong không gian tên **'catalog'**.
+Mỗi thành phần trong ứng dụng mẫu được triển khai trong namespace riêng của nó. Ví dụ, thành phần **'ui'** được triển khai trong namespace **'ui'**, trong khi dịch vụ web **'catalog'** và cơ sở dữ liệu MySQL **'catalog'** được triển khai trong namespace **'catalog'**.
 
 Hiện tại, không có chính sách mạng nào được xác định, và bất kỳ thành phần nào trong ứng dụng mẫu đều có thể giao tiếp với bất kỳ thành phần nào khác hoặc bất kỳ dịch vụ ngoại vi nào. Ví dụ, thành phần 'catalog' có thể giao tiếp trực tiếp với thành phần 'checkout'. Chúng ta có thể xác minh điều này bằng các lệnh dưới đây:
 

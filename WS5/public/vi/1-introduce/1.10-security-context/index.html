@@ -12,21 +12,21 @@
     <title>Security-Context :: TERRAFORM ON AWS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1717491191" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1717491191" rel="stylesheet">
-    <link href="/css/hybrid.css?1717491191" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1717491191" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1717491191" rel="stylesheet">
-    <link href="/css/auto-complete.css?1717491191" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1717491191" rel="stylesheet">
-    <link href="/css/theme.css?1717491191" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1717491191" rel="stylesheet">
+    <link href="/css/nucleus.css?1718608391" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1718608391" rel="stylesheet">
+    <link href="/css/hybrid.css?1718608391" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1718608391" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1718608391" rel="stylesheet">
+    <link href="/css/auto-complete.css?1718608391" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1718608391" rel="stylesheet">
+    <link href="/css/theme.css?1718608391" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1718608391" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1717491191" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1718608391" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1717491191"></script>
+    <script src="/js/jquery-3.3.1.min.js?1718608391"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1717491191"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1717491191"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1718608391"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1718608391"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1717491191"></script>
+<script type="text/javascript" src="/js/search.js?1718608391"></script>
 
     
   </div>
@@ -1333,13 +1333,13 @@
  
   
     
-    <li data-nav-id="/vi/7-pod-security-standards/7.1-privileged-pss-profile/" title="Khám phá hồ sơ PSS" class="dd-item 
+    <li data-nav-id="/vi/7-pod-security-standards/7.1-privileged-pss-profile/" title="Cấu hình PSS được cấp quyền" class="dd-item 
         
         
         
         ">
       <a href="/vi/7-pod-security-standards/7.1-privileged-pss-profile/">
-          <b> 7.1 </b>Khám phá hồ sơ PSS
+          <b> 7.1 </b>Cấu hình PSS được cấp quyền
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1361,13 +1361,13 @@
  
   
     
-    <li data-nav-id="/vi/7-pod-security-standards/7.2-baseline-pss-profile/" title="Hạn chế quyền cho Pod trong Kubernetes" class="dd-item 
+    <li data-nav-id="/vi/7-pod-security-standards/7.2-baseline-pss-profile/" title="Cấu hình PSS cơ bản" class="dd-item 
         
         
         
         ">
       <a href="/vi/7-pod-security-standards/7.2-baseline-pss-profile/">
-          <b> 7.2 </b>Hạn chế quyền cho Pod trong Kubernetes
+          <b> 7.2 </b>Cấu hình PSS cơ bản
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1389,13 +1389,13 @@
  
   
     
-    <li data-nav-id="/vi/7-pod-security-standards/7.3-restricted-pss-profile/" title="Hồ sơ cấu hình bị hạn chế" class="dd-item 
+    <li data-nav-id="/vi/7-pod-security-standards/7.3-restricted-pss-profile/" title="Cấu hình PSS bị hạn chế" class="dd-item 
         
         
         
         ">
       <a href="/vi/7-pod-security-standards/7.3-restricted-pss-profile/">
-          <b> 7.3 </b>Hồ sơ cấu hình bị hạn chế
+          <b> 7.3 </b>Cấu hình PSS bị hạn chế
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1746,12 +1746,12 @@
 <h4 id="bảo-mật-container">Bảo mật Container</h4>
 <pre tabindex="0"><code>$ docker run --user=1001 ubuntu sleep 3600
 $ docker run -cap-add MAC_ADMIN ubuntu
-</code></pre><p><img alt="csec" src="../../images/csec.PNG"></p>
+</code></pre><p><img alt="csec" src="/images/p1/p1-10/csec.PNG"></p>
 <h4 id="bảo-mật-kubernetes">Bảo mật Kubernetes</h4>
 <ul>
 <li>Bạn có thể chọn cấu hình các thiết lập bảo mật ở mức container hoặc mức pod.</li>
 </ul>
-<p><img alt="ksec" src="../../images/ksec.PNG"></p>
+<p><img alt="ksec" src="/images/p1/p1-10/ksec.PNG"></p>
 <h4 id="ngữ-cảnh-bảo-mật">Ngữ cảnh Bảo mật</h4>
 <ul>
 <li>
@@ -1767,7 +1767,7 @@ spec:
   - name: ubuntu
     image: ubuntu
     command: [&#34;sleep&#34;, &#34;3600&#34;]
-</code></pre><p><img alt="sxc1" src="../../images/sxc1.PNG"></p>
+</code></pre><p><img alt="sxc1" src="/images/p1/p1-10/sxc1.PNG"></p>
 </li>
 <li>
 <p>Để đặt cùng một ngữ cảnh ở mức container, sau đó di chuyển toàn bộ phần dưới mục container.</p>
@@ -1798,7 +1798,7 @@ spec:
       runAsUser: 1000
       capabilities: 
         add: [&#34;MAC_ADMIN&#34;]
-</code></pre><p><img alt="cap" src="../../images/cap.PNG"></p>
+</code></pre><p><img alt="cap" src="/images/p1/p1-10/cap.PNG"></p>
 </li>
 </ul>
 <h4 id="tài-liệu-tham-khảo-k8s">Tài liệu Tham khảo K8s</h4>
@@ -2688,19 +2688,19 @@ spec:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1717491191"></script>
-    <script src="/js/perfect-scrollbar.min.js?1717491191"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1717491191"></script>
-    <script src="/js/jquery.sticky.js?1717491191"></script>
-    <script src="/js/featherlight.min.js?1717491191"></script>
-    <script src="/js/highlight.pack.js?1717491191"></script>
+    <script src="/js/clipboard.min.js?1718608391"></script>
+    <script src="/js/perfect-scrollbar.min.js?1718608391"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1718608391"></script>
+    <script src="/js/jquery.sticky.js?1718608391"></script>
+    <script src="/js/featherlight.min.js?1718608391"></script>
+    <script src="/js/highlight.pack.js?1718608391"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1717491191"></script>
-    <script src="/js/learn.js?1717491191"></script>
-    <script src="/js/hugo-learn.js?1717491191"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1718608391"></script>
+    <script src="/js/learn.js?1718608391"></script>
+    <script src="/js/hugo-learn.js?1718608391"></script>
 
-    <link href="/mermaid/mermaid.css?1717491191" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1717491191"></script>
+    <link href="/mermaid/mermaid.css?1718608391" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1718608391"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
