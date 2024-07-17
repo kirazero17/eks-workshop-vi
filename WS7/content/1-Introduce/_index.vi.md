@@ -6,8 +6,6 @@ chapter: false
 pre: "<b> 1. </b>"
 ---
 
-#### Giới thiệu
-
 #### Hiểu về mạng trong Kubernetes
 
 Hiểu về mạng trong Kubernetes là vô cùng quan trọng để vận hành cụm và ứng dụng của bạn một cách hiệu quả. Trong chương này, chúng ta sẽ đào sâu vào các khía cạnh khác nhau của mạng trong Kubernetes, bao gồm mạng Pod, mạng dịch vụ, và giao tiếp dịch vụ.

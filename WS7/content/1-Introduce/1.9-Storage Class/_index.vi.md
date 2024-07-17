@@ -1,28 +1,28 @@
 ---
-title: "Giới thiệu"
+title: "Storage Class"
 date: "`r Sys.Date()`"
 weight: 9
 chapter: false
 pre: "<b> 1.9 </b>"
 ---
 
-#### Lớp Lưu Trữ
+#### Lớp Lưu Trữ (Storage Class)
 
 Trong phần này, chúng ta sẽ xem xét về **Lớp Lưu Trữ**
 
-- Chúng ta đã thảo luận về cách tạo Volume Bền Vững và Yêu Cầu Volume Bền Vững và Chúng ta cũng đã thấy cách sử dụng vào không gian Volume của Pod để yêu cầu không gian volume đó.
-- Chúng ta đã tạo Volume Bền Vững nhưng trước khi điều này nếu chúng ta đang lấy một volume từ các nhà cung cấp Đám Mây như GCP, AWS, Azure. Chúng ta cần phải tạo ổ đĩa trong Google Cloud là một ví dụ.
-- Chúng ta cần phải tạo thủ công mỗi khi khi chúng ta định nghĩa trong tệp định nghĩa Pod. Điều này được gọi là **Cung Cấp Tĩnh**.
+- Chúng ta đã thảo luận về cách tạo PersistentVolume và Yêu Cầu PersistentVolume, cũng như đã thấy cách sử dụng vào không gian Volume của Pod để yêu cầu không gian volume đó.
+- Chúng ta đã tạo PersistentVolume, nhưng trước đó nếu đang lấy một volume từ các nhà cung cấp Đám Mây như GCP, AWS, Azure, chúng ta cần phải tạo ổ đĩa trong Google Cloud là một ví dụ.
+- Chúng ta cần phải tạo thủ công mỗi khi chúng ta định nghĩa trong tệp định nghĩa Pod. Đây này được gọi là **Cấp Phát Tĩnh**.
 
-#### Cung Cấp Tĩnh
+#### Cấp Phát Tĩnh
 
 ![EKS](/images/0005/00018.png?featherlight=false&width=90pc)
 
-#### Cung Cấp Động
+#### Cấp Phát Động
 
 ![EKS](/images/0005/00019.png?featherlight=false&width=90pc)
 
-- Bây giờ chúng ta có một Lớp Lưu Trữ, Vì vậy chúng ta không cần phải định nghĩa Volume Bền Vững nữa. Nó sẽ được tạo tự động khi một Lớp Lưu Trữ được tạo. Điều này được gọi là **Cung Cấp Động**.
+- Bây giờ chúng ta có một Lớp Lưu Trữ, Vì vậy chúng ta không cần phải định nghĩa PersistentVolume nữa. Nó sẽ được tạo tự động khi một Lớp Lưu Trữ được tạo. Đây được gọi là **Cấp Phát Động**.
 
 ```
 sc-definition.yaml
@@ -49,7 +49,7 @@ NAME             PROVISIONER            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLO
 google-storage   kubernetes.io/gce-pd   Delete          Immediate           false                  20s
 ```
 
-#### Tạo Yêu Cầu Volume Bền Vững
+#### Tạo Yêu Cầu PersistentVolume
 
 ```
 pvc-definition.yaml
