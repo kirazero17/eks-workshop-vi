@@ -1,5 +1,5 @@
 ---
-title: "Exploring Secrets"
+title: "Tìm hiểu khoá bí mật"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
@@ -7,7 +7,7 @@ pre: "<b> 5.1 </b>"
 ---
 
 
-#### Exploring Secrets
+### Tìm hiểu khoá bí mật
 
 #### Tiết lộ Secrets dưới dạng Environment Variables
 

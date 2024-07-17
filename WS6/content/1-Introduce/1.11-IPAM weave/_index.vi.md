@@ -8,7 +8,7 @@ pre: "<b> 1.11 </b>"
 
 #### IPAM weave
 
-  - Take me to [Lecture](https://kodekloud.com/topic/ipam-weave/)
+- Đi đến [Bài giảng](https://kodekloud.com/topic/ipam-weave/)
 
 - Quản lý Địa chỉ IP trong Cụm Kubernetes
 

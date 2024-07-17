@@ -1,24 +1,24 @@
 ---
-title: "Giới thiệu"
+title: "Persistent Volume Claims"
 date: "`r Sys.Date()`"
 weight: 7
 chapter: false
 pre: "<b> 1.7 </b>"
 ---
 
-#### Yêu cầu Khối Lưu Trữ
+#### Yêu cầu Khối Lưu Trữ bền (Persistent Volume Claim - PVC)
 
   - Đưa tôi đến [Bài giảng](https://kodekloud.com/topic/persistent-volume-claims-4/)
 
-Trong phần này, chúng ta sẽ xem xét **Yêu cầu Khối Lưu Trữ**
+Trong phần này, chúng ta sẽ xem xét **PVC**
 
-- Bây giờ chúng ta sẽ tạo một Yêu cầu Khối Lưu Trữ để làm cho lưu trữ có sẵn cho node.
+- Bây giờ chúng ta sẽ tạo một PVC để làm cho lưu trữ có sẵn cho node.
 - Khối Lưu Trữ và Yêu cầu Khối Lưu Trữ là hai đối tượng riêng biệt trong không gian tên Kubernetes.
 - Khi Yêu cầu Khối Lưu Trữ được tạo, Kubernetes sẽ gán các Khối Lưu Trữ vào yêu cầu dựa trên yêu cầu và thuộc tính được thiết lập trên khối.
 
 ![class-17](../../images/class17.PNG)
 
-- Nếu các thuộc tính không khớp hoặc Khối Lưu Trữ không có sẵn cho Yêu cầu Khối Lưu Trữ thì nó sẽ hiển thị trạng thái đang chờ.
+- Nếu các thuộc tính không khớp hoặc Khối Lưu Trữ không có sẵn cho Yêu cầu Khối Lưu Trữ thì nó sẽ hiển thị trạng thái `pending`.
 
 ```yaml
 pvc-definition.yaml
@@ -53,7 +53,7 @@ spec:
 
 ```
 $ kubectl create -f pv-definition.yaml
-persistentvolume/pv-vol1 đã được tạo
+persistentvolume/pv-vol1 is created
 
 $ kubectl get pv
 NAME      CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
@@ -65,7 +65,7 @@ pv-vol1   1Gi        RWO            Retain           Available                  
 
 ```
 $ kubectl create -f pvc-definition.yaml
-persistentvolumeclaim/myclaim đã được tạo
+persistentvolumeclaim/myclaim is created
 
 $ kubectl get pvc
 NAME      STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE

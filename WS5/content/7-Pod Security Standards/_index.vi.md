@@ -1,5 +1,5 @@
 ---
-title: "Pod Security Standards"
+title: "Tiêu chuẩn an toàn cho pod"
 date: "`r Sys.Date()`"
 weight: 7
 chapter: false
@@ -34,7 +34,7 @@ Bộ kiểm soát thẩm định PSA triển khai các điều khiển, được
 * **kiểm tra:** Vi phạm chính sách sẽ gây ra việc thêm chú thích kiểm tra vào sự kiện được ghi lại trong [bản ghi kiểm tra](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/), nhưng nó vẫn được phép.
 * **cảnh báo:** Vi phạm chính sách sẽ gây ra một cảnh báo phù hợp với người dùng, nhưng vẫn được phép.
 
-### Kiểm Soát Thẩm Định Bảo Mật Pods tích hợp sẵn
+### Kiểm Soát Thẩm Định Bảo Mật Pods (PSA) tích hợp sẵn
 
 Từ phiên bản Kubernetes 1.23, Cổng tính năng PodSecurity [gate](https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/) được kích hoạt mặc định trong Dịch vụ Kubernetes Đàn Elastic của Amazon. Các [cài đặt mặc định của PSS và PSA](https://kubernetes.io/docs/tasks/configure-pod-container/enforce-standards-admission-controller/#configure-the-admission-controller) cho phiên bản Kubernetes 1.23 từ nguồn
 
@@ -64,7 +64,7 @@ Các cài đặt trên cấu hình kịch bản toàn cụm như sau:
 * Không có các miễn trừ PSA được cấu hình khi khởi động máy chủ API Kubernetes.
 * Hồ sơ PSS Đặc quyền được cấu hình theo mặc định cho tất cả các chế độ PSA, và được đặt thành các phiên bản mới nhất.
 
-#### Nhãn Kiểm Soát Thẩm Định Bảo Mật Pods cho Namespaces
+#### Nhãn Kiểm Soát Thẩm Định Bảo Mật Pods (PSA) cho Namespaces
 
 Dựa trên cấu hình mặc định trên, bạn phải cấu hình các hồ sơ PSS cụ thể và các chế độ PSA tại cấp độ Kubernetes Namespace, để lựa chọn Namespaces vào Pod security được cung cấp bởi PSA và PSS. Bạn có thể cấu hình Namespaces để xác định chế độ kiểm soát thẩm định bạn muốn sử dụng cho bảo mật Pods. Với [nhãn Kubernetes](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels), bạn có thể chọn một trong các cấp độ PSS được xác định trước mà bạn muốn sử dụng cho Pods trong một Namespace cụ thể. Nhãn bạn chọn xác định hành động mà PSA thực hiện nếu phát hiện ra vi phạm tiềm ẩn. Như dưới đây, bạn có thể cấu hình bất kỳ hoặc tất cả các chế độ, hoặc thậm chí đặt một cấp độ khác nhau cho các chế độ khác nhau. Đối với mỗi chế độ, có hai nhãn có thể xác định chính sách được sử dụng.
 
@@ -113,10 +113,10 @@ Trong Kubernetes, một Kiểm Soát Thẩm Định là một phần mã nguồn
 
 Trong luồng dưới đây, [kiểm soát thẩm định động biến đổi và xác thực](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/), được gọi là webhooks kiểm soát thẩm định, được tích hợp vào luồng yêu cầu máy chủ API Kubernetes, thông qua webhooks. Các webhooks gọi ra các dịch vụ, được cấu hình để phản hồi với một số loại yêu cầu máy chủ API nhất định. Ví dụ, bạn có thể sử dụng webhooks để cấu hình các kiểm soát thẩm định động để xác thực rằng các container trong một Pod đang chạy dưới dạng người dùng không phải root, hoặc các container được cung cấp từ các kho lưu trữ đáng tin cậy.
 
-![](assets/k8s-admission-controllers.png)
+![](/images/p7/7.0-1-k8s-admission-controllers.png)
 
 #### Sử Dụng PSA và PSS
 
 PSA thực thi các chính sách được mô tả trong PSS, và các chính sách PSS xác định một bộ hồ sơ bảo mật Pods. Trong biểu đồ dưới đây, chúng tôi mô tả cách PSA và PSS hoạt động cùng nhau, với Pods và Namespaces, để xác định các hồ sơ bảo mật Pods và áp dụng kiểm soát thẩm định dựa trên các hồ sơ đó. Như thấy trong biểu đồ dưới đây, các chế độ thực thi PSA và các chính sách PSS được xác định dưới dạng nhãn trong Namespaces đích.
 
-![](assets/using-pss-psa.png)
+![](/images/p7/7.0-2-using-pss-psa.png)

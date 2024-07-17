@@ -1,5 +1,5 @@
 ---
-title: "Switching Routing Gateways"
+title: "Switching - Routing - Gateways"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
@@ -8,9 +8,9 @@ pre: "<b> 1.1 </b>"
 
 #### Switching Routing Gateways
 
-Trong phần này, chúng ta sẽ xem xét **Chuyển đổi, Định tuyến và Cổng kết nối** (Switching, Routing and Gateways)
+Trong phần này, chúng ta sẽ xem xét **Chuyển mạch, Định tuyến và Cổng kết nối** (Switching, Routing, and Gateways)
 
-#### Chuyển đổi (Switching)
+#### Chuyển mạch (Switching)
 
 - Để xem giao diện trên hệ thống máy chủ
 
@@ -48,12 +48,12 @@ $ ip route add 192.168.1.0/24 via 192.168.2.1
 
 #### Cổng kết nối (Gateways)
 
-- Để thêm một tuyến mặc định.
+- Để thêm một đường đi mặc định.
 ```
 $ ip route add default via 192.168.2.1
 ```
 
-- Để kiểm tra xem chuyển tiếp IP đã được bật trên máy chủ chưa.
+- Để kiểm tra xem chuyển tiếp IPv4 đã được bật trên máy chủ chưa.
 ```
 $ cat /proc/sys/net/ipv4/ip_forward
 0

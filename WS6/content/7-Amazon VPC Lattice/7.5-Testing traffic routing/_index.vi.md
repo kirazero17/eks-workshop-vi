@@ -8,7 +8,7 @@ pre: "<b> 7.5 </b>"
 
 #### Testing traffic routing
 
-Trong thực tế, triển khai canary thường được sử dụng để phát hành một tính năng cho một phần nhỏ người dùng. Trong tình huống này, chúng ta đang định tuyến giả mạo 75% lưu lượng sang phiên bản mới của dịch vụ thanh toán. Hoàn thành quy trình thanh toán nhiều lần với các đối tượng khác nhau trong giỏ hàng sẽ hiển thị phiên bản 2 của ứng dụng cho người dùng.
+Trong thực tế, triển khai canary thường được sử dụng để phát hành một tính năng cho một phần nhỏ người dùng. Trong tình huống này, chúng ta đang định tuyến nhân tạo 75% lưu lượng sang phiên bản mới của dịch vụ thanh toán. Hoàn thành quy trình thanh toán nhiều lần với các đối tượng khác nhau trong giỏ hàng sẽ hiển thị phiên bản 2 của ứng dụng cho người dùng.
 
 Đầu tiên, chúng ta sẽ sử dụng `exec` của Kubernetes để kiểm tra rằng URL dịch vụ Lattice hoạt động từ pod UI. Chúng ta sẽ nhận điều này từ một chú thích trên tài nguyên `HTTPRoute`:
 

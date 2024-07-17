@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.125.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Deployments :: TERRAFORM ON AWS WORKSHOP</title>
+    <title>Triển khai (Deployments) trong Kubernetes :: Kubernetes - EKS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1711702844" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711702844" rel="stylesheet">
-    <link href="/css/hybrid.css?1711702844" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711702844" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711702844" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711702844" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711702844" rel="stylesheet">
-    <link href="/css/theme.css?1711702844" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711702844" rel="stylesheet">
+    <link href="/css/nucleus.css?1715656511" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1715656511" rel="stylesheet">
+    <link href="/css/hybrid.css?1715656511" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1715656511" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1715656511" rel="stylesheet">
+    <link href="/css/auto-complete.css?1715656511" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1715656511" rel="stylesheet">
+    <link href="/css/theme.css?1715656511" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1715656511" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711702844" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1715656511" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711702844"></script>
+    <script src="/js/jquery-3.3.1.min.js?1715656511"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711702844"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711702844"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1715656511"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1715656511"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711702844"></script>
+<script type="text/javascript" src="/js/search.js?1715656511"></script>
 
     
   </div>
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.2-deployments/" title="Deployments" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.2-deployments/" title="Triển khai (Deployments) trong Kubernetes" class="dd-item 
         
         active
         
         ">
       <a href="/vi/1-introduce/1.2-deployments/">
-          <b> 1.2 </b>Deployments
+          <b> 1.2 </b>Triển khai (Deployments) trong Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -197,13 +197,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.4-kubernetes-services/" title="Kubernetes Services" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.4-kubernetes-services/" title="Dịch vụ Kubernetes" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.4-kubernetes-services/">
-          <b> 1.4 </b>Kubernetes Services
+          <b> 1.4 </b>Dịch vụ Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -225,13 +225,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.5-clusterip/" title="ClusterIP" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.5--clusterip/" title="ClusterIP trong Kubernetes" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/1.5-clusterip/">
-          <b> 1.5 </b>ClusterIP
+      <a href="/vi/1-introduce/1.5--clusterip/">
+          <b> 1.5 </b>ClusterIP trong Kubernetes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -266,7 +266,7 @@
         
         ">
       <a href="/vi/2-prerequiste/">
-          <b> 2. </b>Các Bước Chuẩn Bị
+          <b>2.</b>Các Bước Chuẩn Bị
           
             <i class="fas fa-check read-icon"></i>
           
@@ -286,13 +286,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/" title="AWS Load Balancer Controller" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/">
-          <b> 3. </b>Giới thiệu
+          <b> 3. </b>AWS Load Balancer Controller
           
             <i class="fas fa-check read-icon"></i>
           
@@ -345,13 +345,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/" title="" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/" title="Tạo load balancer" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/3.2-creating-the-load-balancer/">
-          
+          <b> 3.2 </b>Tạo load balancer
           
             <i class="fas fa-check read-icon"></i>
           
@@ -373,13 +373,13 @@
  
   
     
-    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.3-ip-mode/" title="" class="dd-item 
+    <li data-nav-id="/vi/3-aws-load-balancer-controller/3.3-ip-mode/" title="IP mode" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-aws-load-balancer-controller/3.3-ip-mode/">
-          
+          <b> 3.3 </b>IP mode
           
             <i class="fas fa-check read-icon"></i>
           
@@ -467,13 +467,13 @@
  
   
     
-    <li data-nav-id="/vi/4-ingress/4.2-creating-the-ingress/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/4-ingress/4.2-creating-the-ingress/" title="Tạo Ingress" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-ingress/4.2-creating-the-ingress/">
-          <b> 4.2 </b>Giới thiệu
+          <b> 4.2 </b>Tạo Ingress
           
             <i class="fas fa-check read-icon"></i>
           
@@ -495,13 +495,13 @@
  
   
     
-    <li data-nav-id="/vi/4-ingress/4.3-multiple-ingress-pattern/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/4-ingress/4.3-multiple-ingress-pattern/" title="Multiple Ingress pattern" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-ingress/4.3-multiple-ingress-pattern/">
-          <b> 4.3 </b>Giới thiệu
+          <b> 4.3 </b>Multiple Ingress pattern
           
             <i class="fas fa-check read-icon"></i>
           
@@ -563,7 +563,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/1-introduce/1.2-deployments/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/1-introduce/1.2-deployments/" selected>Tiếng Việt</option>
                     
                   
               
@@ -651,7 +651,7 @@
             
           
           
-            <a href='/vi/'>Kubernetes trên AWS</a> > <a href='/vi/1-introduce/'>Giới thiệu</a> > Deployments
+            <a href='/vi/'>Kubernetes trên AWS</a> > <a href='/vi/1-introduce/'>Giới thiệu</a> > Triển khai (Deployments) trong Kubernetes
           
         
           
@@ -688,7 +688,7 @@
           
             <h1>
               
-              Deployments
+              Triển khai (Deployments) trong Kubernetes
             </h1>
           
 
@@ -696,47 +696,47 @@
 
 
 
-	<h4 id="kubernetes-deployments">Kubernetes Deployments</h4>
-<p>Trong phần này, chúng ta sẽ tìm hiểu về các triển khai (deployments) trong Kubernetes.</p>
-<p>Triển khai (Deployment) là một đối tượng trong Kubernetes.</p>
-<pre tabindex="0"><code>apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: myapp-deployment
-  labels:
-    app: myapp
-    type: front-end
-spec:
-  template:
-    metadata:
-      name: myapp-pod
-      labels:
-        app: myapp
-        type: front-end
-    spec:
-      containers:
-      - name: nginx-container
-        image: nginx
-  replicas: 3
-  selector:
-    matchLabels:
-      type: front-end
-</code></pre><p>Sau khi tệp này đã sẵn sàng, tạo triển khai bằng cách sử dụng tệp định nghĩa triển khai:</p>
-<pre tabindex="0"><code>$ kubectl create -f deployment-definition.yaml
-</code></pre><p>Để xem triển khai đã được tạo:</p>
-<pre tabindex="0"><code>$ kubectl get deployment
-</code></pre><p>Triển khai tự động tạo một ReplicaSet. Để xem các ReplicaSet:</p>
-<pre tabindex="0"><code>$ kubectl get replicaset
-</code></pre><p>Các ReplicaSet cuối cùng sẽ tạo ra các POD. Để xem các POD:</p>
-<pre tabindex="0"><code>$ kubectl get pods
-</code></pre><p>Để xem tất cả các đối tượng cùng một lúc:</p>
-<pre tabindex="0"><code>$ kubectl get all
-</code></pre><h4 id="k8s-reference-docs">K8s Reference Docs:</h4>
+	<h4 id="triển-khai-deployments-trong-kubernetes">Triển khai (Deployments) trong Kubernetes</h4>
+<p>Trong phần này, chúng ta sẽ tìm hiểu về các <strong>triển khai (deployments)</strong> trong Kubernetes.</p>
+<p><strong>Triển khai (Deployment)</strong> là một đối tượng trong Kubernetes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">myapp-deployment</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app</span>: <span style="color:#ae81ff">myapp</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">front-end</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#ae81ff">myapp-pod</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">myapp</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">type</span>: <span style="color:#ae81ff">front-end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx-container</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">replicas</span>: <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">type</span>: <span style="color:#ae81ff">front-end</span>
+</span></span></code></pre></div><p>Sau khi tệp này đã sẵn sàng, tạo <strong>triển khai</strong> bằng cách sử dụng tệp định nghĩa <strong>triển khai</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl create -f deployment-definition.yaml
+</span></span></code></pre></div><p>Để xem <strong>triển khai</strong> đã được tạo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl get deployment
+</span></span></code></pre></div><p><strong>Triển khai</strong> tự động tạo một <strong>ReplicaSet</strong>. Để xem các <strong>ReplicaSet</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl get replicaset
+</span></span></code></pre></div><p>Các <strong>ReplicaSet</strong> cuối cùng sẽ tạo ra các <strong>POD</strong>. Để xem các <strong>POD</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl get pods
+</span></span></code></pre></div><p>Để xem tất cả các đối tượng cùng một lúc:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kubectl get all
+</span></span></code></pre></div><h4 id="tài-liệu-tham-khảo-về-kubernetes">Tài liệu tham khảo về Kubernetes:</h4>
 <ul>
-<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">https://kubernetes.io/docs/concepts/workloads/controllers/deployment/</a></li>
-<li><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/">https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/</a></li>
-<li><a href="https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/">https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/</a></li>
-<li><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Triển khai (Deployments)</a></li>
+<li><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/">Giới thiệu về triển khai</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/">Quản lý triển khai</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Làm việc với các đối tượng Kubernetes</a></li>
 </ul>
 
 
@@ -1049,19 +1049,19 @@ spec:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711702844"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711702844"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711702844"></script>
-    <script src="/js/jquery.sticky.js?1711702844"></script>
-    <script src="/js/featherlight.min.js?1711702844"></script>
-    <script src="/js/highlight.pack.js?1711702844"></script>
+    <script src="/js/clipboard.min.js?1715656511"></script>
+    <script src="/js/perfect-scrollbar.min.js?1715656511"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1715656511"></script>
+    <script src="/js/jquery.sticky.js?1715656511"></script>
+    <script src="/js/featherlight.min.js?1715656511"></script>
+    <script src="/js/highlight.pack.js?1715656511"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711702844"></script>
-    <script src="/js/learn.js?1711702844"></script>
-    <script src="/js/hugo-learn.js?1711702844"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1715656511"></script>
+    <script src="/js/learn.js?1715656511"></script>
+    <script src="/js/hugo-learn.js?1715656511"></script>
 
-    <link href="/mermaid/mermaid.css?1711702844" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711702844"></script>
+    <link href="/mermaid/mermaid.css?1715656511" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1715656511"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -8,7 +8,7 @@ pre: "<b> 1.3 </b>"
 
 #### CoreDNS
 
-#### Tiền điều kiện CoreDNS
+#### Điều kiện tiên quyết CoreDNS
 
 
 Trong phần này, chúng ta sẽ xem xét **CoreDNS**
@@ -30,7 +30,7 @@ coredns
 
 #### Chạy tệp thực thi
 
-- Chạy tệp thực thi để bắt đầu một máy chủ DNS. Theo mặc định, nó lắng nghe trên cổng 53, đó là cổng mặc định cho một máy chủ DNS.
+- Chạy tệp thực thi để khởi động một máy chủ DNS. Theo mặc định, nó lắng nghe trên cổng 53, đó là cổng mặc định cho máy chủ DNS.
 
 ```
 $ ./coredns

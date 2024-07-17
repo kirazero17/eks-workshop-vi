@@ -1,23 +1,23 @@
 ---
-title: "Giới thiệu"
+title: "Persistent Volumes"
 date: "`r Sys.Date()`"
 weight: 6
 chapter: false
 pre: "<b> 1.6 </b>"
 ---
 
-#### Khối Lưu Trữ Cố Định
+#### Khối Lưu Trữ Bền (Persistent Volume)
 
   - Điều hướng đến [Bài Giảng](https://kodekloud.com/topic/persistent-volumes-4/)
 
 Trong phần này, chúng ta sẽ xem xét về **Khối Lưu Trữ Cố Định**
 
-- Trong môi trường lớn, với nhiều người dùng triển khai nhiều pods, người dùng sẽ phải cấu hình lưu trữ mỗi lần cho mỗi Pod.
+- Trong môi trường lớn, với nhiều người dùng triển khai nhiều pods, người dùng sẽ phải cấu hình lưu trữ riêng lẻ cho từng Pod.
 - Bất kể giải pháp lưu trữ nào được sử dụng, người dùng triển khai các pods sẽ phải cấu hình chúng trên tất cả các tệp định nghĩa pods trong môi trường của mình. Mỗi khi có thay đổi, người dùng sẽ phải thực hiện chúng trên tất cả các pods của mình.
 
 ![EKS](/images/0005/00016.png?featherlight=false&width=90pc)
 
-- Một Khối Lưu Trữ Cố Định là một cụm lưu trữ trên toàn cụm được cấu hình bởi một quản trị viên để được sử dụng bởi người dùng triển khai ứng dụng trên cụm. Người dùng có thể lựa chọn lưu trữ từ cụm này bằng cách sử dụng các Yêu Cầu Khối Lưu Trữ Cố Định.
+- Một Khối Lưu Trữ Bền là một cụm lưu trữ trên toàn cụm được cấu hình bởi một quản trị viên để được sử dụng bởi người dùng triển khai ứng dụng trên cụm. Người dùng có thể lựa chọn lưu trữ từ cụm này bằng cách sử dụng các Yêu Cầu Khối Lưu Trữ Cố Định.
 
   ```yaml
   pv-definition.yaml
@@ -46,7 +46,7 @@ Trong phần này, chúng ta sẽ xem xét về **Khối Lưu Trữ Cố Định
   persistentvolume "pv-vol1" deleted
   ```
 
-#### Khối Lưu Trữ Cố Định Kubernetes
+#### Khối Lưu Trữ Bền Kubernetes
 
 - https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 - https://portworx.com/tutorial-kubernetes-persistent-volumes/

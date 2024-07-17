@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.128.2">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Giới thiệu :: KUBERNETES ON AWS WORKSHOP</title>
+    <title>Plugin Volume Driver trong Docker :: KUBERNETES ON AWS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1711440727" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711440727" rel="stylesheet">
-    <link href="/css/hybrid.css?1711440727" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711440727" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711440727" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711440727" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711440727" rel="stylesheet">
-    <link href="/css/theme.css?1711440727" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711440727" rel="stylesheet">
+    <link href="/css/nucleus.css?1721211906" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1721211906" rel="stylesheet">
+    <link href="/css/hybrid.css?1721211906" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1721211906" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1721211906" rel="stylesheet">
+    <link href="/css/auto-complete.css?1721211906" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1721211906" rel="stylesheet">
+    <link href="/css/theme.css?1721211906" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1721211906" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711440727" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1721211906" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711440727"></script>
+    <script src="/js/jquery-3.3.1.min.js?1721211906"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711440727"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711440727"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1721211906"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1721211906"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711440727"></script>
+<script type="text/javascript" src="/js/search.js?1721211906"></script>
 
     
   </div>
@@ -113,13 +113,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.1-docker-storage/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.1-docker-storage/" title="Lưu trữ trong Docker" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.1-docker-storage/">
-          <b> 1.1 </b>Giới thiệu
+          <b> 1.1 </b>Lưu trữ trong Docker
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.2-storage/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.2-storage/" title="Hệ thống tệp trong Docker" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.2-storage/">
-          <b> 1.2 </b>Giới thiệu
+          <b> 1.2 </b>Hệ thống tệp trong Docker
           
             <i class="fas fa-check read-icon"></i>
           
@@ -169,13 +169,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.3-volume-driver-plugins-in-docker/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.3-volume-driver-plugins-in-docker/" title="Plugin Volume Driver trong Docker" class="dd-item 
         
         active
         
         ">
       <a href="/vi/1-introduce/1.3-volume-driver-plugins-in-docker/">
-          <b> 1.3 </b>Giới thiệu
+          <b> 1.3 </b>Plugin Volume Driver trong Docker
           
             <i class="fas fa-check read-icon"></i>
           
@@ -197,13 +197,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.4-container-storage-interface/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.4-container-storage-interface/" title="Các giao diện container" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.4-container-storage-interface/">
-          <b> 1.4 </b>Giới thiệu
+          <b> 1.4 </b>Các giao diện container
           
             <i class="fas fa-check read-icon"></i>
           
@@ -225,13 +225,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.5-volumes/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.5--volumes/" title="Volume" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/1.5-volumes/">
-          <b> 1.5 </b>Giới thiệu
+      <a href="/vi/1-introduce/1.5--volumes/">
+          <b> 1.5 </b>Volume
           
             <i class="fas fa-check read-icon"></i>
           
@@ -253,13 +253,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.6-persistent-volumes/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.6--persistent-volumes/" title="Persistent Volumes" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/1.6-persistent-volumes/">
-          <b> 1.6 </b>Giới thiệu
+      <a href="/vi/1-introduce/1.6--persistent-volumes/">
+          <b> 1.6 </b>Persistent Volumes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -281,13 +281,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.7-persistent-volume-claims/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.7-persistent-volume-claims/" title="Persistent Volume Claims" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.7-persistent-volume-claims/">
-          <b> 1.7 </b>Giới thiệu
+          <b> 1.7 </b>Persistent Volume Claims
           
             <i class="fas fa-check read-icon"></i>
           
@@ -309,13 +309,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.8-using-pvc-in-pods/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.8-using-pvc-in-pods/" title="Sử dụng PVC trong các pod" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.8-using-pvc-in-pods/">
-          <b> 1.8 </b>Giới thiệu
+          <b> 1.8 </b>Sử dụng PVC trong các pod
           
             <i class="fas fa-check read-icon"></i>
           
@@ -337,13 +337,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.9-storage-class/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.9-storage-class/" title="Storage Class" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.9-storage-class/">
-          <b> 1.9 </b>Giới thiệu
+          <b> 1.9 </b>Storage Class
           
             <i class="fas fa-check read-icon"></i>
           
@@ -398,13 +398,13 @@
  
   
     
-    <li data-nav-id="/vi/3-ebs/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/3-ebs/" title="EBS" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-ebs/">
-          <b> 3. </b>Các Bước Chuẩn Bị
+          <b> 3. </b>EBS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -429,13 +429,13 @@
  
   
     
-    <li data-nav-id="/vi/3-ebs/3.1-statefulsets/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/3-ebs/3.1-statefulsets/" title="StatefulSets" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-ebs/3.1-statefulsets/">
-          <b> 3.1 </b>Các Bước Chuẩn Bị
+          <b> 3.1 </b>StatefulSets
           
             <i class="fas fa-check read-icon"></i>
           
@@ -457,13 +457,13 @@
  
   
     
-    <li data-nav-id="/vi/3-ebs/3.2-ebs-csi-driver/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/3-ebs/3.2-ebs-csi-driver/" title="EBS CSI Driver" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-ebs/3.2-ebs-csi-driver/">
-          <b> 3.2 </b>Các Bước Chuẩn Bị
+          <b> 3.2 </b>EBS CSI Driver
           
             <i class="fas fa-check read-icon"></i>
           
@@ -485,13 +485,13 @@
  
   
     
-    <li data-nav-id="/vi/3-ebs/3.3-statefulset-with-ebs-volume/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/3-ebs/3.3-statefulset-with-ebs-volume/" title="StatefulSet với EBS Volume" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-ebs/3.3-statefulset-with-ebs-volume/">
-          <b> 3.3 </b>Các Bước Chuẩn Bị
+          <b> 3.3 </b>StatefulSet với EBS Volume
           
             <i class="fas fa-check read-icon"></i>
           
@@ -520,13 +520,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-efs/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-efs/" title="Amazon EFS" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-amazon-efs/">
-          <b> 4. </b>Các Bước Chuẩn Bị
+          <b> 4. </b>Amazon EFS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -551,13 +551,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-efs/4.1/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-efs/4.1/" title="Lưu trữ lâu dài qua mạng" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-amazon-efs/4.1/">
-          <b> 4.1 </b>Các Bước Chuẩn Bị
+          <b> 4.1 </b>Lưu trữ lâu dài qua mạng
           
             <i class="fas fa-check read-icon"></i>
           
@@ -579,13 +579,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-efs/4.2/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-efs/4.2/" title="EFS CSI Driver" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-amazon-efs/4.2/">
-          <b> 4.2 </b>Các Bước Chuẩn Bị
+          <b> 4.2 </b>EFS CSI Driver
           
             <i class="fas fa-check read-icon"></i>
           
@@ -607,13 +607,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-efs/4.3/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-efs/4.3/" title="Cấp phát động sử dụng EFS" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-amazon-efs/4.3/">
-          <b> 4.3 </b>Các Bước Chuẩn Bị
+          <b> 4.3 </b>Cấp phát động sử dụng EFS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -675,7 +675,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/1-introduce/1.3-volume-driver-plugins-in-docker/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/1-introduce/1.3-volume-driver-plugins-in-docker/" selected>Tiếng Việt</option>
                     
                   
               
@@ -763,7 +763,7 @@
             
           
           
-            <a href='/vi/'>Kubernetes trên AWS</a> > <a href='/vi/1-introduce/'>Giới thiệu</a> > Giới thiệu
+            <a href='/vi/'>Kubernetes trên AWS</a> > <a href='/vi/1-introduce/'>Giới thiệu</a> > Plugin Volume Driver trong Docker
           
         
           
@@ -800,7 +800,7 @@
           
             <h1>
               
-              Giới thiệu
+              Plugin Volume Driver trong Docker
             </h1>
           
 
@@ -808,23 +808,20 @@
 
 
 
-	<h4 id="plugin-volume-driver-trong-docker">Plugin Volume Driver trong Docker</h4>
+	<h4 id="plugin-volume-driver-pvd-trong-docker">Plugin Volume Driver (PVD) trong Docker</h4>
+<p>Trong phần này, chúng ta sẽ tìm hiểu về <strong>PVD trong Docker</strong></p>
 <ul>
-<li>Điều hướng tới <a href="https://kodekloud.com/topic/volume-driver-plugins-in-docker-4/">Bài giảng</a></li>
+<li>Chúng ta đã thảo luận về các driver lưu trữ. Các driver lưu trữ giúp quản lý lưu trữ trên image và container.</li>
+<li>Chúng ta đã biết rằng nếu bạn muốn lưu trữ lâu dài, bạn phải tạo ra các container. Các container không được quản lý bởi các driver lưu trữ. Các container được quản lý bởi các plugin driver container. Plugin driver container mặc định là local.</li>
+<li>Plugin container local giúp tạo ra một container trên máy chủ Docker và lưu trữ dữ liệu của nó dưới thư mục <code>/var/lib/docker/volumes/</code>.</li>
+<li>Có nhiều plugin driver container khác cho phép bạn tạo ra một container trên các giải pháp của bên thứ ba như lưu trữ tệp Azure Files, DigitalOcean Block Storage, Portworx, Google Compute Persistent Disk, v.v.</li>
 </ul>
-<p>Trong phần này, chúng ta sẽ tìm hiểu về <strong>Plugin Volume Driver trong Docker</strong></p>
+<p><img alt="EKS" src="/images/0005/0009.png?featherlight=false&width=90pc"></p>
 <ul>
-<li>Chúng ta đã thảo luận về các driver lưu trữ. Các driver lưu trữ giúp quản lý lưu trữ trên hình ảnh và container.</li>
-<li>Chúng ta đã biết rằng nếu bạn muốn lưu trữ lâu dài, bạn phải tạo ra các thùng chứa. Các thùng chứa không được quản lý bởi các driver lưu trữ. Các thùng chứa được quản lý bởi các plugin driver thùng chứa. Plugin driver thùng chứa mặc định là local.</li>
-<li>Plugin thùng chứa local giúp tạo ra một thùng chứa trên máy chủ Docker và lưu trữ dữ liệu của nó dưới thư mục <code>/var/lib/docker/volumes/</code>.</li>
-<li>Có nhiều plugin driver thùng chứa khác cho phép bạn tạo ra một thùng chứa trên các giải pháp của bên thứ ba như lưu trữ tệp Azure, Lưu trữ khối DigitalOcean, Portworx, Đĩa cố định Google Compute, v.v.</li>
-</ul>
-<p><img src="/images/0005/0009.png?featherlight=false&amp;width=90pc" alt="EKS"></p>
-<ul>
-<li>Khi bạn chạy một container Docker, bạn có thể chọn sử dụng một plugin driver thùng chứa cụ thể, như RexRay EBS để cung cấp một thùng chứa từ Amazon EBS. Điều này sẽ tạo ra một container và gắn kết một thùng chứa từ điện toán đám mây AWS. Khi container kết thúc, dữ liệu của bạn được an toàn trên điện toán đám mây.</li>
+<li>Khi bạn chạy một Docker container, bạn có thể chọn sử dụng một plugin driver container cụ thể, như RexRay EBS để cung cấp một container từ Amazon EBS. Điều này sẽ tạo ra một container và gắn kết một container từ điện toán đám mây AWS. Khi container kết thúc, dữ liệu của bạn được an toàn trên điện toán đám mây.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker run -it --name mysql --volume-driver rexray/ebs --mount src<span style="color:#f92672">=</span>ebs-vol,target<span style="color:#f92672">=</span>/var/lib/mysql mysql
-</span></span></code></pre></div><p><img src="/images/0005/00010.png?featherlight=false&amp;width=90pc" alt="EKS"></p>
+</span></span></code></pre></div><p><img alt="EKS" src="/images/0005/00010.png?featherlight=false&width=90pc"></p>
 <h4 id="tài-liệu-tham-khảo-docker">Tài liệu tham khảo Docker</h4>
 <ul>
 <li><a href="https://docs.docker.com/engine/extend/legacy_plugins/">https://docs.docker.com/engine/extend/legacy_plugins/</a></li>
@@ -1192,10 +1189,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/1-introduce/1.2-storage/" title="Giới thiệu"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/1-introduce/1.2-storage/" title="Hệ thống tệp trong Docker"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/1-introduce/1.4-container-storage-interface/" title="Giới thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/1-introduce/1.4-container-storage-interface/" title="Các giao diện container" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1205,19 +1202,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711440727"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711440727"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711440727"></script>
-    <script src="/js/jquery.sticky.js?1711440727"></script>
-    <script src="/js/featherlight.min.js?1711440727"></script>
-    <script src="/js/highlight.pack.js?1711440727"></script>
+    <script src="/js/clipboard.min.js?1721211906"></script>
+    <script src="/js/perfect-scrollbar.min.js?1721211906"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1721211906"></script>
+    <script src="/js/jquery.sticky.js?1721211906"></script>
+    <script src="/js/featherlight.min.js?1721211906"></script>
+    <script src="/js/highlight.pack.js?1721211906"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711440727"></script>
-    <script src="/js/learn.js?1711440727"></script>
-    <script src="/js/hugo-learn.js?1711440727"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1721211906"></script>
+    <script src="/js/learn.js?1721211906"></script>
+    <script src="/js/hugo-learn.js?1721211906"></script>
 
-    <link href="/mermaid/mermaid.css?1711440727" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711440727"></script>
+    <link href="/mermaid/mermaid.css?1721211906" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1721211906"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

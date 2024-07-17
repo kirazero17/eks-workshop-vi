@@ -1,14 +1,14 @@
 ---
-title: "Managing the Sealing Key"
+title: "Quản lý khoá niêm phong"
 date: "`r Sys.Date()`"
 weight: 4
 chapter: false
 pre: "<b> 5.3.4 </b>"
 ---
 
-#### Managing the Sealing Key
+#### Quản lý khoá niêm phong
 
-Để giải mã dữ liệu được mã hóa bên trong một SealedSecret, bạn cần sử dụng khóa niêm phong được quản lý bởi bộ điều khiển. Có thể có tình huống khi bạn cố gắng khôi phục trạng thái ban đầu của một cụm sau một thảm họa hoặc bạn muốn tận dụng luồng làm việc GitOps để triển khai các tài nguyên Kubernetes, bao gồm SealedSecrets, từ một kho lưu trữ Git và tạo một cụm EKS mới. Bộ điều khiển được triển khai trong cụm EKS mới phải sử dụng cùng một khóa niêm phong để có thể mở niêm phong các SealedSecrets.
+Để giải mã dữ liệu được mã hóa bên trong một SealedSecret, bạn cần sử dụng khóa niêm phong được quản lý bởi bộ điều khiển. Có thể có tình huống khi bạn cố gắng khôi phục trạng thái ban đầu của một cụm sau một thảm họa hoặc bạn muốn tận dụng quy trình GitOps để triển khai các tài nguyên Kubernetes, bao gồm SealedSecrets, từ một kho lưu trữ Git và tạo một cụm EKS mới. Bộ điều khiển được triển khai trong cụm EKS mới phải sử dụng cùng một khóa niêm phong để có thể mở niêm phong các SealedSecrets.
 
 Chạy lệnh sau để lấy khóa niêm phong từ cụm. Trong môi trường sản xuất, việc sử dụng Kubernetes RBAC để cấp quyền cho một tập hợp hạn chế các khách hàng thực hiện thao tác này được coi là một thực hành tốt.
 
@@ -55,6 +55,6 @@ $ kubectl logs deployment/sealed-secrets-controller -n kube-system
 
 Tệp `/tmp/master-sealing-key.yaml` chứa cặp khóa công khóa riêng được tạo bởi bộ điều khiển. Nếu tệp này bị lộ, tất cả các biểu hiện SealedSecret có thể được mở niêm phong và thông tin nhạy cảm được mã hóa mà chúng lưu trữ sẽ được tiết lộ. Do đó, tệp này phải được bảo vệ bằng cách cấp quyền truy cập ít nhất đặc quyền. Đối với hướng dẫn bổ sung về các chủ đề như làm mới khóa niêm phong và quản lý khóa niêm phong thủ công, vui lòng tham khảo [tài liệu](https://github.com/bitnami-labs/sealed-secrets#secret-rotation).
 
-Một lựa chọn để bảo mật khóa niêm phong là lưu nội dung của tệp `/tmp/master-sealing-key.yaml` dưới dạng tham số SecureString trong AWS Systems Manager Parameter Store. Tham số có thể được bảo vệ bằng cách sử dụng một khóa quản lý khách hàng KMS (CMK) và bạn có thể sử dụng Chính sách khóa để
+Một lựa chọn để bảo mật khóa niêm phong là lưu nội dung của tệp `/tmp/master-sealing-key.yaml` dưới dạng tham số SecureString trong AWS Systems Manager Parameter Store. Tham số có thể được bảo vệ bằng cách sử dụng một khóa quản lý khách hàng KMS (CMK) và bạn có thể sử dụng Chính sách khóa để hạn chế tập hợp các nguyên tắc IAM nào có thể sử dụng khóa này để lấy tham số. Bên cạnh đó, bạn cũng có thể kích hoạt tự động làm mới của CMK này trong KMS.
 
- hạn chế tập hợp các nguyên tắc IAM nào có thể sử dụng khóa này để lấy tham số. Bên cạnh đó, bạn cũng có thể kích hoạt tự động làm mới của CMK này trong KMS. Lưu ý rằng các tham số tier tiêu chuẩn hỗ trợ một giá trị tham số tối đa là 4096 ký tự. Do đó, với kích thước của tệp master.yaml, bạn sẽ phải lưu nó dưới dạng tham số trong tier Advanced.
+Lưu ý rằng các tham số tier tiêu chuẩn hỗ trợ một giá trị tham số tối đa là 4096 ký tự. Do đó, với kích thước của tệp master.yaml, bạn sẽ phải lưu nó dưới dạng tham số trong tier Advanced.

@@ -66,9 +66,9 @@ spec:
               containerPort: 443
 ```
 
-#### Tài khoản Dịch vụ
+#### Tài khoản Dịch vụ (ServiceAccount)
 
-- Tài khoản Dịch vụ yêu cầu cho mục đích xác thực cùng với các Quyền, Quyền Cụm và Liên kết Quyền chính xác.
+- ServiceAccount yêu cầu cho mục đích xác thực cùng với các Role, ClusterRole và RoleBinding chính xác.
 
 - Tạo một tài khoản dịch vụ ingress
 ```

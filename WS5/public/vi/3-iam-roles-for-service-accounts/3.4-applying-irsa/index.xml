@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Applying IRSA on TERRAFORM ON AWS WORKSHOP</title>
-    <link>/vi/3-iam-roles-for-service-accounts/3.4-applying-irsa/</link>
-    <description>Recent content in Applying IRSA on TERRAFORM ON AWS WORKSHOP</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Áp dụng IRSA on TERRAFORM ON AWS WORKSHOP</title>
+    <link>//localhost:1313/vi/3-iam-roles-for-service-accounts/3.4-applying-irsa/</link>
+    <description>Recent content in Áp dụng IRSA on TERRAFORM ON AWS WORKSHOP</description>
+    <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="/vi/3-iam-roles-for-service-accounts/3.4-applying-irsa/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/3-iam-roles-for-service-accounts/3.4-applying-irsa/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

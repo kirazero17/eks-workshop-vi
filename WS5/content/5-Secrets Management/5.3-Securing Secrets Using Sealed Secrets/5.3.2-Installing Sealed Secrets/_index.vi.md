@@ -1,12 +1,12 @@
 ---
-title: "Securing Secrets Using Sealed Secrets"
+title: "Cài đặt Sealed Secrets"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: false
 pre: "<b> 5.3.2 </b>"
 ---
 
-#### Securing Secrets Using Sealed Secrets
+#### Cài đặt Sealed Secrets
 
 
 Lệnh `kubeseal` được sử dụng để tương tác với bộ điều khiển sealed secrets, và đã được cài đặt sẵn trong Cloud9.
@@ -25,7 +25,7 @@ $ kubectl get pods -n kube-system -l name=sealed-secrets-controller
 sealed-secrets-controller-77747c4b8c-snsxp      1/1     Running   0          5s
 ```
 
-Các nhật ký của bộ điều khiển sealed secrets cho thấy rằng bộ điều khiển cố gắng tìm bất kỳ khóa riêng nào hiện có trong quá trình khởi động. Nếu không có khóa riêng nào được tìm thấy, sau đó nó sẽ tạo một bí mật mới với các chi tiết chứng chỉ.
+Các bản log của bộ điều khiển sealed secrets cho thấy rằng bộ điều khiển cố gắng tìm bất kỳ khóa riêng nào hiện có trong quá trình khởi động. Nếu không có khóa riêng nào được tìm thấy, sau đó nó sẽ tạo một khoá bí mật mới với các chi tiết chứng chỉ.
 
 ```bash
 $ kubectl logs deployments/sealed-secrets-controller -n kube-system
@@ -44,7 +44,7 @@ q5P11EvxPBfIt9xDx5Jz4JWp5M7wWawGaeBqTmTDbSkc
 2022/10/18 09:17:02 HTTP server serving on :8080
 ```
 
-Chúng ta có thể xem nội dung của Bí mật chứa khóa niêm phong dưới dạng cặp khóa công khai / khóa riêng trong định dạng YAML như sau:
+Chúng ta có thể xem nội dung của khoá bí mật chứa khóa niêm phong dưới dạng cặp khóa công khai / khóa riêng trong định dạng YAML như sau:
 
 ```bash
 $ kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml

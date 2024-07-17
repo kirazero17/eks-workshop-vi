@@ -77,7 +77,7 @@ metadata:
   namespace: carts
 ```
 
-Bây giờ chúng ta cần khởi động lại tất cả các Pod giỏ hàng để lấy nội dung ConfigMap mới của chúng tôi:
+Bây giờ chúng ta cần khởi động lại tất cả các Pod `carts` để lấy nội dung ConfigMap mới của chúng tôi:
 
 ```bash
 kubectl rollout restart -n carts deployment/carts
@@ -94,6 +94,6 @@ kubectl get service -n ui ui-nlb -o jsonpath='{.status.loadBalancer.ingress[*].h
 k8s-ui-uinlb-647e781087-6717c5049aa96bd9.elb.us-west-2.amazonaws.com
 ```
 
-Vậy bây giờ ứng dụng của chúng ta nên đang sử dụng DynamoDB đúng không? Hãy mở nó trong trình duyệt bằng cách sử dụng đầu ra của lệnh trên và điều hướng đến giỏ hàng:
+Vậy bây giờ ứng dụng của chúng ta phải đang sử dụng DynamoDB đúng không? Hãy mở nó trong trình duyệt bằng cách sử dụng đầu ra của lệnh trên và điều hướng đến giỏ hàng:
 
 Trang giỏ hàng không thể truy cập! Đã xảy ra vấn đề gì?

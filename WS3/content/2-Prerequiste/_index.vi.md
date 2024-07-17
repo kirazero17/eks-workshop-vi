@@ -8,7 +8,7 @@ pre: "<b> 2. </b>"
 
 #### Các Bước Chuẩn Bị
 
-Thực hiện lệnh sau từ Cloud9 của bài đầu tiên:
+Thực hiện lệnh sau từ Cloud9 đã tạo trong bài đầu tiên:
 
 ```bash timeout=600 wait=30
 $ prepare-environment fundamentals/mng/basics
@@ -38,4 +38,4 @@ Bạn nên thấy:
 
 - Các **node** được phân phối trên nhiều subnet trong các AZ khác nhau, cung cấp tính sẵn có cao
 
-Trong suốt module này, chúng ta sẽ thực hiện các thay đổi vào managed node group này để thể hiện các khả năng cơ bản của **MNGs**.
+Trong suốt module này, chúng ta sẽ thực hiện các thay đổi lên managed node group này để cho thấy các khả năng cơ bản của các **MNGs**.

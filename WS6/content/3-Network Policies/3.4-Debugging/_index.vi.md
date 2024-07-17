@@ -8,7 +8,7 @@ pre: "<b> 3.4 </b>"
 
 #### Debugging
 
-## Debugging Network Policies with Amazon VPC CNI Logs
+## Debug Chính sách Mạng bằng Amazon VPC CNI Logs
 
 Đến nay, chúng ta đã có thể áp dụng các chính sách mạng mà không gặp vấn đề hoặc lỗi. Nhưng điều gì sẽ xảy ra nếu có lỗi hoặc vấn đề? Làm thế nào để chúng ta có thể gỡ lỗi những vấn đề này?
 
@@ -38,7 +38,7 @@ curl: (28) Failed to connect to orders.orders port 80 after 5000 ms: Timeout was
 ...
 ```
 
-Như bạn có thể thấy từ các đầu ra, có điều gì đó đã đi sai ở đây. Cuộc gọi từ thành phần 'ui' nên đã thành công, nhưng thay vào đó, nó đã thất bại. Để gỡ lỗi điều này, chúng ta có thể tận dụng các nhật ký của agent chính sách mạng để xem vấn đề ở đâu.
+Như bạn có thể thấy từ các đầu ra, có gì đó sai ở đây. Cuộc gọi từ thành phần 'ui' nên đã thành công, nhưng thay vào đó, nó đã thất bại. Để gỡ lỗi điều này, chúng ta có thể tận dụng các nhật ký của agent chính sách mạng để xem vấn đề ở đâu.
 
 Nhật ký của agent chính sách mạng có sẵn trong tập tin `/var/log/aws-routed-eni/network-policy-agent.log` trên mỗi nút worker. Hãy xem liệu có bất kỳ câu lệnh `DENY` nào được đăng nhập trong tập tin đó không:
 

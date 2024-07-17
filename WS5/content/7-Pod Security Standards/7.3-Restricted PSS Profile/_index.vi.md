@@ -1,5 +1,5 @@
 ---
-title: "Restricted profile"
+title: "Cấu hình PSS bị hạn chế"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false

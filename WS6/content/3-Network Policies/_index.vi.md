@@ -1,12 +1,12 @@
 ---
-title: "Network Policies"
+title: "Network Policies (Chính Sách Mạng)"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 3. </b>"
 ---
 
-#### Network Policies
+#### Network Policies (Chính Sách Mạng)
 
 Chuẩn bị môi trường của bạn cho phần này:
 
@@ -65,8 +65,8 @@ Phần mô tả network policy chứa các phần quan trọng sau:
 
 Để biết thêm thông tin về những khả năng được phép hoặc bị hạn chế của network policies trong Kubernetes, xem tài liệu [Kubernetes](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
-Ngoài network policies, Amazon VPC CNI ở chế độ IPv4 cung cấp một tính năng mạnh mẽ được gọi là "security group s for Pods". Tính năng này cho phép bạn sử dụng các security group Amazon EC2 để xác định các quy tắc toàn diện điều chỉnh lưu lượng mạng đến và đi từ các pod triển khai trên các nút của bạn. Trong khi có sự trùng lặp về khả năng giữa các security group cho các pod và các network policy, nhưng có một số khác biệt quan trọng.
+Ngoài network policies, Amazon VPC CNI ở chế độ IPv4 cung cấp một tính năng mạnh mẽ được gọi là "security group s for Pods". Tính năng này cho phép bạn sử dụng các security group Amazon EC2 để xác định các quy tắc toàn diện điều chỉnh lưu lượng mạng đến và đi từ các pod triển khai trên các nút của bạn. Trong khi có sự trùng lặp về công năng giữa các security group cho các pod và các network policy, nhưng có một số khác biệt quan trọng.
 - Các security group cho phép điều khiển lưu lượng ingress và egress đến các phạm vi CIDR, trong khi network policies cho phép điều khiển lưu lượng ingress và egress đến các pod, namespace cũng như các phạm vi CIDR.
 - Các security group cho phép điều khiển lưu lượng ingress và egress từ các security group khác, điều này không có sẵn cho các network policies.
 
-Amazon EKS mạnh mẽ khuyến khích sử dụng network policies kết hợp với các security group để hạn chế giao tiếp mạng giữa các pod, từ đó giảm bề mặt tấn công và giảm thiểu các lỗ hổng tiềm ẩn.
+Amazon EKS đặc biệt khuyến khích sử dụng network policies kết hợp với các security group để hạn chế giao tiếp mạng giữa các pod, từ đó giảm bề mặt tấn công và giảm thiểu các lỗ hổng tiềm ẩn.

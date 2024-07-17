@@ -1,5 +1,5 @@
 ---
-title: "Hạn chế quyền cho Pod trong Kubernetes"
+title: "Cấu hình PSS cơ bản"
 date: "`r Sys.Date()`"
 weight: 2
 chapter: false
@@ -8,7 +8,7 @@ pre: "<b> 7.2 </b>"
 
 #### Hạn chế quyền cho Pod trong Kubernetes
 
-Nếu chúng ta muốn hạn chế quyền mà một Pod có thể yêu cầu, chẳng hạn như quyền `privileged` mà chúng tôi cung cấp cho Pod `assets` trong phần trước, có thể nguy hiểm, cho phép một kẻ tấn công truy cập vào tài nguyên của máy chủ bên ngoài của container.
+Sẽ thế nào nếu chúng ta muốn hạn chế quyền mà một Pod có thể yêu cầu ? Chẳng hạn như quyền `privileged` mà chúng ta cung cấp cho Pod `assets` trong phần trước (có thể nguy hiểm, cho phép một kẻ tấn công truy cập vào tài nguyên của máy chủ bên ngoài của container).
 
 Chính sách Baseline PSS là một chính sách hạn chế tối thiểu ngăn chặn việc tăng quyền biết trước. Hãy thêm nhãn vào `assets` Namespace để kích hoạt nó:
 
@@ -43,7 +43,7 @@ $ kubectl -n assets get pod
 Không tìm thấy tài nguyên trong namespace assets.
 ```
 
-Như bạn có thể thấy, không có Pods nào đang chạy, do nhãn Namespace `pod-security.kubernetes.io/enforce`, tuy nhiên chúng ta không biết ngay lập tức lý do tại sao. Khi sử dụng độc lập, các chế độ PSA có các phản ứng khác nhau dẫn đến các trải nghiệm người dùng khác nhau. Chế độ thực thi ngăn chặn việc tạo Pods nếu các đặc tả Pod tương ứng vi phạm hồ sơ PSS được cấu hình. Tuy nhiên, trong chế độ này, các đối tượng Kubernetes không phải là Pod tạo ra Pods, chẳng hạn như Deployments, sẽ không bị ngăn chặn khỏi việc áp dụng vào cụm, ngay cả khi các đặc tả Pod trong đó vi phạm hồ sơ PSS được áp dụng. Trong trường hợp này, Deployment được áp dụng trong khi các Pods bị ngăn chặn khỏi việc áp dụng.
+Như bạn có thể thấy, không có Pods nào đang chạy do nhãn Namespace `pod-security.kubernetes.io/enforce`, nhưng chúng ta không biết ngay lập tức lý do tại sao. Khi sử dụng độc lập, các chế độ PSA có các phản ứng khác nhau dẫn đến các trải nghiệm người dùng khác nhau. Chế độ thực thi ngăn chặn việc tạo Pods nếu các đặc tả Pod tương ứng vi phạm hồ sơ PSS được cấu hình. Tuy nhiên, trong chế độ này, các đối tượng Kubernetes không phải là Pod tạo ra Pods, chẳng hạn như Deployments, sẽ không bị ngăn chặn khỏi việc áp dụng vào cụm, ngay cả khi các đặc tả Pod trong đó vi phạm hồ sơ PSS được áp dụng. Trong trường hợp này, Deployment được áp dụng trong khi các Pods bị ngăn chặn khỏi việc áp dụng.
 
 Chạy lệnh dưới đây để kiểm tra tình trạng điều kiện của tài nguyên Deployment:
 

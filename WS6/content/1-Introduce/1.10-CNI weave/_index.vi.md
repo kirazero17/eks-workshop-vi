@@ -1,5 +1,5 @@
 ---
-title: "CNI weave"
+title: "CNI Weave"
 date: "`r Sys.Date()`"
 weight: 10
 chapter: false
@@ -16,12 +16,12 @@ Trong phần này, chúng ta sẽ tìm hiểu về "CNI Weave trong Cụm Kubern
 
 ```shell
 $ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
-serviceaccount/weave-net đã được tạo
-clusterrole.rbac.authorization.k8s.io/weave-net đã được tạo
-clusterrolebinding.rbac.authorization.k8s.io/weave-net đã được tạo
-role.rbac.authorization.k8s.io/weave-net đã được tạo
-rolebinding.rbac.authorization.k8s.io/weave-net đã được tạo
-daemonset.apps/weave-net đã được tạo
+serviceaccount/weave-net created
+clusterrole.rbac.authorization.k8s.io/weave-net created
+clusterrolebinding.rbac.authorization.k8s.io/weave-net created
+role.rbac.authorization.k8s.io/weave-net created
+rolebinding.rbac.authorization.k8s.io/weave-net created
+daemonset.apps/weave-net created
 ```
 
 #### Weave Peers
@@ -48,11 +48,11 @@ weave-net-tb9tz                           2/2     Running            0          
 $ kubectl logs weave-net-tb9tz weave -n kube-system 
 ```
 
-#### Xem đường mạng mặc định trong Pod
+#### Xem đường đi mạng mặc định trong Pod
 
 ```shell
 $ kubectl run test --image=busybox --command -- sleep 4500
-pod/test đã được tạo
+pod/test created
 
 $ kubectl exec test -- ip route
 default via 10.244.1.1 dev eth0

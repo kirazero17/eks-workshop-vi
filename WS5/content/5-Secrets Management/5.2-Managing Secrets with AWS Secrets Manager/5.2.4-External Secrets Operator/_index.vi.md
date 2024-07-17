@@ -6,7 +6,7 @@ chapter: false
 pre: "<b> 5.2.4 </b>"
 ---
 
-#### External Secrets Operator
+#### External Secrets Operator (Trình vận hành secret từ bên thứ ba)
 
 Bây giờ chúng ta có thể khám phá tích hợp với Secrets Managed sử dụng External Secrets operator. Điều này đã được cài đặt trong cluster EKS của chúng ta:
 
@@ -61,7 +61,7 @@ provider:
 
 Bạn có thể thấy ở đây, nó đang sử dụng một [JSON Web Token (jwt)](https://jwt.io/), được tham chiếu đến ServiceAccount mà chúng ta vừa kiểm tra, để đồng bộ với AWS Secrets Manager.
 
-Hãy tiến lên và tạo một `ExternalSecret` mô tả những dữ liệu nào sẽ được lấy từ AWS Secrets Manager, cách dữ liệu sẽ được biến đổi và lưu trữ như một Kubernetes Secret. Sau đó, chúng ta có thể patch Deployment `catalog` của mình để sử dụng External Secret làm nguồn cho thông tin xác thực.
+Hãy tiếp tục và tạo một `ExternalSecret` mô tả những dữ liệu nào sẽ được lấy từ AWS Secrets Manager, cách dữ liệu sẽ được biến đổi và lưu trữ như một Kubernetes Secret. Sau đó, chúng ta có thể patch Deployment `catalog` của mình để sử dụng External Secret làm nguồn cho thông tin xác thực.
 
 ```kustomization
 modules/security/secrets-manager/external-secrets/kustomization.yaml
@@ -127,9 +127,9 @@ $ kubectl -n catalog get secret catalog-external-secret -o yaml | yq '.metadata.
 
 Thấy rằng nó có một `ownerReference` trỏ đến External Secrets Operator.
 
-Bây giờ kiểm tra rằng pod `catalog` đã được cập nhật với các giá trị từ secret mới này, và
+Bây giờ kiểm tra rằng pod `catalog` đã được cập nhật với các giá trị từ secret mới này, và...
 
- nó đã hoạt động!
+Nó đã hoạt động!
 
 ```bash
 $ kubectl -n catalog get pods
@@ -153,4 +153,4 @@ $ kubectl -n catalog get deployment catalog -o yaml | yq '.spec.template.spec.co
 
 Tóm lại không có lựa chọn tốt nhất giữa **AWS Secrets and Configuration Provider (ASCP)** và **External Secrets Operator (ESO)** để quản lý secrets được lưu trữ trên **AWS Secrets Manager**.
 
-Cả hai công cụ đều có những ưu điểm cụ thể của họ, ví dụ, ASCP có thể giúp bạn tránh tiết lộ secrets như biến môi trường, gắn chúng như volumes trực tiếp từ AWS Secrets Manager vào một Pod, nhược điểm là cần phải quản lý những volumes đó. Trong khi đó, ESO làm cho việc quản lý vòng đời của Kubernetes Secrets dễ dàng hơn, có cũng một SecretStore trên toàn cụm, tuy nhiên nó không cho phép bạn sử dụng Secrets như volumes. Tất cả phụ thuộc vào trường hợp sử dụng của bạn, và có cả hai có thể mang lại cho bạn nhiều linh hoạt và bảo mật hơn với quản lý Secrets.
+Cả hai công cụ đều có những ưu điểm cụ thể của chúng, ví dụ, ASCP có thể giúp bạn tránh tiết lộ secrets như biến môi trường, gắn chúng như volumes trực tiếp từ AWS Secrets Manager vào một Pod, nhược điểm là cần phải quản lý những volumes đó. Trong khi đó, ESO làm cho việc quản lý vòng đời của Kubernetes Secrets dễ dàng hơn, có cũng một SecretStore trên toàn cụm, tuy nhiên nó không cho phép bạn sử dụng Secrets như volumes. Tất cả phụ thuộc vào trường hợp sử dụng của bạn, và có cả hai có thể mang lại cho bạn nhiều linh hoạt và bảo mật hơn với quản lý Secrets.

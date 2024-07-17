@@ -6,7 +6,7 @@ chapter: false
 pre: "<b> 8. </b>"
 ---
 
-# Chuẩn bị môi trường cho phần này:
+### Chuẩn bị môi trường cho phần này:
 
 ```bash timeout=300 wait=30
 $ prepare-environment security/kyverno
@@ -23,7 +23,7 @@ Cài đặt các add-on Kubernetes sau trong cụm EKS:
 Bạn có thể xem Terraform áp dụng các thay đổi này [tại đây](https://github.com/aws-samples/eks-workshop-v2/tree/main/manifests/modules/security/kyverno/.workshop/terraform).
 :::
 
-Khi các container được sử dụng rộng rãi trong môi trường sản xuất, các nhóm DevOps, Bảo mật và Nền tảng cần một giải pháp để hợp tác và quản lý Quản trị và [Chính sách-dưới-dạng-Mã (PaC)](https://aws.github.io/aws-eks-best-practices/security/docs/pods/#policy-as-code-pac). Điều này đảm bảo rằng tất cả các nhóm khác nhau đều có thể có cùng một nguồn tin cậy trong việc đảm bảo bảo mật, cũng như sử dụng cùng một "ngôn ngữ" cơ bản khi mô tả các nhu cầu cá nhân của họ.
+Khi các container được sử dụng rộng rãi trong môi trường sản xuất, các nhóm DevOps, Bảo mật và Nền tảng cần một giải pháp để hợp tác và quản lý Việc quản trị và [Chính sách-dưới-dạng-Mã (PaC)](https://aws.github.io/aws-eks-best-practices/security/docs/pods/#policy-as-code-pac). Điều này đảm bảo rằng tất cả các nhóm khác nhau đều có thể có cùng một nguồn tin cậy trong việc đảm bảo bảo mật, cũng như sử dụng cùng một "ngôn ngữ" cơ bản khi mô tả các nhu cầu cá nhân của họ.
 
 Kubernetes theo bản chất của nó được thiết kế để là một công cụ để xây dựng và điều phối, điều này có nghĩa là nó thiếu các rào cản được xác định trước. Để cung cấp cho các nhà xây dựng một cách để kiểm soát bảo mật, Kubernetes cung cấp (bắt đầu từ phiên bản 1.23) [Pod Security Admission (PSA)](https://kubernetes.io/docs/concepts/security/pod-security-admission/), một bộ kiểm soát đăng ký tích hợp mà thực hiện các điều khiển bảo mật được mô tả trong [Tiêu chuẩn Bảo mật Pod (PSS)](https://kubernetes.io/docs/concepts/security/pod-security-standards/), được kích hoạt mặc định trong Dịch vụ Amazon Elastic Kubernetes (EKS).
 
@@ -49,9 +49,7 @@ Hai thành phần chính là Máy chủ Webhook & Bộ điều khiển Webhook. 
 
 ---
 
-Trước khi tiếp tục với các lab, xác thực các tài nguyên Kyverno được cung cấp bởi t
-
-ập lệnh `prepare-environment`.
+Trước khi tiếp tục với các lab, xác thực các tài nguyên Kyverno được cung cấp bởi tập lệnh `prepare-environment`.
 
 ```bash
 $ kubectl -n kyverno get all

@@ -1,12 +1,12 @@
 ---
-title: "Persistent network storage"
+title: "Lưu trữ lâu dài qua mạng"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
 pre: "<b> 4.1 </b>"
 ---
 
-#### Persistent network storage
+#### Lưu trữ lâu dài qua mạng
 
 Trên ứng dụng thương mại điện tử của chúng tôi, chúng tôi đã tạo một `deployment` như là một phần của dịch vụ microservice của chúng tôi. Dịch vụ microservice sử dụng một máy chủ web chạy trên EKS. Các máy chủ web là một ví dụ tuyệt vời cho việc sử dụng `deployments` vì chúng **mở rộng theo chiều ngang** và **khai báo trạng thái mới** của các `Pods`.
 

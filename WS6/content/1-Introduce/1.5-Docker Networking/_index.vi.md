@@ -1,5 +1,5 @@
 ---
-title: "Docker Networking"
+title: "Xây dựng mạng Docker"
 date: "`r Sys.Date()`"
 weight: 5
 chapter: false
@@ -195,7 +195,7 @@ $ iptables \
       --to-destination 172.18.0.6:80
 ```
 
-#### Liệt kê các luật Iptables
+#### Liệt kê các quy tắc Iptables
 
 ```bash
 $ iptables -nvL -t nat

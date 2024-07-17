@@ -1,16 +1,16 @@
 ---
-title: "Applying a Security Group"
+title: "Áp dụng Security Group"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 4.3 </b>"
 ---
 
-#### Applying a Security Group
+#### Áp dụng Security Group
 
 ## Kết nối Pod Catalog với RDS Instance trên AWS
 
-Để Pod catalog của chúng ta kết nối thành công với RDS instance, chúng ta cần sử dụng security group đúng. Tuy nhiên, việc áp dụng security group này trực tiếp vào các node worker của EKS sẽ dẫn đến tất cả các công việc trong cluster của chúng ta đều có quyền truy cập mạng vào RDS instance. Thay vào đó, chúng ta sẽ áp dụng Security Groups cho Pods để cho phép các Pod catalog của chúng ta truy cập vào RDS instance.
+Để Pod `catalog` của chúng ta kết nối thành công với RDS instance, chúng ta cần sử dụng security group đúng. Tuy nhiên, việc áp dụng security group này trực tiếp vào các node worker của EKS sẽ dẫn đến tất cả các công việc trong cluster của chúng ta đều có quyền truy cập mạng vào RDS instance. Thay vào đó, chúng ta sẽ áp dụng Security Group vào các Pod `catalog` để cho phép chúng truy cập vào RDS instance.
 
 Một security group cho phép truy cập vào cơ sở dữ liệu RDS đã được thiết lập sẵn cho bạn và bạn có thể xem như sau:
 
@@ -18,8 +18,11 @@ Một security group cho phép truy cập vào cơ sở dữ liệu RDS đã đ�
 $ export CATALOG_SG_ID=$(aws ec2 describe-security-groups \
     --filters Name=vpc-id,Values=$VPC_ID Name=group-name,Values=$EKS_CLUSTER_NAME-catalog \
     --query "SecurityGroups[0].GroupId" --output text)
+
 $ aws ec2 describe-security-groups \
   --group-ids $CATALOG_SG_ID | jq '.'
+```
+```yaml
 {
   "SecurityGroups": [
     {
@@ -75,7 +78,7 @@ Security group này:
 manifests/modules/networking/securitygroups-for-pods/sg/policy.yaml
 ```
 
-Áp dụng điều này vào cluster sau đó tái khởi động các Pod catalog một lần nữa:
+Áp dụng điều này vào cluster sau đó tái khởi động các Pod `catalog` một lần nữa:
 
 ```bash
 $ kubectl kustomize ~/environment/eks-workshop/modules/networking/securitygroups-for-pods/sg \
@@ -98,7 +101,7 @@ $ kubectl rollout status -n catalog deployment/catalog --timeout 30s
 deployment "catalog" successfully rolled out
 ```
 
-Lần này, Pod catalog sẽ được khởi động và quá trình triển khai sẽ thành công. Bạn có thể kiểm tra log để xác nhận rằng nó đang kết nối với cơ sở dữ liệu RDS:
+Lần này, Pod `catalog` sẽ khởi động và quá trình triển khai sẽ thành công. Bạn có thể kiểm tra log để xác nhận rằng nó đang kết nối với cơ sở dữ liệu RDS:
 
 ```bash
 $ kubectl -n catalog logs deployment/catalog | grep Connect

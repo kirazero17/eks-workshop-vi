@@ -1,12 +1,12 @@
 ---
-title: "CNI in Kubernetes"
+title: "CNI trong Kubernetes"
 date: "`r Sys.Date()`"
 weight: 9
 chapter: false
 pre: "<b> 1.9 </b>"
 ---
 
-#### CNI in Kubernetes
+#### CNI trong Kubernetes
 
 Trong phần này, chúng ta sẽ xem xét **Giao diện Mạng Container (CNI) trong Kubernetes**
 

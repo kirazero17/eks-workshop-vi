@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Phân Cấp Tiền Tố on KUBERNETES ON AWS WORKSHOP</title>
-    <link>/vi/6-prefix-delegation/</link>
-    <description>Recent content in Phân Cấp Tiền Tố on KUBERNETES ON AWS WORKSHOP</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Ủy Quyền Tiền Tố on KUBERNETES ON AWS WORKSHOP</title>
+    <link>//localhost:1313/vi/6-prefix-delegation/</link>
+    <description>Recent content in Ủy Quyền Tiền Tố on KUBERNETES ON AWS WORKSHOP</description>
+    <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="/vi/6-prefix-delegation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/6-prefix-delegation/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

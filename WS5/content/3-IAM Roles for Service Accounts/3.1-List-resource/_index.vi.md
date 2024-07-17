@@ -9,7 +9,7 @@ pre: "<b> 3.1 </b>"
 #### Liệt kê tài nguyên
 
 #### Giới thiệu
-Thành phần giỏ hàng của kiến ​​trúc của chúng tôi sử dụng Amazon DynamoDB làm cơ sở dữ liệu lưu trữ của nó, đây là một trường hợp sử dụng phổ biến bạn sẽ thấy cho việc tích hợp cơ sở dữ liệu không quan hệ với Amazon EKS. Cách mà API giỏ hàng hiện đang triển khai sử dụng một phiên bản nhẹ của Amazon DynamoDB chạy như một container trong cụm EKS.
+Thành phần `carts` của kiến ​​trúc của chúng tôi sử dụng Amazon DynamoDB làm cơ sở dữ liệu lưu trữ của nó, đây là một trường hợp sử dụng phổ biến bạn sẽ thấy cho việc tích hợp cơ sở dữ liệu không quan hệ với Amazon EKS. Cách mà API `carts` hiện đang triển khai sử dụng một phiên bản nhẹ của Amazon DynamoDB chạy như một container trong cụm EKS.
 
 Bạn có thể thấy điều này bằng cách chạy lệnh sau:
 
@@ -33,4 +33,4 @@ kubectl -n carts exec deployment/carts -- env | grep CARTS_DYNAMODB_ENDPOINT
 CARTS_DYNAMODB_ENDPOINT=http://carts-dynamodb:8000
 ```
 
-Cách tiếp cận này có thể hữu ích cho việc kiểm tra, nhưng chúng tôi muốn di chuyển ứng dụng của mình để sử dụng dịch vụ Amazon DynamoDB quản lý hoàn toàn để tận dụng đầy đủ quy mô và độ tin cậy mà nó cung cấp.
+Cách tiếp cận này có thể hữu ích cho việc kiểm thử, nhưng chúng tôi muốn di chuyển ứng dụng của mình để sử dụng dịch vụ Amazon DynamoDB quản lý hoàn toàn để tận dụng đầy đủ quy mô và độ tin cậy mà nó cung cấp.

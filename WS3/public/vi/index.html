@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.125.7">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Kubernetes trên AWS :: Kubernetes - EKS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1712388775" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1712388775" rel="stylesheet">
-    <link href="/css/hybrid.css?1712388775" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1712388775" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1712388775" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712388775" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1712388775" rel="stylesheet">
-    <link href="/css/theme.css?1712388775" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1712388775" rel="stylesheet">
+    <link href="/css/nucleus.css?1717034172" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1717034172" rel="stylesheet">
+    <link href="/css/hybrid.css?1717034172" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1717034172" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1717034172" rel="stylesheet">
+    <link href="/css/auto-complete.css?1717034172" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1717034172" rel="stylesheet">
+    <link href="/css/theme.css?1717034172" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1717034172" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1712388775" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1717034172" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1712388775"></script>
+    <script src="/js/jquery-3.3.1.min.js?1717034172"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1712388775"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1712388775"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1717034172"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1717034172"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1712388775"></script>
+<script type="text/javascript" src="/js/search.js?1717034172"></script>
 
     
   </div>
@@ -917,7 +917,7 @@
                   
                     
                     
-                      <option id="en" value="/">English</option>
+                      <option id="en" value="//localhost:1313/">English</option>
                     
                   
               
@@ -931,7 +931,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/" selected>Tiếng Việt</option>
                     
                   
               
@@ -1011,7 +1011,7 @@
 <p>Tên Kubernetes bắt nguồn từ tiếng Hy Lạp, nghĩa là người lái tàu hoặc hoa tiêu. Kubernetes được Google công bố mã nguồn vào năm 2014, dựa trên gần một thập kỷ kinh nghiệm quản lý workload lớn trong thực tế của Google, kết hợp với các ý tưởng và best practices từ cộng đồng.</p>
 <h4 id="quay-ngược-thời-gian">Quay ngược thời gian</h4>
 <p>Hãy xem xét tại sao Kubernetes lại quan trọng thông qua việc nhìn lại quá khứ.</p>
-<p><img src="/images/4/00010.svg?featherlight=false&amp;width=60pc" alt="Kubernetes"></p>
+<p><img alt="Kubernetes" src="/images/4/00010.svg?featherlight=false&width=60pc"></p>
 <p><strong>Thời kỳ triển khai truyền thống:</strong> Ban đầu, các ứng dụng được chạy trực tiếp trên máy chủ vật lý, khiến việc phân bổ tài nguyên gặp khó khăn do không có cơ chế xác định ranh giới tài nguyên cho từng ứng dụng. Cách tiếp cận này dẫn đến nguy cơ một ứng dụng có thể sử dụng quá nhiều tài nguyên, ảnh hưởng đến hoạt động của các ứng dụng khác. Giải pháp là chạy mỗi ứng dụng trên một máy chủ vật lý riêng biệt, nhưng điều này lại không hiệu quả về mặt chi phí và tài nguyên.</p>
 <p><strong>Thời kỳ triển khai ảo hóa:</strong> Ảo hóa được giới thiệu như một giải pháp cho phép chạy nhiều Máy ảo (VM) trên cùng một máy chủ vật lý, giúp cô lập ứng dụng và tăng cường bảo mật. Ảo hóa cũng giúp cải thiện hiệu quả sử dụng tài nguyên và khả năng mở rộng.</p>
 <p><strong>Thời kỳ triển khai Container:</strong> Container giống như VM nhưng nhẹ hơn và chia sẻ Hệ điều hành (HĐH) với nhau. Container mang lại nhiều lợi ích như tạo mới và triển khai ứng dụng nhanh chóng, phát triển và triển khai liên tục, phân biệt rõ ràng giữa quá trình phát triển và vận hành, cung cấp tính nhất quán qua các môi trường, khả năng di chuyển giữa các cloud và HĐH, và quản lý ứng dụng tập trung.</p>
@@ -1521,19 +1521,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1712388775"></script>
-    <script src="/js/perfect-scrollbar.min.js?1712388775"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1712388775"></script>
-    <script src="/js/jquery.sticky.js?1712388775"></script>
-    <script src="/js/featherlight.min.js?1712388775"></script>
-    <script src="/js/highlight.pack.js?1712388775"></script>
+    <script src="/js/clipboard.min.js?1717034172"></script>
+    <script src="/js/perfect-scrollbar.min.js?1717034172"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1717034172"></script>
+    <script src="/js/jquery.sticky.js?1717034172"></script>
+    <script src="/js/featherlight.min.js?1717034172"></script>
+    <script src="/js/highlight.pack.js?1717034172"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1712388775"></script>
-    <script src="/js/learn.js?1712388775"></script>
-    <script src="/js/hugo-learn.js?1712388775"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1717034172"></script>
+    <script src="/js/learn.js?1717034172"></script>
+    <script src="/js/hugo-learn.js?1717034172"></script>
 
-    <link href="/mermaid/mermaid.css?1712388775" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1712388775"></script>
+    <link href="/mermaid/mermaid.css?1717034172" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1717034172"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

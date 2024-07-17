@@ -1,5 +1,5 @@
 ---
-title: "Creating a Simple Policy"
+title: "Tạo một chính sách đơn giản"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
@@ -33,7 +33,7 @@ $ kubectl apply -f ~/environment/eks-workshop/modules/security/kyverno/simple-po
 clusterpolicy.kyverno.io/require-labels created
 ```
 
-Tiếp theo, hãy xem các Pod đang chạy trong không gian tên `ui`, chú ý các nhãn đã áp dụng.
+Tiếp theo, hãy xem các Pod đang chạy trong namespace `ui`, chú ý các nhãn đã áp dụng.
 
 ```bash
 $ kubectl -n ui get pods --show-labels
@@ -52,7 +52,7 @@ $ kubectl -n ui get pods
 No resources found in ui namespace.
 ```
 
-Như đã đề cập, Pod không được tạo lại, hãy thử buộc một cuộc triển khai của `ui`.
+Như đã đề cập, Pod không được tạo lại, hãy thử cưỡng chế triển khai của `ui`.
 
 ```bash expectError=true
 $ kubectl -n ui rollout restart deployment/ui

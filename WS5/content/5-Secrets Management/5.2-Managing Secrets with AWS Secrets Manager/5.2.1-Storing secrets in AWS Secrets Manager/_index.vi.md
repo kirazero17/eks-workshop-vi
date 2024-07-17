@@ -9,7 +9,7 @@ pre: "<b> 5.2.1 </b>"
 ####  Storing secrets in AWS Secrets Manager
 
 
-Trước tiên, chúng ta cần lưu một bí mật trong AWS Secrets Manager, hãy làm điều đó bằng cách sử dụng AWS CLI:
+Trước tiên, chúng ta cần lưu một khoá bí mật trong AWS Secrets Manager, hãy làm điều đó bằng cách sử dụng AWS CLI:
 
 ```bash
 $ export SECRET_SUFFIX=$(openssl rand -hex 4)
@@ -23,7 +23,7 @@ $ aws secretsmanager create-secret --name "$SECRET_NAME" \
 }
 ```
 
-Lệnh trên đang lưu một bí mật với nội dung key/value được mã hóa JSON, cho các thông tin `username` và `password`.
+Lệnh trên đang lưu một khoá bí mật với nội dung key/value được mã hóa JSON, cho các thông tin `username` và `password`.
 
 Xác thực bí mật mới đã lưu trong [AWS Secrets Manager Console](https://console.aws.amazon.com/secretsmanager/listsecrets) hoặc sử dụng lệnh này:
 

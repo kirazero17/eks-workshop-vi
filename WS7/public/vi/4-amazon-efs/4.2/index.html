@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.128.2">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Các Bước Chuẩn Bị :: KUBERNETES ON AWS WORKSHOP</title>
+    <title>EFS CSI Driver :: KUBERNETES ON AWS WORKSHOP</title>
 
     
-    <link href="/css/nucleus.css?1711440727" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711440727" rel="stylesheet">
-    <link href="/css/hybrid.css?1711440727" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711440727" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711440727" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711440727" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711440727" rel="stylesheet">
-    <link href="/css/theme.css?1711440727" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711440727" rel="stylesheet">
+    <link href="/css/nucleus.css?1721208554" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1721208554" rel="stylesheet">
+    <link href="/css/hybrid.css?1721208554" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1721208554" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1721208554" rel="stylesheet">
+    <link href="/css/auto-complete.css?1721208554" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1721208554" rel="stylesheet">
+    <link href="/css/theme.css?1721208554" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1721208554" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711440727" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1721208554" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711440727"></script>
+    <script src="/js/jquery-3.3.1.min.js?1721208554"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711440727"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711440727"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1721208554"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1721208554"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711440727"></script>
+<script type="text/javascript" src="/js/search.js?1721208554"></script>
 
     
   </div>
@@ -113,13 +113,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.1-docker-storage/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.1-docker-storage/" title="Lưu trữ trong Docker" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.1-docker-storage/">
-          <b> 1.1 </b>Giới thiệu
+          <b> 1.1 </b>Lưu trữ trong Docker
           
             <i class="fas fa-check read-icon"></i>
           
@@ -141,13 +141,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.2-storage/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.2-storage/" title="Hệ thống tệp trong Docker" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.2-storage/">
-          <b> 1.2 </b>Giới thiệu
+          <b> 1.2 </b>Hệ thống tệp trong Docker
           
             <i class="fas fa-check read-icon"></i>
           
@@ -169,13 +169,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.3-volume-driver-plugins-in-docker/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.3-volume-driver-plugins-in-docker/" title="Plugin Volume Driver trong Docker" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.3-volume-driver-plugins-in-docker/">
-          <b> 1.3 </b>Giới thiệu
+          <b> 1.3 </b>Plugin Volume Driver trong Docker
           
             <i class="fas fa-check read-icon"></i>
           
@@ -197,13 +197,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.4-container-storage-interface/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.4-container-storage-interface/" title="Các giao diện container" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.4-container-storage-interface/">
-          <b> 1.4 </b>Giới thiệu
+          <b> 1.4 </b>Các giao diện container
           
             <i class="fas fa-check read-icon"></i>
           
@@ -225,13 +225,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.5-volumes/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.5--volumes/" title="Volume" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/1.5-volumes/">
-          <b> 1.5 </b>Giới thiệu
+      <a href="/vi/1-introduce/1.5--volumes/">
+          <b> 1.5 </b>Volume
           
             <i class="fas fa-check read-icon"></i>
           
@@ -253,13 +253,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.6-persistent-volumes/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.6--persistent-volumes/" title="Persistent Volumes" class="dd-item 
         
         
         
         ">
-      <a href="/vi/1-introduce/1.6-persistent-volumes/">
-          <b> 1.6 </b>Giới thiệu
+      <a href="/vi/1-introduce/1.6--persistent-volumes/">
+          <b> 1.6 </b>Persistent Volumes
           
             <i class="fas fa-check read-icon"></i>
           
@@ -281,13 +281,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.7-persistent-volume-claims/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.7-persistent-volume-claims/" title="Persistent Volume Claims" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.7-persistent-volume-claims/">
-          <b> 1.7 </b>Giới thiệu
+          <b> 1.7 </b>Persistent Volume Claims
           
             <i class="fas fa-check read-icon"></i>
           
@@ -309,13 +309,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.8-using-pvc-in-pods/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.8-using-pvc-in-pods/" title="Sử dụng PVC trong các pod" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.8-using-pvc-in-pods/">
-          <b> 1.8 </b>Giới thiệu
+          <b> 1.8 </b>Sử dụng PVC trong các pod
           
             <i class="fas fa-check read-icon"></i>
           
@@ -337,13 +337,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/1.9-storage-class/" title="Giới thiệu" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/1.9-storage-class/" title="Storage Class" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/1.9-storage-class/">
-          <b> 1.9 </b>Giới thiệu
+          <b> 1.9 </b>Storage Class
           
             <i class="fas fa-check read-icon"></i>
           
@@ -398,13 +398,13 @@
  
   
     
-    <li data-nav-id="/vi/3-ebs/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/3-ebs/" title="EBS" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-ebs/">
-          <b> 3. </b>Các Bước Chuẩn Bị
+          <b> 3. </b>EBS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -429,13 +429,13 @@
  
   
     
-    <li data-nav-id="/vi/3-ebs/3.1-statefulsets/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/3-ebs/3.1-statefulsets/" title="StatefulSets" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-ebs/3.1-statefulsets/">
-          <b> 3.1 </b>Các Bước Chuẩn Bị
+          <b> 3.1 </b>StatefulSets
           
             <i class="fas fa-check read-icon"></i>
           
@@ -457,13 +457,13 @@
  
   
     
-    <li data-nav-id="/vi/3-ebs/3.2-ebs-csi-driver/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/3-ebs/3.2-ebs-csi-driver/" title="EBS CSI Driver" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-ebs/3.2-ebs-csi-driver/">
-          <b> 3.2 </b>Các Bước Chuẩn Bị
+          <b> 3.2 </b>EBS CSI Driver
           
             <i class="fas fa-check read-icon"></i>
           
@@ -485,13 +485,13 @@
  
   
     
-    <li data-nav-id="/vi/3-ebs/3.3-statefulset-with-ebs-volume/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/3-ebs/3.3-statefulset-with-ebs-volume/" title="StatefulSet với EBS Volume" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-ebs/3.3-statefulset-with-ebs-volume/">
-          <b> 3.3 </b>Các Bước Chuẩn Bị
+          <b> 3.3 </b>StatefulSet với EBS Volume
           
             <i class="fas fa-check read-icon"></i>
           
@@ -520,13 +520,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-efs/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-efs/" title="Amazon EFS" class="dd-item 
         parent
         
         
         ">
       <a href="/vi/4-amazon-efs/">
-          <b> 4. </b>Các Bước Chuẩn Bị
+          <b> 4. </b>Amazon EFS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -551,13 +551,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-efs/4.1/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-efs/4.1/" title="Lưu trữ lâu dài qua mạng" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-amazon-efs/4.1/">
-          <b> 4.1 </b>Các Bước Chuẩn Bị
+          <b> 4.1 </b>Lưu trữ lâu dài qua mạng
           
             <i class="fas fa-check read-icon"></i>
           
@@ -579,13 +579,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-efs/4.2/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-efs/4.2/" title="EFS CSI Driver" class="dd-item 
         
         active
         
         ">
       <a href="/vi/4-amazon-efs/4.2/">
-          <b> 4.2 </b>Các Bước Chuẩn Bị
+          <b> 4.2 </b>EFS CSI Driver
           
             <i class="fas fa-check read-icon"></i>
           
@@ -607,13 +607,13 @@
  
   
     
-    <li data-nav-id="/vi/4-amazon-efs/4.3/" title="Các Bước Chuẩn Bị" class="dd-item 
+    <li data-nav-id="/vi/4-amazon-efs/4.3/" title="Cấp phát động sử dụng EFS" class="dd-item 
         
         
         
         ">
       <a href="/vi/4-amazon-efs/4.3/">
-          <b> 4.3 </b>Các Bước Chuẩn Bị
+          <b> 4.3 </b>Cấp phát động sử dụng EFS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -675,7 +675,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/4-amazon-efs/4.2/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/4-amazon-efs/4.2/" selected>Tiếng Việt</option>
                     
                   
               
@@ -763,7 +763,7 @@
             
           
           
-            <a href='/vi/'>Kubernetes trên AWS</a> > <a href='/vi/4-amazon-efs/'>Các Bước Chuẩn Bị</a> > Các Bước Chuẩn Bị
+            <a href='/vi/'>Kubernetes trên AWS</a> > <a href='/vi/4-amazon-efs/'>Amazon EFS</a> > EFS CSI Driver
           
         
           
@@ -776,7 +776,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -792,7 +800,7 @@
           
             <h1>
               
-              Các Bước Chuẩn Bị
+              EFS CSI Driver
             </h1>
           
 
@@ -800,7 +808,8 @@
 
 
 
-	<p>Trước khi chúng ta đào sâu vào phần này, hãy đảm bảo bạn đã làm quen với các đối tượng lưu trữ Kubernetes (thể hiện bằng các khối lưu trữ, khối lưu trữ vĩnh viễn (PV), yêu cầu khối lưu trữ vĩnh viễn (PVC), cấp phát động và lưu trữ tạm thời) đã được giới thiệu trong <a href="../index.md">Phần Lưu trữ</a>.</p>
+	<h4 id="efs-csi-driver">EFS CSI Driver</h4>
+<p>Trước khi chúng ta đào sâu vào phần này, hãy đảm bảo bạn đã làm quen với các đối tượng lưu trữ Kubernetes (thể hiện bằng các khối lưu trữ, khối lưu trữ vĩnh viễn (PV), yêu cầu khối lưu trữ vĩnh viễn (PVC), cấp phát động và lưu trữ tạm thời) đã được giới thiệu trong <a href="/vi/4-amazon-efs/">Phần Lưu trữ</a>.</p>
 <p>Trình điều khiển Giao diện Lưu trữ Container Amazon Elastic File System (CSI) (<a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver">https://github.com/kubernetes-sigs/aws-efs-csi-driver</a>) giúp bạn chạy các ứng dụng container có trạng thái. Trình điều khiển Giao diện Lưu trữ Container Amazon Elastic File System (CSI) cung cấp một giao diện CSI cho phép các cụm Kubernetes chạy trên AWS quản lý vòng đời của các hệ thống tệp Amazon EFS.</p>
 <p>Để tận dụng hệ thống tệp Amazon EFS với cấp phát động trên cụm EKS của chúng tôi, chúng ta cần xác nhận rằng chúng ta đã cài đặt Trình điều khiển CSI EFS. Trình điều khiển Giao diện Lưu trữ Container Amazon Elastic File System (CSI) (<a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver">https://github.com/kubernetes-sigs/aws-efs-csi-driver</a>) triển khai quy định CSI để các bộ triển khai container quản lý vòng đời của các hệ thống tệp Amazon EFS.</p>
 <p>Để cải thiện bảo mật và giảm lượng công việc, bạn có thể quản lý trình điều khiển CSI EFS của Amazon như một phần mở rộng của Amazon EKS. Vai trò IAM cần thiết cho phần mở rộng đã được tạo ra cho chúng ta để chúng ta có thể tiến hành cài đặt phần mở rộng:</p>
@@ -1205,10 +1214,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/4-amazon-efs/4.1/" title="Các Bước Chuẩn Bị"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/4-amazon-efs/4.1/" title="Lưu trữ lâu dài qua mạng"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/4-amazon-efs/4.3/" title="Các Bước Chuẩn Bị" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/4-amazon-efs/4.3/" title="Cấp phát động sử dụng EFS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1218,19 +1227,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711440727"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711440727"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711440727"></script>
-    <script src="/js/jquery.sticky.js?1711440727"></script>
-    <script src="/js/featherlight.min.js?1711440727"></script>
-    <script src="/js/highlight.pack.js?1711440727"></script>
+    <script src="/js/clipboard.min.js?1721208554"></script>
+    <script src="/js/perfect-scrollbar.min.js?1721208554"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1721208554"></script>
+    <script src="/js/jquery.sticky.js?1721208554"></script>
+    <script src="/js/featherlight.min.js?1721208554"></script>
+    <script src="/js/highlight.pack.js?1721208554"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711440727"></script>
-    <script src="/js/learn.js?1711440727"></script>
-    <script src="/js/hugo-learn.js?1711440727"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1721208554"></script>
+    <script src="/js/learn.js?1721208554"></script>
+    <script src="/js/hugo-learn.js?1721208554"></script>
 
-    <link href="/mermaid/mermaid.css?1711440727" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711440727"></script>
+    <link href="/mermaid/mermaid.css?1721208554" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1721208554"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

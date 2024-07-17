@@ -25,7 +25,7 @@ pod/csi-secrets-store-secrets-store-csi-driver-k7m6c   3/3     Running   0      
 pod/csi-secrets-store-secrets-store-csi-driver-x2rs4   3/3     Running   0          3m57s
 ```
 
-Kiểm tra DaemonSet và các Pods tương ứng của Nhà cung cấp AWS cho Kubernetes Secrets Store CSI Driver.
+Kiểm tra DaemonSet và các Pods tương ứng của Driver CSI Secrets Store Provider cho AWS.
 
 ```bash
 $ kubectl -n kube-system get pods,daemonset -l "app=secrets-store-csi-driver-provider-aws"  
@@ -38,7 +38,7 @@ pod/secrets-store-csi-driver-provider-aws-djtf5   1/1     Running   0          2
 pod/secrets-store-csi-driver-provider-aws-dzg9r   1/1     Running   0          2m2s
 ```
 
-Để cung cấp quyền truy cập vào các bí mật được lưu trữ trong AWS Secrets Manager qua Kubernetes Secrets Store CSI Driver, bạn cần một *SecretProviderClass*, đây là một tài nguyên tùy chỉnh có phạm vi được sử dụng để cung cấp cấu hình của trình điều khiển và các tham số cụ thể phù hợp với thông tin trong AWS Secrets Manager.
+Để cung cấp quyền truy cập vào các khoá bí mật được lưu trữ trong AWS Secrets Manager qua Kubernetes Secrets Store CSI Driver, bạn cần một *SecretProviderClass*, đây là một tài nguyên tùy chỉnh có phạm vi được sử dụng để cung cấp cấu hình của trình điều khiển và các tham số cụ thể phù hợp với thông tin trong AWS Secrets Manager.
 
 ```file
 manifests/modules/security/secrets-manager/secret-provider-class.yaml
@@ -51,7 +51,7 @@ $ cat ~/environment/eks-workshop/modules/security/secrets-manager/secret-provide
   | envsubst | kubectl apply -f -
 ```
 
-Tham số *objects*, trỏ đến một bí mật có tên là `eks-workshop/catalog-secret` mà chúng ta sẽ lưu trữ trong AWS Secrets Manager trong bước tiếp theo. Lưu ý rằng chúng tôi đang sử dụng [jmesPath](https://jmespath.org/) để trích xuất một cặp key-value cụ thể từ bí mật được định dạng JSON.
+Tham số *objects*, trỏ đến một khoá bí mật có tên là `eks-workshop/catalog-secret` mà chúng ta sẽ lưu trữ trong AWS Secrets Manager trong bước tiếp theo. Lưu ý rằng chúng tôi đang sử dụng [jmesPath](https://jmespath.org/) để trích xuất một cặp key-value cụ thể từ bí mật được định dạng JSON.
 
 ```bash
 $ kubectl get secretproviderclass -n catalog catalog-spc -o yaml | yq '.spec.parameters.objects'

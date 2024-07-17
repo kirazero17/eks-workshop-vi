@@ -1,5 +1,5 @@
 ---
-title: "Network Namespaces"
+title: "Network Namespaces (Không gian tên mạng)"
 date: "`r Sys.Date()`"
 weight: 4
 chapter: false
@@ -178,7 +178,7 @@ $ ip netns add red
 $ ip netns add blue
 ``` 
 
-- Để tạo một mạng cầu ảo nội bộ, chúng ta thêm một giao diện mới vào máy chủ
+- Để tạo một bridge ảo nội bộ, chúng ta thêm một giao diện mới vào máy chủ
 
 ```shell
 $ ip link add v-net-0 type bridge
@@ -198,7 +198,7 @@ $ ip link
 $ ip link set dev v-net-0 up
 ```
 
-- Để kết nối không gian mạng vào cầu. Tạo một cáp ảo
+- Để kết nối không gian mạng vào bridge. Tạo một cáp ảo (veth)
 
 ```shell
 $ ip link add veth-red type veth peer name veth-red-br
@@ -282,7 +282,7 @@ $ ip netns exec blue ip route add default via 192.168.15.5
 $ ip netns exec blue ping 8.8.8.8
 ```
 
-- Thêm luật chuyển tiếp cổng vào iptables
+- Thêm quy tắc chuyển tiếp cổng vào iptables
 
 ```shell
 $ iptables -t nat -A PREROUTING --dport 80 --to-destination 192.168.15.2:80 -j DNAT

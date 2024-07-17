@@ -1,12 +1,12 @@
 ---
-title: "Securing Secrets Using Sealed Secrets"
+title: "Bảo vệ khoá bí mật bằng Seal Secrets"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 5.3 </b>"
 ---
 
-#### Securing Secrets Using Sealed Secrets
+#### Bảo vệ khoá bí mật bằng Seal Secrets
 
 
 Dự án [Sealed Secrets](https://docs.bitnami.com/tutorials/sealed-secrets) không liên quan đến Dịch vụ AWS mà là một công cụ mã nguồn mở từ bên thứ ba của [Btinami Labs](https://bitnami.com/)

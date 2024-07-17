@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cấu hình PSS cơ bản on TERRAFORM ON AWS WORKSHOP</title>
+    <link>//localhost:1313/vi/7-pod-security-standards/7.2-baseline-pss-profile/</link>
+    <description>Recent content in Cấu hình PSS cơ bản on TERRAFORM ON AWS WORKSHOP</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <atom:link href="//localhost:1313/vi/7-pod-security-standards/7.2-baseline-pss-profile/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

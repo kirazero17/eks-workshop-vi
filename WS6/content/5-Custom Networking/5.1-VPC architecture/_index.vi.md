@@ -1,14 +1,14 @@
 ---
-title: "VPC architecture"
+title: "Kiến trúc VPC"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
 pre: "<b> 5.1 </b>"
 ---
 
-#### VPC architecture
+#### Kiến trúc VPC
 
-#### Khám phá VPC đã được thiết lập
+##### **Khám phá VPC đã được thiết lập**
 
 Chúng ta có thể bắt đầu bằng cách kiểm tra VPC đã được thiết lập. Ví dụ, mô tả VPC:
 
@@ -59,7 +59,7 @@ $ aws ec2 describe-vpcs --vpc-ids $VPC_ID
 }
 ```
 
-Ở đây, chúng ta thấy có hai phạm vi CIDR được liên kết với VPC:
+Ở đây, chúng ta thấy có hai dải CIDR được liên kết với VPC:
 
 1. Phạm vi `10.42.0.0/16` là CIDR "chính"
 2. Phạm vi `100.64.0.0/16` là CIDR "phụ"
@@ -88,9 +88,9 @@ $ aws ec2 describe-subnets --filters "Name=tag:created-by,Values=eks-workshop-v2
 
 Các subnet này được chia thành:
 
-- Subnet công cộng: Một cho mỗi khu vực có sẵn sử dụng một CIDR block từ phạm vi CIDR chính
-- Subnet riêng: Một cho mỗi khu vực có sẵn sử dụng một CIDR block từ phạm vi CIDR chính
-- Subnet riêng phụ: Một cho mỗi khu vực có sẵn sử dụng một CIDR block từ phạm vi CIDR **phụ**
+- Subnet công cộng: Một cho mỗi khu vực có sẵn sử dụng một khối CIDR từ dải CIDR chính
+- Subnet riêng: Một cho mỗi khu vực có sẵn sử dụng một khối CIDR từ dải CIDR chính
+- Subnet riêng phụ: Một cho mỗi khu vực có sẵn sử dụng một khối CIDR từ dải CIDR **phụ**
 
 ![EKS](/images/0004/00017.png?featherlight=false&width=60pc)
 

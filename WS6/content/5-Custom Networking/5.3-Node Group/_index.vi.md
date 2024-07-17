@@ -1,15 +1,15 @@
 ---
-title: "Provision a new Node Group"
+title: "Cung cấp node group mới"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 5.3 </b>"
 ---
 
-#### Provision a new Node Group
+#### Cung cấp node group mới
 
 
-Tạo một nhóm node được quản lý EKS:
+Tạo một node group được quản lý EKS:
 
 ```bash wait=30
 $ aws eks create-nodegroup --region $AWS_REGION \
@@ -21,7 +21,7 @@ $ aws eks create-nodegroup --region $AWS_REGION \
   --scaling-config minSize=1,maxSize=1,desiredSize=1
 ```
 
-Quá trình tạo nhóm node mất vài phút. Bạn có thể chờ quá trình tạo nhóm node hoàn thành bằng cách sử dụng lệnh này:
+Quá trình tạo node group mất vài phút. Bạn có thể chờ quá trình tạo node group hoàn thành bằng cách sử dụng lệnh này:
 
 ```bash wait=30 timeout=300
 $ aws eks wait nodegroup-active --cluster-name $EKS_CLUSTER_NAME --nodegroup-name custom-networking
@@ -38,4 +38,4 @@ ip-10-42-139-60.us-west-2.compute.internal      Ready    <none>   65m   vVAR::KU
 ip-10-42-180-105.us-west-2.compute.internal     Ready    <none>   65m   vVAR::KUBERNETES_NODE_VERSION   default
 ```
 
-Bạn có thể thấy 1 node mới được cung cấp được gắn nhãn với tên của nhóm node mới.
+Bạn có thể thấy 1 node mới được cung cấp được gắn nhãn với tên của node group mới.

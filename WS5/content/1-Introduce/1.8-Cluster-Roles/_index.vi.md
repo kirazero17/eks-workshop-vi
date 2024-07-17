@@ -11,12 +11,12 @@ pre: "<b> 1.8 </b>"
   
 Trong phần này, chúng ta sẽ tìm hiểu về các vai trò cụm
 
-#### Vai trò
+#### Role (Vai trò)
 - Vai trò và Rolebindings được gắn với không gian tên, có nghĩa là chúng được tạo trong các không gian tên.
   
 
   
-#### Không gian tên
+#### Namespace (Không gian tên)
 - Bạn có thể nhóm hoặc cô lập các nút trong một không gian tên không?
   - Không, những thứ đó là tài nguyên phạm vi cụm hoặc phạm vi cụm. Chúng không thể được liên kết với bất kỳ không gian tên cụ thể nào.
   
@@ -25,18 +25,18 @@ Trong phần này, chúng ta sẽ tìm hiểu về các vai trò cụm
 - Vì vậy, các tài nguyên được phân loại là tài nguyên phạm vi tên hoặc phạm vi cụm.
   
 - Để xem tài nguyên phạm vi tên
-  ```
+  ```bash
   $ kubectl api-resources --namespaced=true
   ```
 - Để xem tài nguyên không phạm vi tên
-  ```
-  $ $ kubectl api-resources --namespaced=false
+  ```bash
+  $ kubectl api-resources --namespaced=false
   ```
   
   
-#### Vai trò cụm và Ràng buộc Vai trò cụm
+#### ClusterRole (Vai trò cụm) và ClusterRoleBinding (Ràng buộc Vai trò cụm)
 - Vai trò cụm là các vai trò ngoại trừ chúng được sử dụng cho các tài nguyên phạm vi cụm. Loại như **`CLusterRole`** 
-  ```
+  ```yaml
   apiVersion: rbac.authorization.k8s.io/v1
   kind: ClusterRole
   metadata:
@@ -46,7 +46,7 @@ Trong phần này, chúng ta sẽ tìm hiểu về các vai trò cụm
     resources: ["nodes"]
     verbs: ["get", "list", "delete", "create"]
   ```
-  ```
+  ```yaml
   apiVersion: rbac.authorization.k8s.io/v1
   kind: ClusterRoleBinding
   metadata:
@@ -60,13 +60,13 @@ Trong phần này, chúng ta sẽ tìm hiểu về các vai trò cụm
     name: cluster-administrator
     apiGroup: rbac.authorization.k8s.io
   ```
-  ```
+  ```bash
   $ kubectl create -f cluster-admin-role.yaml
   $ kubectl create -f cluster-admin-role-binding.yaml
   ```
   
   
-- Bạn có thể tạo một vai trò cụm cho các tài nguyên không gian tên as well. Khi bạn làm điều đó, người dùng sẽ có quyền truy cập vào các tài nguyên này trên tất cả các không gian tên.
+- Bạn cũng có thể tạo một vai trò cụm cho các tài nguyên không gian tên. Khi bạn làm điều đó, người dùng sẽ có quyền truy cập vào các tài nguyên này trên tất cả các không gian tên.
 
 #### Tài liệu Tham khảo K8s
 - https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-and-clusterrole

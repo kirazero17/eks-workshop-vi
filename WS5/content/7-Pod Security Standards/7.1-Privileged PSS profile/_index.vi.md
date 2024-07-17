@@ -1,14 +1,14 @@
 ---
-title: "Khám phá hồ sơ PSS"
+title: "Cấu hình PSS được cấp quyền"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
 pre: "<b> 7.1 </b>"
 ---
 
-#### Khám phá hồ sơ PSS
+#### Quan sát hồ sơ PSS
 
-Chúng ta sẽ bắt đầu khám phá hồ sơ Privileged (PSS) bằng cách khám phá hồ sơ Privileged, là hồ sơ linh hoạt nhất và cho phép việc nâng cao đặc quyền đã biết.
+Chúng ta sẽ bắt đầu quan sát hồ sơ Privileged (PSS) bằng cách quan sát hồ sơ Privileged, là hồ sơ linh hoạt nhất và cho phép việc nâng cao đặc quyền đã biết.
 
 Kể từ phiên bản Kubernetes 1.23, theo mặc định, tất cả các chế độ PSA (tức là enforce, audit và warn) đều được kích hoạt cho hồ sơ PSS Privileged ở cấp độ cluster. Điều đó có nghĩa, theo mặc định, PSA cho phép triển khai (Deployments) hoặc các Pod với hồ sơ PSS Privileged (tức là không có bất kỳ hạn chế nào) trên tất cả các không gian tên (namespace). Các thiết lập mặc định này cung cấp ít ảnh hưởng đến các cluster và giảm thiểu tác động tiêu cực đối với các ứng dụng. Như chúng ta sẽ thấy, nhãn Namespace có thể được sử dụng để lựa chọn vào các thiết lập hạn chế hơn.
 
@@ -95,7 +95,7 @@ volumes:
 
 Trong cấu hình bảo mật Pod trên, `securityContext` là nil ở cấp độ Pod. Ở cấp độ container, `securityContext` được cấu hình để loại bỏ tất cả các khả năng Linux và `readOnlyRootFilesystem` được đặt thành false. Việc triển khai và Pod đã chạy cho thấy rằng PSA (được cấu hình cho hồ sơ PSS Privileged theo mặc định) đã cho phép cấu hình bảo mật Pod trên.
 
-Nhưng các điều kiện bảo mật khác mà PSA này cho phép là gì? Để kiểm tra điều đó, hãy thêm một số quyền hạn khác vào cấu hình bảo mật Pod trên và kiểm tra xem PSA có vẫn cho phép nó hay không trong không gian tên `assets`. Cụ thể, hãy thêm các cờ `privileged` và `runAsUser:0` vào Pod trên, điều này có nghĩa là nó có thể truy cập vào tài nguyên máy chủ mà thường được yêu cầu cho các công việc như các đại lý giám sát và các sidecar của mạng dịch vụ, và cũng được phép chạy dưới dạng người dùng `root`:
+Nhưng các điều kiện bảo mật khác mà PSA này cho phép là gì? Để kiểm tra điều đó, hãy thêm một số quyền hạn khác vào cấu hình bảo mật Pod trên và kiểm tra xem PSA có vẫn cho phép nó hay không trong không gian tên `assets`. Cụ thể, hãy thêm các cờ `privileged` và `runAsUser:0` vào Pod trên, điều này có nghĩa là nó có thể truy cập vào tài nguyên máy chủ mà thường được yêu cầu cho các công việc như các agent giám sát và các sidecar của mạng dịch vụ, và cũng được phép chạy dưới dạng người dùng `root`:
 
 ```kustomization
 modules/security/pss-psa/privileged-workload/deployment.yaml

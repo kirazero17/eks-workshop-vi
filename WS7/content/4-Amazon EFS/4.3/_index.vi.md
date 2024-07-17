@@ -1,12 +1,12 @@
 ---
-title: "Dynamic provisioning using EFS"
+title: "Cấp phát động sử dụng EFS"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
 pre: "<b> 4.3 </b>"
 ---
 
-#### Dynamic provisioning using EFS
+#### Cấp phát động sử dụng EFS
 
 Bây giờ khi chúng ta đã hiểu về lớp lưu trữ EFS cho Kubernetes, hãy tạo một [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) và thay đổi container `assets` trên deployment assets để mount Volume được tạo.
 

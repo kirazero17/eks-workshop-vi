@@ -1,23 +1,23 @@
 ---
-title: "Verifying DynamoDB Access"
+title: "Xác nhận khả năng truy cập DynamoDB"
 date: "`r Sys.Date()`"
 weight: 5
 chapter: false
 pre: "<b> 4.5 </b>"
 ---
 
-Bây giờ, với `carts` Service Account được liên kết với vai trò IAM được ủy quyền, `carts` Pod có quyền truy cập vào bảng DynamoDB. Truy cập cửa hàng web lại và điều hướng đến giỏ hàng.
+Bây giờ, với `carts` Service Account được liên kết với vai trò IAM được ủy quyền, pod `carts` có quyền truy cập vào bảng DynamoDB. Truy cập cửa hàng web lại và điều hướng đến giỏ hàng.
 
 ```bash
 $ kubectl -n ui get service ui-nlb -o jsonpath='{.status.loadBalancer.ingress[*].hostname}{"\n"}'
 k8s-ui-uinlb-647e781087-6717c5049aa96bd9.elb.us-west-2.amazonaws.com
 ```
 
-`carts` Pod có thể tiếp cận dịch vụ DynamoDB và giỏ hàng bây giờ có thể truy cập!
+Pod `carts` có thể tiếp cận dịch vụ DynamoDB và giỏ hàng bây giờ có thể truy cập!
 
 ![Cart](../../../static/img/sample-app-screens/shopping-cart.png)
 
-Sau khi vai trò IAM của AWS được liên kết với Service Account, bất kỳ Pods mới nào được tạo bằng Service Account đó sẽ bị chặn bởi [webhook EKS Pod Identity](https://github.com/aws/amazon-eks-pod-identity-webhook). Webhook này chạy trên bảng điều khiển của cụm Amazon EKS và được quản lý hoàn toàn bởi AWS. Hãy xem xét kỹ hơn `carts` Pod mới để xem các biến môi trường mới.
+Sau khi vai trò IAM của AWS được liên kết với Service Account, bất kỳ Pods mới nào được tạo bằng Service Account đó sẽ bị chặn bởi [webhook EKS Pod Identity](https://github.com/aws/amazon-eks-pod-identity-webhook). Webhook này chạy trên bảng điều khiển của cụm Amazon EKS và được quản lý hoàn toàn bởi AWS. Hãy xem xét kỹ hơn pod `carts` mới để xem các biến môi trường mới.
 
 ```bash
 $ kubectl -n carts exec deployment/carts -- env | grep AWS

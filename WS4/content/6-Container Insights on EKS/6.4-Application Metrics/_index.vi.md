@@ -8,14 +8,14 @@ pre: "<b> 6.4 </b>"
 
 ####  Đo lường Ứng dụng trong Amazon CloudWatch
 
-1.Trong phần này, chúng ta sẽ tìm hiểu cách nhận được thông tin về các chỉ số được tiết lộ bởi các công việc của chúng ta và hiển thị các chỉ số đó bằng cách sử dụng Amazon CloudWatch Insights Prometheus. Một số ví dụ về các chỉ số này có thể là:
+1. Trong phần này, chúng ta sẽ tìm hiểu cách nhận được thông tin về các chỉ số được tiết lộ bởi các công việc của chúng ta và hiển thị các chỉ số đó bằng cách sử dụng Amazon CloudWatch Insights Prometheus. Một số ví dụ về các chỉ số này có thể là:
 
 - Các chỉ số hệ thống như chỉ số Java heap hoặc trạng thái của bể kết nối cơ sở dữ liệu
 - Các chỉ số ứng dụng liên quan đến các chỉ số KPI kinh doanh
 
 2. Hãy xem cách nhập các chỉ số ứng dụng bằng cách sử dụng AWS Distro cho OpenTelemetry và hiển thị các chỉ số bằng cách sử dụng Amazon CloudWatch.
 
-3. Mỗi trong các thành phần trong bộ công cụ này đã được trang bị để cung cấp các chỉ số Prometheus bằng cách sử dụng các thư viện phù hợp với ngôn ngữ lập trình hoặc framework cụ thể. Chúng ta có thể xem một ví dụ về các chỉ số này từ dịch vụ đặt hàng như sau:
+3. Mỗi thành phần trong bộ công cụ này đã được trang bị để cung cấp các chỉ số Prometheus bằng cách sử dụng các thư viện phù hợp với ngôn ngữ lập trình hoặc framework cụ thể. Chúng ta có thể xem một ví dụ về các chỉ số này từ dịch vụ đặt hàng như sau:
 
 ```
 

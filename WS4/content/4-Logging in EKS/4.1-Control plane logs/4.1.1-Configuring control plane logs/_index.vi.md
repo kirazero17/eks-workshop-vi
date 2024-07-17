@@ -28,7 +28,7 @@ Hãy xem cấu hình này trên bảng điều khiển EKS:
 
 [https://console.aws.amazon.com/eks/home#/clusters/eks-workshop?selectedTab=cluster-logging-tab](https://console.aws.amazon.com/eks/home#/clusters/eks-workshop?selectedTab=cluster-logging-tab)
 
-Tab Logging hiển thị cấu hình hiện tại cho log của điều khiển cho cluster:
+Tab Logging hiển thị cấu hình hiện tại cho log điều khiển cho cluster:
 
 
 Bạn có thể điều chỉnh cấu hình ghi nhật ký bằng cách nhấp vào nút Quản lý: Manage
