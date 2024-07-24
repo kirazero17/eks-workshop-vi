@@ -8,7 +8,7 @@ pre: "<b> 3.2 </b>"
 
 #### EFS CSI Driver
 
-Trước khi chúng ta đào sâu vào phần này, hãy đảm bảo bạn đã làm quen với các đối tượng lưu trữ Kubernetes (thể hiện bằng các khối lưu trữ, khối lưu trữ vĩnh viễn (PV), yêu cầu khối lưu trữ vĩnh viễn (PVC), cấp phát động và lưu trữ tạm thời) đã được giới thiệu trong [Phần Lưu trữ](../index.md).
+Trước khi chúng ta đào sâu vào phần này, hãy đảm bảo bạn đã làm quen với các đối tượng lưu trữ Kubernetes (thể hiện bằng các khối lưu trữ, khối lưu trữ bền (PV), yêu cầu khối lưu trữ bền (PVC), cấp phát động và lưu trữ tạm thời) đã được giới thiệu trong [Phần Lưu trữ](../index.md).
 
 Trình điều khiển Giao diện Lưu trữ Container Amazon Elastic File System (CSI) (https://github.com/kubernetes-sigs/aws-efs-csi-driver) giúp bạn chạy các ứng dụng container có trạng thái. Trình điều khiển Giao diện Lưu trữ Container Amazon Elastic File System (CSI) cung cấp một giao diện CSI cho phép các cụm Kubernetes chạy trên AWS quản lý vòng đời của các hệ thống tệp Amazon EFS.
 
