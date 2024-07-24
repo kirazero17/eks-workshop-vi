@@ -10,16 +10,16 @@ pre: "<b> 2.1 </b>"
 
 Tương tự như Deployments, [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) quản lý các Pods dựa trên một container spec đồng nhất. Khác với Deployments, StatefulSets duy trì một danh tính cố định cho mỗi Pod của nó. Các Pods này được tạo ra từ cùng một spec, nhưng không thể hoán đổi với nhau, mỗi Pod có một định danh bền vững mà nó duy trì qua bất kỳ sự kiện lên lịch lại nào.
 
-Nếu bạn muốn sử dụng các thùng chứa lưu trữ để cung cấp tính bền vững cho công việc của mình, bạn có thể sử dụng StatefulSet như một phần của giải pháp. Mặc dù các Pods riêng lẻ trong một StatefulSet có thể gặp sự cố, các định danh Pod bền vững làm cho việc phù hợp các thùng chứa hiện có với các Pods mới thay thế bất kỳ Pod nào đã thất bại trở nên dễ dàng hơn.
+Nếu bạn muốn sử dụng các container lưu trữ để cung cấp tính bền vững cho công việc của mình, bạn có thể sử dụng StatefulSet như một phần của giải pháp. Mặc dù các Pods riêng lẻ trong một StatefulSet có thể gặp sự cố, các định danh Pod bền vững giúp các Pod mới thay thế Pod lỗi dễ dàng thích nghi với các pod đang hoạt động hơn.
 
-StatefulSets là có giá trị cho các ứng dụng yêu cầu một hoặc nhiều trong các yếu tố sau:
+StatefulSets có ý nghĩa với các ứng dụng yêu cầu một hoặc nhiều trong các yếu tố sau:
 
 - Các định danh mạng ổn định, duy nhất
 - Lưu trữ ổn định, bền vững
-- Triển khai và mở rộng dịch vụ một cách đặt hàng, lịch sự
-- Cập nhật cuộn tự động, đặt hàng
+- Triển khai và mở rộng dịch vụ một cách có tổ chức và an toàn
+- Cập nhật tự động và có tổ chức
 
-Trong ứng dụng thương mại điện tử của chúng tôi, chúng tôi đã triển khai một StatefulSet như một phần của dịch vụ nhỏ Catalog. Dịch vụ nhỏ Catalog sử dụng cơ sở dữ liệu MySQL chạy trên EKS. Cơ sở dữ liệu là một ví dụ tốt cho việc sử dụng StatefulSets vì chúng đòi hỏi **lưu trữ bền vững**. Chúng ta có thể phân tích Pod MySQL Database của chúng ta để xem cấu hình thùng chứa hiện tại của nó:
+Trong ứng dụng thương mại điện tử của workshop, chúng ta đã triển khai một StatefulSet như một phần của vi dịch vụ Catalog. Vi dịch vụ Catalog sử dụng cơ sở dữ liệu MySQL chạy trên EKS. Cơ sở dữ liệu là một ví dụ tốt cho việc sử dụng StatefulSets vì chúng đòi hỏi **lưu trữ bền vững**. Chúng ta có thể phân tích Pod MySQL Database của chúng ta để xem cấu hình container hiện tại của nó:
 
 ```bash
 $ kubectl describe statefulset -n catalog catalog-mysql
@@ -49,11 +49,11 @@ Volume Claims:  <none>
 [...]
 ```
 
-Như bạn có thể thấy phần [`Volumes`](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir-configuration-example) của StatefulSet của chúng ta cho thấy chúng ta chỉ sử dụng một loại thùng chứa [EmptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) mà "chia sẻ với tuổi thọ của Pod".
+Như bạn có thể thấy phần [`Volumes`](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir-configuration-example) của StatefulSet của chúng ta cho thấy chúng ta chỉ sử dụng một loại container [EmptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) mà "chia sẻ với tuổi thọ của Pod".
 
-![MySQL với emptyDir](./assets/mysql-emptydir.png)
+![MySQL với emptyDir](/images/part2/2-1/mysql-emptydir.png)
 
-Một thùng chứa `emptyDir` được tạo ra khi một Pod được gán cho một nút, và tồn tại trong suốt thời gian mà Pod đó đang chạy trên nút đó. Như tên gọi của nó, thùng chứa emptyDir ban đầu là trống. Tất cả các container trong Pod có thể đọc và ghi các tệp tin trong thùng chứa emptyDir, mặc dù thùng chứa đó có thể được gắn vào các đường dẫn giống nhau hoặc khác nhau trong mỗi container. **Khi một Pod được xóa khỏi một nút vì bất kỳ lý do nào, dữ liệu trong emptyDir sẽ bị xóa một cách vĩnh viễn.** Do đó, EmptyDir không phù hợp cho cơ sở dữ liệu MySQL của chúng ta.
+Một container `emptyDir` được tạo ra khi một Pod được gán cho một nút, và tồn tại trong suốt thời gian Pod đó đang chạy trên một nút. Như tên gọi của nó, container emptyDir ban đầu rỗng. Tất cả các container trong Pod có thể đọc và ghi các tệp tin trong emptyDir, mặc dù container đó có thể được gắn vào các đường dẫn giống nhau hoặc khác nhau trong mỗi container. **Khi một Pod được xóa khỏi một nút vì bất kỳ lý do nào, dữ liệu trong emptyDir sẽ bị xóa vĩnh viễn.** Do đó, EmptyDir không phù hợp cho cơ sở dữ liệu MySQL của chúng ta.
 
 Chúng ta có thể minh họa điều này bằng cách bắt đầu một phiên shell bên trong container MySQL và tạo một tệp tin thử nghiệm. Sau đó, chúng ta sẽ xóa Pod đang chạy trong StatefulSet của chúng ta. Bởi vì Pod đang sử dụng emptyDir và không phải là Persistent Volume (PV), tệp tin sẽ không tồn tại sau khi Pod được khởi động lại. Đầu tiên, hãy chạy một lệnh bên trong container MySQL của chúng ta để tạo một tệp tin trong đường dẫn emptyDir `/var/lib/mysql` (nơi MySQL lưu trữ các tệp cơ sở dữ liệu):
 
