@@ -3,7 +3,7 @@ title: "StatefulSet với EBS Volume"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
-pre: "<b> 3.3 </b>"
+pre: "<b> 2.3 </b>"
 ---
 
 #### Cập nhật MySQL DB cho dịch vụ Catalog sử dụng EBS Volume

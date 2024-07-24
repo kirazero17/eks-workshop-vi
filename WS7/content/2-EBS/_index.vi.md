@@ -1,9 +1,9 @@
 ---
 title: "EBS"
 date: "`r Sys.Date()`"
-weight: 3
+weight: 2
 chapter: false
-pre: "<b> 3. </b>"
+pre: "<b> 2. </b>"
 ---
 
 #### Chuẩn bị môi trường cho phần này:

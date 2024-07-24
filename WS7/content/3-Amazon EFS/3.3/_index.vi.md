@@ -3,7 +3,7 @@ title: "Cấp phát động sử dụng EFS"
 date: "`r Sys.Date()`"
 weight: 3
 chapter: false
-pre: "<b> 4.3 </b>"
+pre: "<b> 3.3 </b>"
 ---
 
 #### Cấp phát động sử dụng EFS

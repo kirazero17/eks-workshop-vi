@@ -3,7 +3,7 @@ title: "Lưu trữ lâu dài qua mạng"
 date: "`r Sys.Date()`"
 weight: 1
 chapter: false
-pre: "<b> 4.1 </b>"
+pre: "<b> 3.1 </b>"
 ---
 
 #### Lưu trữ lâu dài qua mạng
