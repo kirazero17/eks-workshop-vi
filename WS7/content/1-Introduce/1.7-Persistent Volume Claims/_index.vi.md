@@ -6,19 +6,19 @@ chapter: false
 pre: "<b> 1.7 </b>"
 ---
 
-#### Yêu cầu Khối Lưu Trữ bền (Persistent Volume Claim - PVC)
+#### Yêu cầu Khối Lưu Trữ bền (PersistentVolumeClaim - PVC)
 
-  - Đưa tôi đến [Bài giảng](https://kodekloud.com/topic/persistent-volume-claims-4/)
+  - Tham khảo [Bài giảng này](https://kodekloud.com/topic/persistent-volume-claims-4/)
 
 Trong phần này, chúng ta sẽ xem xét **PVC**
 
 - Bây giờ chúng ta sẽ tạo một PVC để làm cho lưu trữ có sẵn cho node.
-- Khối Lưu Trữ và Yêu cầu Khối Lưu Trữ là hai đối tượng riêng biệt trong không gian tên Kubernetes.
-- Khi Yêu cầu Khối Lưu Trữ được tạo, Kubernetes sẽ gán các Khối Lưu Trữ vào yêu cầu dựa trên yêu cầu và thuộc tính được thiết lập trên khối.
+- PersistentVolume (PV) và PVC là hai đối tượng riêng biệt trong không gian tên Kubernetes.
+- Khi PVC được tạo, Kubernetes sẽ gán các PV vào yêu cầu dựa trên yêu cầu và thuộc tính được thiết lập trên khối.
 
 ![class-17](../../images/class17.PNG)
 
-- Nếu các thuộc tính không khớp hoặc Khối Lưu Trữ không có sẵn cho Yêu cầu Khối Lưu Trữ thì nó sẽ hiển thị trạng thái `pending`.
+- Nếu các thuộc tính không khớp hoặc Khối Lưu Trữ không có sẵn cho PVC thì nó sẽ hiển thị trạng thái `pending`.
 
 ```yaml
 pvc-definition.yaml

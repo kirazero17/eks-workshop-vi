@@ -12,9 +12,9 @@ pre: "<b> 1.8 </b>"
 
 Trong phần này, chúng ta sẽ tìm hiểu về **Sử dụng PVC trong PODs**
 
-- Trong trường hợp này, PODs truy cập vào bộ nhớ lưu trữ bằng cách khẳng định vùng lưu trữ (volume). Persistent Volume Claim phải tồn tại trong cùng namespace với Pod yêu cầu.
-- Cụm sẽ tìm thấy yêu cầu trong namespace của Pod và sử dụng nó để lấy Persistent Volume Claim. Vùng lưu trữ sau đó được gắn vào máy chủ và vào Pod.
-- Persistent Volume tồn tại trong phạm vi cụm và Persistent Volume Claim tồn tại trong phạm vi namespace.
+- Các pod truy cập vào bộ nhớ lưu trữ bằng cách khẳng định vùng lưu trữ (volume). PersistentVolumeClaim phải tồn tại trong cùng namespace với Pod yêu cầu.
+- Cụm sẽ tìm thấy yêu cầu trong namespace của Pod và sử dụng nó để lấy PersistentVolume laim. Vùng lưu trữ sau đó được gắn vào máy chủ và vào Pod.
+- PersistentVolume tồn tại trong phạm vi cụm và PersistentVolumeClaim tồn tại trong phạm vi namespace.
 
 #### Tạo Persistent Volume
 
@@ -56,7 +56,7 @@ spec:
 $ kubectl create -f pvc-definition.yaml
 ```
 
-#### Tạo một Pod
+#### Tạo Pod
 
 ```yaml
 pod-definition.yaml

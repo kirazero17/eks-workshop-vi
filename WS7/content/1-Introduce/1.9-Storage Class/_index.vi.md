@@ -22,7 +22,7 @@ Trong phần này, chúng ta sẽ xem xét về **Lớp Lưu Trữ**
 
 ![EKS](/images/0005/00019.png?featherlight=false&width=90pc)
 
-- Bây giờ chúng ta có một Lớp Lưu Trữ, Vì vậy chúng ta không cần phải định nghĩa PersistentVolume nữa. Nó sẽ được tạo tự động khi một Lớp Lưu Trữ được tạo. Đây được gọi là **Cấp Phát Động**.
+- Bây giờ chúng ta có một Lớp Lưu Trữ (StorageClass). Chúng ta sẽ không cần phải định nghĩa PersistentVolume (PV) nữa. PV sẽ được tạo tự động khi một Lớp Lưu Trữ được tạo. Đây được gọi là **Cấp Phát Động**.
 
 ```
 sc-definition.yaml
@@ -93,7 +93,7 @@ spec:
 ```
 $ kubectl create -f pod-definition.yaml
 ```
-#### Người Cung Cấp
+#### Các Nhà Cung Cấp
 
 ![EKS](/images/0005/00020.png?featherlight=false&width=90pc)
 
