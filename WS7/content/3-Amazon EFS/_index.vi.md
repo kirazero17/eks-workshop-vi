@@ -6,6 +6,8 @@ chapter: false
 pre: "<b> 3. </b>"
 ---
 
+Tham khảo Workshop đầu tiên để tạo cụm EKS cùng các tài nguyên trước khi triển khai môi trường cho phần này. Nếu đã hoàn thành, bạn có thể tiếp tục phần này.
+
 #### Chuẩn bị môi trường cho phần này:
 
 ```bash timeout=300 wait=30
