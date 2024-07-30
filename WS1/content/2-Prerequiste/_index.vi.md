@@ -32,7 +32,7 @@ $ aws cloudformation deploy --stack-name eks-workshop-ide \
     --template-file ./eks-workshop-ide-cfn.yaml \
     --parameter-overrides RepositoryRef=stable \
     --capabilities CAPABILITY_NAMED_IAM
-Waiting for changeset to be created..
+Waiting for changeset to be created...
 Waiting for stack create/update to complete
 Successfully created/updated stack - eks-workshop-ide
 ```

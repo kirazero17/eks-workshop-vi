@@ -14,7 +14,7 @@ CLI **terraform** đã được cài đặt sẵn trong Môi trường Amazon Cl
 
 #### Hiểu các tập tin cấu hình Terraform
 
-Tập tin `providers.tf` cấu hình các nhà cung cấp Terraform mà sẽ cần để xây dựng hạ tầng. Trong trường hợp của chúng ta, chúng tôi sử dụng các nhà cung cấp **aws**, **kubernetes** và **helm**:
+Tập tin `providers.tf` cấu hình các nhà cung cấp Terraform mà sẽ cần để xây dựng hạ tầng. Trong trường hợp này, của chúng ta sử dụng các nhà cung cấp **aws**, **kubernetes** và **helm**:
 
 ```file hidePath=true
 manifests/../cluster/terraform/providers.tf
