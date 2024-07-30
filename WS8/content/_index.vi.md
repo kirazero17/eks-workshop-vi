@@ -15,13 +15,13 @@ Tên Kubernetes bắt nguồn từ tiếng Hy Lạp, nghĩa là người lái t�
 
 Hãy xem xét tại sao Kubernetes lại quan trọng thông qua việc nhìn lại quá khứ.
 
-![Kubernetes](/images/4/00010.svg?featherlight=false&width=60pc)
+![Kubernetes](/images/main/00010.svg?featherlight=false&width=60pc)
 
 **Thời kỳ triển khai truyền thống:** Ban đầu, các ứng dụng được chạy trực tiếp trên máy chủ vật lý, khiến việc phân bổ tài nguyên gặp khó khăn do không có cơ chế xác định ranh giới tài nguyên cho từng ứng dụng. Cách tiếp cận này dẫn đến nguy cơ một ứng dụng có thể sử dụng quá nhiều tài nguyên, ảnh hưởng đến hoạt động của các ứng dụng khác. Giải pháp là chạy mỗi ứng dụng trên một máy chủ vật lý riêng biệt, nhưng điều này lại không hiệu quả về mặt chi phí và tài nguyên.
 
 **Thời kỳ triển khai ảo hóa:** Ảo hóa được giới thiệu như một giải pháp cho phép chạy nhiều Máy ảo (VM) trên cùng một máy chủ vật lý, giúp cô lập ứng dụng và tăng cường bảo mật. Ảo hóa cũng giúp cải thiện hiệu quả sử dụng tài nguyên và khả năng mở rộng.
 
-**Thời kỳ triển khai Container:** Container giống như VM nhưng nhẹ hơn và chia sẻ Hệ điều hành (HĐH) với nhau. Container mang lại nhiều lợi ích như tạo mới và triển khai ứng dụng nhanh chóng, phát triển và triển khai liên tục, phân biệt rõ ràng giữa quá trình phát triển và vận hành, cung cấp tính nhất quán qua các môi trường, khả năng di chuyển giữa các cloud và HĐH, và quản lý ứng dụng tập trung.
+**Thời kỳ triển khai Container:** Container giống như VM nhưng nhẹ hơn và chia sẻ nhân Hệ điều hành (HĐH) với nhau. Container mang lại nhiều lợi ích như tạo mới và triển khai ứng dụng nhanh chóng, phát triển và triển khai liên tục, phân biệt rõ ràng giữa quá trình phát triển và vận hành, cung cấp tính nhất quán qua các môi trường, khả năng di chuyển giữa các cloud và HĐH, và quản lý ứng dụng tập trung.
 
 #### Tại sao bạn cần Kubernetes và nó có thể làm gì?
 
