@@ -20,7 +20,7 @@ Trong phần này, chúng ta sẽ tìm hiểu về cách cấu hình configmaps 
     $ kubectl create configmap app-config --from-literal=APP_COLOR=blue --from-literal=APP_MODE=prod
     $ kubectl create configmap app-config --from-file=app_config.properties (Cách khác)
     ```
-![EKS](/images/0006/00016.png?featherlight=false&width=90pc)
+![EKS](/images/part1/1.4/00016.png?featherlight=false&width=90pc)
     
   - Cách Tuyên bố (Declarative way)
     
@@ -37,7 +37,7 @@ Trong phần này, chúng ta sẽ tìm hiểu về cách cấu hình configmaps 
     Tạo một tệp định nghĩa config map và chạy lệnh 'kubectl create` để triển khai nó.
     $ kubectl create -f config-map.yaml
     ```
-![EKS](/images/0006/00017.png?featherlight=false&width=90pc)
+![EKS](/images/part1/1.4/00017.png?featherlight=false&width=90pc)
     
  #### Xem ConfigMaps
  - Để xem configMaps
@@ -50,7 +50,7 @@ Trong phần này, chúng ta sẽ tìm hiểu về cách cấu hình configmaps 
    $ kubectl describe configmaps
    ```
    
-![EKS](/images/0006/00018.png?featherlight=false&width=90pc)
+![EKS](/images/part1/1.4/00018.png?featherlight=false&width=90pc)
    
  #### ConfigMap trong Pods
  - Inject configmap vào pod
@@ -82,13 +82,11 @@ Trong phần này, chúng ta sẽ tìm hiểu về cách cấu hình configmaps 
    $ kubectl create -f pod-definition.yaml
    ```
   
-![EKS](/images/0006/00019.png?featherlight=false&width=90pc)
+![EKS](/images/part1/1.4/00019.png?featherlight=false&width=90pc)
    
  #### Có các cách khác để inject các biến cấu hình vào pod   
- - Bạn có thể inject nó như một **`Biến Môi trường Đơn`** 
- - Bạn có thể inject nó như một tệp trong một **`Thể Tích`**
- 
-![EKS](/images/0006/00020.png?featherlight=false&width=90pc)
+ - Bạn có thể inject nó như một **`Biến Môi trường`** 
+ - Bạn có thể inject nó như một tệp trong một **`Volume`**
    
  #### Tài liệu Tham khảo K8s
  - https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
